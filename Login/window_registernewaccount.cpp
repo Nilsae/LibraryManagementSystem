@@ -28,7 +28,7 @@ void Window_RegisterNewAccount::on_pushButton_Register_clicked()
     QString Name = ui->lineEdit_Name->text();
     QString Family = ui->lineEdit_Family->text();
     QString ExpireDate = ui->lineEdit_ExpireDate->text();
-    QString AccountType = ui->lineEdit_AccountType->text();
+//    QString AccountType = ui->lineEdit_AccountType->text();
     QString Password = ui->lineEdit_Password->text();
 //    QFile AddedBooksFile("/home/nilsa/Documents/AP/LibraryManagementSystem/Login/RowData/accounts.json"); // json file
    QFile AccountsFile(accounts);
@@ -44,7 +44,7 @@ void Window_RegisterNewAccount::on_pushButton_Register_clicked()
                                   {"Family", "Family"},
                                   {"date_added", QDateTime::currentDateTime().toString( "yyyy-MM-dd hh:mm:ss" )},
                           {"ExpireDate", ExpireDate},
-                                  {"AccountType", AccountType},
+//                                  {"AccountType", AccountType},
                                   {"Password", Password}
                                 };
 
