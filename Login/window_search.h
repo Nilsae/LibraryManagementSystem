@@ -18,6 +18,14 @@ public:
 private slots:
     void on_pushButton_SearchBook_clicked();
 
+    void on_pushButton_clicked();
+
+    void on_pushButton_ID_clicked();
+
+    void on_pushButton_2_clicked();
+
+    void on_pushButton_name_clicked();
+
 private:
     Ui::Window_Search *ui;
 };

@@ -116,6 +116,24 @@ public:
         pushButton_Search->setObjectName(QStringLiteral("pushButton_Search"));
         pushButton_Search->setGeometry(QRect(400, 30, 89, 25));
         tableWidget = new QTableWidget(Window_EditBook);
+        if (tableWidget->columnCount() < 1)
+            tableWidget->setColumnCount(1);
+        QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(0, __qtablewidgetitem);
+        if (tableWidget->rowCount() < 3)
+            tableWidget->setRowCount(3);
+        QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
+        tableWidget->setVerticalHeaderItem(0, __qtablewidgetitem1);
+        QTableWidgetItem *__qtablewidgetitem2 = new QTableWidgetItem();
+        tableWidget->setVerticalHeaderItem(1, __qtablewidgetitem2);
+        QTableWidgetItem *__qtablewidgetitem3 = new QTableWidgetItem();
+        tableWidget->setVerticalHeaderItem(2, __qtablewidgetitem3);
+        QTableWidgetItem *__qtablewidgetitem4 = new QTableWidgetItem();
+        tableWidget->setItem(0, 0, __qtablewidgetitem4);
+        QTableWidgetItem *__qtablewidgetitem5 = new QTableWidgetItem();
+        tableWidget->setItem(1, 0, __qtablewidgetitem5);
+        QTableWidgetItem *__qtablewidgetitem6 = new QTableWidgetItem();
+        tableWidget->setItem(2, 0, __qtablewidgetitem6);
         tableWidget->setObjectName(QStringLiteral("tableWidget"));
         tableWidget->setGeometry(QRect(20, 110, 271, 221));
 
@@ -133,6 +151,19 @@ public:
         pushButton_EditBook->setText(QApplication::translate("Window_EditBook", "EditBook", Q_NULLPTR));
         label->setText(QApplication::translate("Window_EditBook", "Book ID", Q_NULLPTR));
         pushButton_Search->setText(QApplication::translate("Window_EditBook", "Search", Q_NULLPTR));
+        QTableWidgetItem *___qtablewidgetitem = tableWidget->horizontalHeaderItem(0);
+        ___qtablewidgetitem->setText(QApplication::translate("Window_EditBook", "New Column", Q_NULLPTR));
+        QTableWidgetItem *___qtablewidgetitem1 = tableWidget->verticalHeaderItem(0);
+        ___qtablewidgetitem1->setText(QApplication::translate("Window_EditBook", "BookName", Q_NULLPTR));
+        QTableWidgetItem *___qtablewidgetitem2 = tableWidget->verticalHeaderItem(1);
+        ___qtablewidgetitem2->setText(QApplication::translate("Window_EditBook", "Author", Q_NULLPTR));
+        QTableWidgetItem *___qtablewidgetitem3 = tableWidget->verticalHeaderItem(2);
+        ___qtablewidgetitem3->setText(QApplication::translate("Window_EditBook", "Subject", Q_NULLPTR));
+
+        const bool __sortingEnabled = tableWidget->isSortingEnabled();
+        tableWidget->setSortingEnabled(false);
+        tableWidget->setSortingEnabled(__sortingEnabled);
+
     } // retranslateUi
 
 };

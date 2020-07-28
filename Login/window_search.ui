@@ -90,7 +90,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="pushButton_ID">
    <property name="geometry">
     <rect>
      <x>320</x>
@@ -103,7 +103,7 @@
     <string>Search By ID</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="pushButton_name">
    <property name="geometry">
     <rect>
      <x>320</x>
@@ -116,7 +116,7 @@
     <string>Search By Name</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_3">
+  <widget class="QPushButton" name="pushButton_author">
    <property name="geometry">
     <rect>
      <x>320</x>
@@ -129,7 +129,7 @@
     <string>Search By Author</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_4">
+  <widget class="QPushButton" name="pushButton_subject">
    <property name="geometry">
     <rect>
      <x>320</x>

@@ -16,16 +16,22 @@
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-<<<<<<< HEAD
+<!--<<<<<<< HEAD-->
+<!--<<<<<<< HEAD-->
      <x>21</x>
      <y>43</y>
      <width>301</width>
      <height>361</height>
 =======
+=======
+>>>>>>> 5faffb79ed62ac4619190044e5907d48751b4ee1
      <x>172</x>
      <y>144</y>
      <width>261</width>
      <height>271</height>
+<!--<<<<<<< HEAD-->
+>>>>>>> 5faffb79ed62ac4619190044e5907d48751b4ee1
+=======
 >>>>>>> 5faffb79ed62ac4619190044e5907d48751b4ee1
     </rect>
    </property>

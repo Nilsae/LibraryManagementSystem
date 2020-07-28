@@ -27,10 +27,8 @@ QT_BEGIN_NAMESPACE
 class Ui_Window_RemoveBook
 {
 public:
-    QWidget *layoutWidget;
+    QWidget *widget;
     QVBoxLayout *verticalLayout;
-    QHBoxLayout *horizontalLayout;
-    QHBoxLayout *horizontalLayout_2;
     QHBoxLayout *horizontalLayout_3;
     QLabel *label_Subject;
     QLineEdit *lineEdit_BookId;
@@ -41,30 +39,20 @@ public:
         if (Window_RemoveBook->objectName().isEmpty())
             Window_RemoveBook->setObjectName(QStringLiteral("Window_RemoveBook"));
         Window_RemoveBook->resize(541, 465);
-        layoutWidget = new QWidget(Window_RemoveBook);
-        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        layoutWidget->setGeometry(QRect(140, 100, 271, 241));
-        verticalLayout = new QVBoxLayout(layoutWidget);
+        widget = new QWidget(Window_RemoveBook);
+        widget->setObjectName(QStringLiteral("widget"));
+        widget->setGeometry(QRect(141, 152, 271, 151));
+        verticalLayout = new QVBoxLayout(widget);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
-        horizontalLayout = new QHBoxLayout();
-        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-
-        verticalLayout->addLayout(horizontalLayout);
-
-        horizontalLayout_2 = new QHBoxLayout();
-        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-
-        verticalLayout->addLayout(horizontalLayout_2);
-
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
-        label_Subject = new QLabel(layoutWidget);
+        label_Subject = new QLabel(widget);
         label_Subject->setObjectName(QStringLiteral("label_Subject"));
 
         horizontalLayout_3->addWidget(label_Subject);
 
-        lineEdit_BookId = new QLineEdit(layoutWidget);
+        lineEdit_BookId = new QLineEdit(widget);
         lineEdit_BookId->setObjectName(QStringLiteral("lineEdit_BookId"));
 
         horizontalLayout_3->addWidget(lineEdit_BookId);
@@ -72,7 +60,7 @@ public:
 
         verticalLayout->addLayout(horizontalLayout_3);
 
-        pushButton_RemoveBook = new QPushButton(layoutWidget);
+        pushButton_RemoveBook = new QPushButton(widget);
         pushButton_RemoveBook->setObjectName(QStringLiteral("pushButton_RemoveBook"));
 
         verticalLayout->addWidget(pushButton_RemoveBook);

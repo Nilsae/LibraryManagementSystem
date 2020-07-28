@@ -19,6 +19,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QRadioButton>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -37,7 +38,8 @@ public:
     QLineEdit *lineEdit_Family;
     QHBoxLayout *horizontalLayout_3;
     QLabel *label_AccountType;
-    QLineEdit *lineEdit_AccountType;
+    QRadioButton *radioButton_Admin;
+    QRadioButton *radioButton_Member;
     QHBoxLayout *horizontalLayout_4;
     QLabel *label_ExpireDate;
     QLineEdit *lineEdit_ExpireDate;
@@ -56,7 +58,7 @@ public:
         Window_RegisterNewAccount->resize(593, 516);
         layoutWidget = new QWidget(Window_RegisterNewAccount);
         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        layoutWidget->setGeometry(QRect(21, 43, 301, 361));
+        layoutWidget->setGeometry(QRect(172, 144, 261, 271));
         verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
@@ -98,10 +100,15 @@ public:
 
         horizontalLayout_3->addWidget(label_AccountType);
 
-        lineEdit_AccountType = new QLineEdit(layoutWidget);
-        lineEdit_AccountType->setObjectName(QStringLiteral("lineEdit_AccountType"));
+        radioButton_Admin = new QRadioButton(layoutWidget);
+        radioButton_Admin->setObjectName(QStringLiteral("radioButton_Admin"));
 
-        horizontalLayout_3->addWidget(lineEdit_AccountType);
+        horizontalLayout_3->addWidget(radioButton_Admin);
+
+        radioButton_Member = new QRadioButton(layoutWidget);
+        radioButton_Member->setObjectName(QStringLiteral("radioButton_Member"));
+
+        horizontalLayout_3->addWidget(radioButton_Member);
 
 
         verticalLayout->addLayout(horizontalLayout_3);
@@ -162,6 +169,8 @@ public:
         label_Name->setText(QApplication::translate("Window_RegisterNewAccount", "Name", Q_NULLPTR));
         label_Family->setText(QApplication::translate("Window_RegisterNewAccount", "Family", Q_NULLPTR));
         label_AccountType->setText(QApplication::translate("Window_RegisterNewAccount", "AcountType", Q_NULLPTR));
+        radioButton_Admin->setText(QApplication::translate("Window_RegisterNewAccount", "ADMIN", Q_NULLPTR));
+        radioButton_Member->setText(QApplication::translate("Window_RegisterNewAccount", "MEMBER", Q_NULLPTR));
         label_ExpireDate->setText(QApplication::translate("Window_RegisterNewAccount", "ExpireDate", Q_NULLPTR));
         label_Password->setText(QApplication::translate("Window_RegisterNewAccount", "Password", Q_NULLPTR));
         pushButton_Register->setText(QApplication::translate("Window_RegisterNewAccount", "Register", Q_NULLPTR));

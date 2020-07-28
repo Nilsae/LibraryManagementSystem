@@ -40,10 +40,10 @@ public:
     QLineEdit *lineEdit_Subject;
     QLabel *label;
     QLineEdit *lineEdit_BookId;
-    QPushButton *pushButton;
-    QPushButton *pushButton_2;
-    QPushButton *pushButton_3;
-    QPushButton *pushButton_4;
+    QPushButton *pushButton_ID;
+    QPushButton *pushButton_name;
+    QPushButton *pushButton_author;
+    QPushButton *pushButton_subject;
 
     void setupUi(QDialog *Window_Search)
     {
@@ -107,18 +107,18 @@ public:
         lineEdit_BookId = new QLineEdit(Window_Search);
         lineEdit_BookId->setObjectName(QStringLiteral("lineEdit_BookId"));
         lineEdit_BookId->setGeometry(QRect(100, 50, 181, 25));
-        pushButton = new QPushButton(Window_Search);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(320, 50, 89, 25));
-        pushButton_2 = new QPushButton(Window_Search);
-        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(320, 130, 131, 25));
-        pushButton_3 = new QPushButton(Window_Search);
-        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
-        pushButton_3->setGeometry(QRect(320, 220, 131, 25));
-        pushButton_4 = new QPushButton(Window_Search);
-        pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
-        pushButton_4->setGeometry(QRect(320, 310, 131, 25));
+        pushButton_ID = new QPushButton(Window_Search);
+        pushButton_ID->setObjectName(QStringLiteral("pushButton_ID"));
+        pushButton_ID->setGeometry(QRect(320, 50, 89, 25));
+        pushButton_name = new QPushButton(Window_Search);
+        pushButton_name->setObjectName(QStringLiteral("pushButton_name"));
+        pushButton_name->setGeometry(QRect(320, 130, 131, 25));
+        pushButton_author = new QPushButton(Window_Search);
+        pushButton_author->setObjectName(QStringLiteral("pushButton_author"));
+        pushButton_author->setGeometry(QRect(320, 220, 131, 25));
+        pushButton_subject = new QPushButton(Window_Search);
+        pushButton_subject->setObjectName(QStringLiteral("pushButton_subject"));
+        pushButton_subject->setGeometry(QRect(320, 310, 131, 25));
 
         retranslateUi(Window_Search);
 
@@ -132,10 +132,10 @@ public:
         label_AuthorName->setText(QApplication::translate("Window_Search", "Author", Q_NULLPTR));
         label_Subject->setText(QApplication::translate("Window_Search", "Subject", Q_NULLPTR));
         label->setText(QApplication::translate("Window_Search", "Book ID ", Q_NULLPTR));
-        pushButton->setText(QApplication::translate("Window_Search", "Search By ID", Q_NULLPTR));
-        pushButton_2->setText(QApplication::translate("Window_Search", "Search By Name", Q_NULLPTR));
-        pushButton_3->setText(QApplication::translate("Window_Search", "Search By Author", Q_NULLPTR));
-        pushButton_4->setText(QApplication::translate("Window_Search", "Search By Subject", Q_NULLPTR));
+        pushButton_ID->setText(QApplication::translate("Window_Search", "Search By ID", Q_NULLPTR));
+        pushButton_name->setText(QApplication::translate("Window_Search", "Search By Name", Q_NULLPTR));
+        pushButton_author->setText(QApplication::translate("Window_Search", "Search By Author", Q_NULLPTR));
+        pushButton_subject->setText(QApplication::translate("Window_Search", "Search By Subject", Q_NULLPTR));
     } // retranslateUi
 
 };
