@@ -58,7 +58,7 @@ public:
         Window_RegisterNewAccount->resize(593, 516);
         layoutWidget = new QWidget(Window_RegisterNewAccount);
         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        layoutWidget->setGeometry(QRect(172, 144, 261, 271));
+        layoutWidget->setGeometry(QRect(32, 144, 281, 281));
         verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
@@ -150,13 +150,13 @@ public:
 
         label = new QLabel(Window_RegisterNewAccount);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(340, 260, 241, 31));
+        label->setGeometry(QRect(340, 290, 241, 31));
         label_2 = new QLabel(Window_RegisterNewAccount);
         label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(30, 10, 67, 17));
+        label_2->setGeometry(QRect(50, 110, 67, 17));
         lineEdit_ID = new QLineEdit(Window_RegisterNewAccount);
         lineEdit_ID->setObjectName(QStringLiteral("lineEdit_ID"));
-        lineEdit_ID->setGeometry(QRect(180, 10, 141, 25));
+        lineEdit_ID->setGeometry(QRect(150, 110, 161, 25));
 
         retranslateUi(Window_RegisterNewAccount);
 

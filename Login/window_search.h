@@ -26,6 +26,10 @@ private slots:
 
     void on_pushButton_name_clicked();
 
+    void on_pushButton_author_clicked();
+
+    void on_pushButton_subject_clicked();
+
 private:
     Ui::Window_Search *ui;
 };
