@@ -48,11 +48,12 @@ void Window_Search::on_pushButton_ID_clicked()
    QByteArray B = AddedBooksFile.readAll();
    QJsonDocument D = QJsonDocument::fromJson(B);
    QJsonObject Obj = D.object();
+
    AddedBooksFile.close();
 //   QJsonObject empty ={};
    QJsonValueRef found_ref = Obj.find(BookId).value();
    QJsonObject found_obj= found_ref.toObject();
-   QString name= found_obj["name"].toString();
+   QString BookName= found_obj["name"].toString();
    QString subject= found_obj["subject"].toString();
    QString date_added= found_obj["date_added"].toString();
    QString status= found_obj["status"].toString();
@@ -72,6 +73,7 @@ void Window_Search::on_pushButton_name_clicked()
    QJsonDocument D = QJsonDocument::fromJson(B);
    QJsonObject Obj = D.object();
    AddedBooksFile.close();
+
    foreach(QJsonValue x,Obj){
 
        QString BookName=(x.toObject())["name"].toString();
@@ -97,19 +99,26 @@ void Window_Search::on_pushButton_author_clicked()
    QJsonDocument D = QJsonDocument::fromJson(B);
    QJsonObject Obj = D.object();
    AddedBooksFile.close();
+
+
    foreach(QJsonValue x,Obj){
 
        QString author=(x.toObject())["author"].toString();
 
        if(Author_lineEdit==author){
+
            QString subject= (x.toObject())["subject"].toString();
            QString date_added= (x.toObject())["date_added"].toString();
            QString status= (x.toObject())["status"].toString();
            QString BookName=(x.toObject())["name"].toString();
+
+           //MR.MOUSAVI : GET ALL THE STUFF TO PRINT IN THIS BLOCK
+           //IF YOU TRY TO USE THESE STRINGS OUT OF THE IF BLOCK YOU WILL FACE BUGS!!!!
            break;
            }
 
 }
+
 }
 
 void Window_Search::on_pushButton_subject_clicked()
@@ -121,6 +130,7 @@ void Window_Search::on_pushButton_subject_clicked()
    QJsonDocument D = QJsonDocument::fromJson(B);
    QJsonObject Obj = D.object();
    AddedBooksFile.close();
+
    foreach(QJsonValue x,Obj){
 
        QString subject=(x.toObject())["subject"].toString();

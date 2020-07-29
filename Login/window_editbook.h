@@ -15,6 +15,11 @@ public:
     explicit Window_EditBook(QWidget *parent = nullptr);
     ~Window_EditBook();
 
+private slots:
+    void on_pushButton_Search_clicked();
+
+    void on_pushButton_EditBook_clicked();
+
 private:
     Ui::Window_EditBook *ui;
 };
