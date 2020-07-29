@@ -12,6 +12,7 @@
 #include <QString>
 #define AddedBooks "/home/nilsa/Documents/AP/LibraryManagementSystem/Login/RowData/AddedBooks.json"
 #define accounts "/home/nilsa/Documents/AP/LibraryManagementSystem/Login/RowData/accounts.json"
+#define max_permitted_books 4
 Window_ReserveBook::Window_ReserveBook(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Window_ReserveBook)
@@ -39,7 +40,7 @@ void Window_ReserveBook::on_pushButton_Reserve_clicked()
    QJsonObject found_obj= found_ref.toObject();
    QString BookName= found_obj["name"].toString();
    QString subject= found_obj["subject"].toString();
-   QString status= found_obj["status"].toString();
+   QString status= found_obj["status"].toString(); //ADD AN IF
    QString author= found_obj["author"].toString();
    QString date_added= found_obj["date_added"].toString();
    QJsonObject EditedBook = {   {"id", BookId},
@@ -64,15 +65,51 @@ void Window_ReserveBook::on_pushButton_Reserve_clicked()
    AddedBooksFile.write(doc.toJson());
    AddedBooksFile.close();
 
+//...........................................................................................................
+   QFile AccountsFile(accounts);
+   AccountsFile.open(QIODevice::ReadWrite);
+
+   QJsonDocument jsonDocAcc = QJsonDocument::fromJson( AccountsFile.readAll() );
+
+   QJsonObject Accounts_Obj=jsonDocAcc.object();
+   AccountsFile.close();
+
+   QString MemberId = ui->lineEdit_MemberId->text();
+  QJsonValueRef Account_ref = Accounts_Obj.find(MemberId).value();
+  QJsonObject Account_Obj= Account_ref.toObject();
+  qDebug()<<Account_Obj;
+  QString MemberName= Account_Obj["Name"].toString();
+  qDebug()<<MemberName;
+  QString Family= Account_Obj["Family"].toString();
+  QString date_added_account= Account_Obj["date_added"].toString();
+  QString ExpireDate= Account_Obj["ExpireDate"].toString();
+  QString AccountType= Account_Obj["AccountType"].toString();
+  QString Password= Account_Obj["Password"].toString();
+  QJsonArray RentedBooks= Account_Obj["RentedBooks"].toArray();
+  if(RentedBooks.size()>max_permitted_books){
+    //notification that it is not permitted
+      return;
+  }
+  RentedBooks.append(BookId);
+  QJsonObject newAccount = { {"Name", MemberName},
+                                 {"Family", Family},
+                                 {"date_added", date_added_account},
+                         {"ExpireDate", ExpireDate},
+//                                  {"AccountType", AccountType},
+                                 {"Password", Password},
+                             {"RentedBooks",RentedBooks}
+                               };
+  Accounts_Obj.remove(MemberId);
+ Accounts_Obj[MemberId]=newAccount;
 
 
-//   QString BookId = ui->lineEdit_BookId->text();
-//   QFile AccountsFile(accounts);
-//  AccountsFile.open(QIODevice::ReadWrite | QIODevice::Text);
-//  QByteArray B = AccountsFile.readAll();
-//  QJsonDocument D = QJsonDocument::fromJson(B);
-//  QJsonObject Obj = D.object();
-//  QJsonValueRef found_ref = Obj.find(memberId).value();
-//  QJsonObject found_obj= found_ref.toObject();
+ QJsonDocument final_acc_doc(Accounts_Obj);
 
+ if( !AccountsFile.open( QIODevice::WriteOnly ) ) //write json content to file.
+ {
+     qDebug()<<"error opening file for write.\n";
+ }
+
+ AccountsFile.write(final_acc_doc.toJson());
+ AccountsFile.close();
 }
