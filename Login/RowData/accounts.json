@@ -9,18 +9,12 @@
         "date_added": "2020-07-29 13:15:55"
     },
     "12735": {
-        "ExpireDate": "2030-01-01 00:00:00",
+        "ExpireDate": ":)",
         "Family": "Family",
         "Name": "nilu",
         "Password": "12735",
-        "RentedBooks": [
-            {
-                "122": "2020-07-29"
-            },
-            {
-                "250": "2020-07-29"
-            }
-        ],
-        "date_added": "2020-07-29 13:12:44"
+        "RentedBooks": {
+        },
+        "date_added": "2020-07-29 19:06:36"
     }
 }

@@ -15,6 +15,9 @@ public:
     explicit Window_ReturnBook(QWidget *parent = nullptr);
     ~Window_ReturnBook();
 
+private slots:
+    void on_pushButton_ReturnBook_clicked();
+
 private:
     Ui::Window_ReturnBook *ui;
 };

@@ -90,7 +90,7 @@ void Window_ReserveBook::on_pushButton_Reserve_clicked()
   QString ExpireDate= Account_Obj["ExpireDate"].toString();
   QString AccountType= Account_Obj["AccountType"].toString();
   QString Password= Account_Obj["Password"].toString();
-  QJsonArray RentedBooks= Account_Obj["RentedBooks"].toArray();
+  QJsonObject RentedBooks= Account_Obj["RentedBooks"].toObject();
   if(RentedBooks.size()>max_permitted_books){
     //notification that it is not permitted
       return;
@@ -98,9 +98,9 @@ void Window_ReserveBook::on_pushButton_Reserve_clicked()
 //  QPair<QString,QString> BookDatePair ;
 //  BookDatePair.first=BookId;
 //  BookDatePair.second=QDate::currentDate().toString( "yyyy-MM-dd" );
-  QJsonObject RBook;
-  RBook[BookId]=QDate::currentDate().toString( "yyyy-MM-dd" );
-  RentedBooks.append(RBook);
+//  QJsonObject RBook;
+//  RBook[BookId]=QDate::currentDate().toString( "yyyy-MM-dd" );
+  RentedBooks.insert(BookId,QDate::currentDate().toString( "yyyy-MM-dd" ));
   QJsonObject newAccount = { {"Name", MemberName},
                                  {"Family", Family},
                                  {"date_added", date_added_account},
@@ -109,6 +109,7 @@ void Window_ReserveBook::on_pushButton_Reserve_clicked()
                                  {"Password", Password},
                              {"RentedBooks",RentedBooks}
                                };
+
   Accounts_Obj.remove(MemberId);
  Accounts_Obj[MemberId]=newAccount;
 
