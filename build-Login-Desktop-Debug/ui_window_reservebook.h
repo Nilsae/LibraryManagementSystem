@@ -27,17 +27,15 @@ QT_BEGIN_NAMESPACE
 class Ui_Window_ReserveBook
 {
 public:
-    QWidget *widget;
+    QWidget *layoutWidget;
     QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout;
-    QLabel *label_BookName;
-    QLineEdit *lineEdit_BookName;
     QHBoxLayout *horizontalLayout_2;
     QLabel *label_Subject;
-    QLineEdit *lineEdit_Subject;
+    QLineEdit *lineEdit_BookId;
     QHBoxLayout *horizontalLayout_3;
     QLabel *label_Author;
-    QLineEdit *lineEdit_Author;
+    QLineEdit *lineEdit_MemberId;
     QPushButton *pushButton_Reserve;
 
     void setupUi(QDialog *Window_ReserveBook)
@@ -45,58 +43,48 @@ public:
         if (Window_ReserveBook->objectName().isEmpty())
             Window_ReserveBook->setObjectName(QStringLiteral("Window_ReserveBook"));
         Window_ReserveBook->resize(708, 516);
-        widget = new QWidget(Window_ReserveBook);
-        widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(180, 100, 271, 261));
-        verticalLayout = new QVBoxLayout(widget);
+        layoutWidget = new QWidget(Window_ReserveBook);
+        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
+        layoutWidget->setGeometry(QRect(180, 100, 271, 261));
+        verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        label_BookName = new QLabel(widget);
-        label_BookName->setObjectName(QStringLiteral("label_BookName"));
-
-        horizontalLayout->addWidget(label_BookName);
-
-        lineEdit_BookName = new QLineEdit(widget);
-        lineEdit_BookName->setObjectName(QStringLiteral("lineEdit_BookName"));
-
-        horizontalLayout->addWidget(lineEdit_BookName);
-
 
         verticalLayout->addLayout(horizontalLayout);
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        label_Subject = new QLabel(widget);
+        label_Subject = new QLabel(layoutWidget);
         label_Subject->setObjectName(QStringLiteral("label_Subject"));
 
         horizontalLayout_2->addWidget(label_Subject);
 
-        lineEdit_Subject = new QLineEdit(widget);
-        lineEdit_Subject->setObjectName(QStringLiteral("lineEdit_Subject"));
+        lineEdit_BookId = new QLineEdit(layoutWidget);
+        lineEdit_BookId->setObjectName(QStringLiteral("lineEdit_BookId"));
 
-        horizontalLayout_2->addWidget(lineEdit_Subject);
+        horizontalLayout_2->addWidget(lineEdit_BookId);
 
 
         verticalLayout->addLayout(horizontalLayout_2);
 
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
-        label_Author = new QLabel(widget);
+        label_Author = new QLabel(layoutWidget);
         label_Author->setObjectName(QStringLiteral("label_Author"));
 
         horizontalLayout_3->addWidget(label_Author);
 
-        lineEdit_Author = new QLineEdit(widget);
-        lineEdit_Author->setObjectName(QStringLiteral("lineEdit_Author"));
+        lineEdit_MemberId = new QLineEdit(layoutWidget);
+        lineEdit_MemberId->setObjectName(QStringLiteral("lineEdit_MemberId"));
 
-        horizontalLayout_3->addWidget(lineEdit_Author);
+        horizontalLayout_3->addWidget(lineEdit_MemberId);
 
 
         verticalLayout->addLayout(horizontalLayout_3);
 
-        pushButton_Reserve = new QPushButton(widget);
+        pushButton_Reserve = new QPushButton(layoutWidget);
         pushButton_Reserve->setObjectName(QStringLiteral("pushButton_Reserve"));
 
         verticalLayout->addWidget(pushButton_Reserve);
@@ -110,9 +98,8 @@ public:
     void retranslateUi(QDialog *Window_ReserveBook)
     {
         Window_ReserveBook->setWindowTitle(QApplication::translate("Window_ReserveBook", "Dialog", Q_NULLPTR));
-        label_BookName->setText(QApplication::translate("Window_ReserveBook", "BookName", Q_NULLPTR));
-        label_Subject->setText(QApplication::translate("Window_ReserveBook", "Subject", Q_NULLPTR));
-        label_Author->setText(QApplication::translate("Window_ReserveBook", "Author", Q_NULLPTR));
+        label_Subject->setText(QApplication::translate("Window_ReserveBook", "Book ID", Q_NULLPTR));
+        label_Author->setText(QApplication::translate("Window_ReserveBook", "Memeber ID", Q_NULLPTR));
         pushButton_Reserve->setText(QApplication::translate("Window_ReserveBook", "Reserve", Q_NULLPTR));
     } // retranslateUi
 

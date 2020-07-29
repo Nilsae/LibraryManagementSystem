@@ -60,6 +60,7 @@ void Window_Search::on_pushButton_ID_clicked()
    QString author= found_obj["author"].toString();
 
 
+
 }
 
 
@@ -83,6 +84,10 @@ void Window_Search::on_pushButton_name_clicked()
            QString date_added= (x.toObject())["date_added"].toString();
            QString status= (x.toObject())["status"].toString();
            QString author= (x.toObject())["author"].toString();
+           QString BookId= (x.toObject())["id"].toString();
+
+
+
            break;
            }
 
@@ -111,6 +116,7 @@ void Window_Search::on_pushButton_author_clicked()
            QString date_added= (x.toObject())["date_added"].toString();
            QString status= (x.toObject())["status"].toString();
            QString BookName=(x.toObject())["name"].toString();
+           QString BookId= (x.toObject())["id"].toString();
 
            //MR.MOUSAVI : GET ALL THE STUFF TO PRINT IN THIS BLOCK
            //IF YOU TRY TO USE THESE STRINGS OUT OF THE IF BLOCK YOU WILL FACE BUGS!!!!
@@ -140,6 +146,7 @@ void Window_Search::on_pushButton_subject_clicked()
            QString date_added= (x.toObject())["date_added"].toString();
            QString status= (x.toObject())["status"].toString();
            QString BookName=(x.toObject())["name"].toString();
+           QString BookId= (x.toObject())["id"].toString();
            break;
            }
 }

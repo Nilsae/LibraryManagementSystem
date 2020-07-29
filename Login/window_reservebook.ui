@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>180</x>
@@ -24,30 +24,19 @@
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout">
-      <item>
-       <widget class="QLabel" name="label_BookName">
-        <property name="text">
-         <string>BookName</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="lineEdit_BookName"/>
-      </item>
-     </layout>
+     <layout class="QHBoxLayout" name="horizontalLayout"/>
     </item>
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item>
        <widget class="QLabel" name="label_Subject">
         <property name="text">
-         <string>Subject</string>
+         <string>Book ID</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit_Subject"/>
+       <widget class="QLineEdit" name="lineEdit_BookId"/>
       </item>
      </layout>
     </item>
@@ -56,12 +45,12 @@
       <item>
        <widget class="QLabel" name="label_Author">
         <property name="text">
-         <string>Author</string>
+         <string>Memeber ID</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit_Author"/>
+       <widget class="QLineEdit" name="lineEdit_MemberId"/>
       </item>
      </layout>
     </item>

@@ -39,16 +39,17 @@ void Window_RegisterNewAccount::on_pushButton_Register_clicked()
    QJsonObject main=jsonDoc.object();
    AccountsFile.close();
 
-
-   QJsonObject Books = { {"Name", Name},
+   QJsonObject RentedBooks;
+   QJsonObject newAccount = { {"Name", Name},
                                   {"Family", "Family"},
                                   {"date_added", QDateTime::currentDateTime().toString( "yyyy-MM-dd hh:mm:ss" )},
                           {"ExpireDate", ExpireDate},
 //                                  {"AccountType", AccountType},
-                                  {"Password", Password}
+                                  {"Password", Password},
+                              {"RentedBooks",RentedBooks}
                                 };
 
-   main[ID]=Books;
+   main[ID]=newAccount;
 
    QJsonDocument doc( main );
 

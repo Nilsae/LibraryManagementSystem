@@ -15,6 +15,9 @@ public:
     explicit Window_ReserveBook(QWidget *parent = nullptr);
     ~Window_ReserveBook();
 
+private slots:
+    void on_pushButton_Reserve_clicked();
+
 private:
     Ui::Window_ReserveBook *ui;
 };

@@ -38,7 +38,7 @@ void Window_AddBook::on_pushButton_AddBook_clicked()
     AddedBooksFile.close();
 
 
-    QJsonObject Books = { /*{"id", BookId},*/
+    QJsonObject Books = { {"id", BookId},
                                    {"status", "available"},
                                    {"date_added", QDateTime::currentDateTime().toString( "yyyy-MM-dd hh:mm:ss" )},
                                    {"name", BookName},

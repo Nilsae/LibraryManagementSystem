@@ -58,7 +58,7 @@ void Window_EditBook::on_pushButton_EditBook_clicked()
    QJsonValueRef found_ref = Obj.find(BookId).value();
    QJsonObject found_obj= found_ref.toObject();
    QString date_added= found_obj["date_added"].toString();
-   QJsonObject EditedBook = {
+   QJsonObject EditedBook = {   {"id", BookId},
                                   {"status", "available"},
                                   {"date_added", date_added},
                                   {"name", NewBookName},
