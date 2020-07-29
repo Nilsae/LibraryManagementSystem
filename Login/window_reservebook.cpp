@@ -10,6 +10,7 @@
 #include <bits/stdc++.h>
 #include <QDateTime>
 #include <QString>
+#include <QPair>
 #define AddedBooks "/home/nilsa/Documents/AP/LibraryManagementSystem/Login/RowData/AddedBooks.json"
 #define accounts "/home/nilsa/Documents/AP/LibraryManagementSystem/Login/RowData/accounts.json"
 #define max_permitted_books 4
@@ -41,6 +42,10 @@ void Window_ReserveBook::on_pushButton_Reserve_clicked()
    QString BookName= found_obj["name"].toString();
    QString subject= found_obj["subject"].toString();
    QString status= found_obj["status"].toString(); //ADD AN IF
+   if(status!="available"){
+       //notification that the book is not available
+       return;
+   }
    QString author= found_obj["author"].toString();
    QString date_added= found_obj["date_added"].toString();
    QJsonObject EditedBook = {   {"id", BookId},
@@ -77,9 +82,9 @@ void Window_ReserveBook::on_pushButton_Reserve_clicked()
    QString MemberId = ui->lineEdit_MemberId->text();
   QJsonValueRef Account_ref = Accounts_Obj.find(MemberId).value();
   QJsonObject Account_Obj= Account_ref.toObject();
-  qDebug()<<Account_Obj;
+
   QString MemberName= Account_Obj["Name"].toString();
-  qDebug()<<MemberName;
+
   QString Family= Account_Obj["Family"].toString();
   QString date_added_account= Account_Obj["date_added"].toString();
   QString ExpireDate= Account_Obj["ExpireDate"].toString();
@@ -90,7 +95,12 @@ void Window_ReserveBook::on_pushButton_Reserve_clicked()
     //notification that it is not permitted
       return;
   }
-  RentedBooks.append(BookId);
+//  QPair<QString,QString> BookDatePair ;
+//  BookDatePair.first=BookId;
+//  BookDatePair.second=QDate::currentDate().toString( "yyyy-MM-dd" );
+  QJsonObject RBook;
+  RBook[BookId]=QDate::currentDate().toString( "yyyy-MM-dd" );
+  RentedBooks.append(RBook);
   QJsonObject newAccount = { {"Name", MemberName},
                                  {"Family", Family},
                                  {"date_added", date_added_account},
