@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/Data">
+        <file>RowData/User&amp;Pass.json</file>
+    </qresource>
+</RCC>
