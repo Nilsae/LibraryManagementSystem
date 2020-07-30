@@ -34,11 +34,11 @@ void Window_Member::on_pushButton_Logout_clicked()
     //RETURN TO Login page
 }
 
-void Window_Member::on_pushButton_RemoveReservation_clicked()
-{
-    RemoveReservationObj=new Window_RemoveReservation(this);
-    RemoveReservationObj->show();
-}
+//void Window_Member::on_pushButton_RemoveReservation_clicked()
+//{
+//    RemoveReservationObj=new Window_RemoveReservation(this);
+//    RemoveReservationObj->show();
+//}
 
 void Window_Member::on_pushButton_RenewBook_clicked()
 {

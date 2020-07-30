@@ -61,7 +61,6 @@ SOURCES       = ../Login/main.cpp \
 		../Login/window_member.cpp \
 		../Login/window_registernewaccount.cpp \
 		../Login/window_removebook.cpp \
-		../Login/window_removereservation.cpp \
 		../Login/window_renewbook.cpp \
 		../Login/window_reservebook.cpp \
 		../Login/window_returnbook.cpp \
@@ -78,7 +77,6 @@ SOURCES       = ../Login/main.cpp \
 		moc_window_member.cpp \
 		moc_window_registernewaccount.cpp \
 		moc_window_removebook.cpp \
-		moc_window_removereservation.cpp \
 		moc_window_renewbook.cpp \
 		moc_window_reservebook.cpp \
 		moc_window_returnbook.cpp \
@@ -96,7 +94,6 @@ OBJECTS       = main.o \
 		window_member.o \
 		window_registernewaccount.o \
 		window_removebook.o \
-		window_removereservation.o \
 		window_renewbook.o \
 		window_reservebook.o \
 		window_returnbook.o \
@@ -114,7 +111,6 @@ OBJECTS       = main.o \
 		moc_window_member.o \
 		moc_window_registernewaccount.o \
 		moc_window_removebook.o \
-		moc_window_removereservation.o \
 		moc_window_renewbook.o \
 		moc_window_reservebook.o \
 		moc_window_returnbook.o \
@@ -175,6 +171,7 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt_config.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_post.prf \
+		../Login/.qmake.stash \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exclusive_builds.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/toolchain.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf \
@@ -204,7 +201,6 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		../Login/window_member.h \
 		../Login/window_registernewaccount.h \
 		../Login/window_removebook.h \
-		../Login/window_removereservation.h \
 		../Login/window_renewbook.h \
 		../Login/window_reservebook.h \
 		../Login/window_returnbook.h \
@@ -221,7 +217,6 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		../Login/window_member.cpp \
 		../Login/window_registernewaccount.cpp \
 		../Login/window_removebook.cpp \
-		../Login/window_removereservation.cpp \
 		../Login/window_renewbook.cpp \
 		../Login/window_reservebook.cpp \
 		../Login/window_returnbook.cpp \
@@ -236,7 +231,7 @@ TARGET        = Login
 first: all
 ####### Build rules
 
-$(TARGET): ui_mainwindow.h ui_window_addbook.h ui_window_cancelmembership.h ui_window_chechoutbook.h ui_window_editbook.h ui_window_issuebook.h ui_window_librarian.h ui_window_member.h ui_window_registernewaccount.h ui_window_removebook.h ui_window_removereservation.h ui_window_renewbook.h ui_window_reservebook.h ui_window_returnbook.h ui_window_search.h ui_window_updateaccount.h ui_window_viewaccount.h $(OBJECTS)  
+$(TARGET): ui_mainwindow.h ui_window_addbook.h ui_window_cancelmembership.h ui_window_chechoutbook.h ui_window_editbook.h ui_window_issuebook.h ui_window_librarian.h ui_window_member.h ui_window_registernewaccount.h ui_window_removebook.h ui_window_renewbook.h ui_window_reservebook.h ui_window_returnbook.h ui_window_search.h ui_window_updateaccount.h ui_window_viewaccount.h $(OBJECTS)  
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
 Makefile: ../Login/Login.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
@@ -293,6 +288,7 @@ Makefile: ../Login/Login.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qma
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt_config.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exclusive_builds.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/toolchain.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf \
@@ -372,6 +368,7 @@ Makefile: ../Login/Login.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qma
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt_config.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_post.prf:
+.qmake.stash:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exclusive_builds.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/toolchain.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf:
@@ -412,9 +409,9 @@ distdir: FORCE
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../Login/UserAndPass.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../Login/mainwindow.h ../Login/window_addbook.h ../Login/window_cancelmembership.h ../Login/window_chechoutbook.h ../Login/window_editbook.h ../Login/window_issuebook.h ../Login/window_librarian.h ../Login/window_member.h ../Login/window_registernewaccount.h ../Login/window_removebook.h ../Login/window_removereservation.h ../Login/window_renewbook.h ../Login/window_reservebook.h ../Login/window_returnbook.h ../Login/window_search.h ../Login/window_updateaccount.h ../Login/window_viewaccount.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../Login/main.cpp ../Login/mainwindow.cpp ../Login/window_addbook.cpp ../Login/window_cancelmembership.cpp ../Login/window_chechoutbook.cpp ../Login/window_editbook.cpp ../Login/window_issuebook.cpp ../Login/window_librarian.cpp ../Login/window_member.cpp ../Login/window_registernewaccount.cpp ../Login/window_removebook.cpp ../Login/window_removereservation.cpp ../Login/window_renewbook.cpp ../Login/window_reservebook.cpp ../Login/window_returnbook.cpp ../Login/window_search.cpp ../Login/window_updateaccount.cpp ../Login/window_viewaccount.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../Login/mainwindow.ui ../Login/window_addbook.ui ../Login/window_cancelmembership.ui ../Login/window_chechoutbook.ui ../Login/window_editbook.ui ../Login/window_issuebook.ui ../Login/window_librarian.ui ../Login/window_member.ui ../Login/window_registernewaccount.ui ../Login/window_removebook.ui ../Login/window_removereservation.ui ../Login/window_renewbook.ui ../Login/window_reservebook.ui ../Login/window_returnbook.ui ../Login/window_search.ui ../Login/window_updateaccount.ui ../Login/window_viewaccount.ui $(DISTDIR)/
+	$(COPY_FILE) --parents ../Login/mainwindow.h ../Login/window_addbook.h ../Login/window_cancelmembership.h ../Login/window_chechoutbook.h ../Login/window_editbook.h ../Login/window_issuebook.h ../Login/window_librarian.h ../Login/window_member.h ../Login/window_registernewaccount.h ../Login/window_removebook.h ../Login/window_renewbook.h ../Login/window_reservebook.h ../Login/window_returnbook.h ../Login/window_search.h ../Login/window_updateaccount.h ../Login/window_viewaccount.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../Login/main.cpp ../Login/mainwindow.cpp ../Login/window_addbook.cpp ../Login/window_cancelmembership.cpp ../Login/window_chechoutbook.cpp ../Login/window_editbook.cpp ../Login/window_issuebook.cpp ../Login/window_librarian.cpp ../Login/window_member.cpp ../Login/window_registernewaccount.cpp ../Login/window_removebook.cpp ../Login/window_renewbook.cpp ../Login/window_reservebook.cpp ../Login/window_returnbook.cpp ../Login/window_search.cpp ../Login/window_updateaccount.cpp ../Login/window_viewaccount.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../Login/mainwindow.ui ../Login/window_addbook.ui ../Login/window_cancelmembership.ui ../Login/window_chechoutbook.ui ../Login/window_editbook.ui ../Login/window_issuebook.ui ../Login/window_librarian.ui ../Login/window_member.ui ../Login/window_registernewaccount.ui ../Login/window_removebook.ui ../Login/window_renewbook.ui ../Login/window_reservebook.ui ../Login/window_returnbook.ui ../Login/window_search.ui ../Login/window_updateaccount.ui ../Login/window_viewaccount.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -452,11 +449,10 @@ compiler_moc_predefs_clean:
 moc_predefs.h: /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 	g++ -pipe -g -std=gnu++11 -Wall -W -dM -E -o moc_predefs.h /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_mainwindow.cpp moc_window_addbook.cpp moc_window_cancelmembership.cpp moc_window_chechoutbook.cpp moc_window_editbook.cpp moc_window_issuebook.cpp moc_window_librarian.cpp moc_window_member.cpp moc_window_registernewaccount.cpp moc_window_removebook.cpp moc_window_removereservation.cpp moc_window_renewbook.cpp moc_window_reservebook.cpp moc_window_returnbook.cpp moc_window_search.cpp moc_window_updateaccount.cpp moc_window_viewaccount.cpp
+compiler_moc_header_make_all: moc_mainwindow.cpp moc_window_addbook.cpp moc_window_cancelmembership.cpp moc_window_chechoutbook.cpp moc_window_editbook.cpp moc_window_issuebook.cpp moc_window_librarian.cpp moc_window_member.cpp moc_window_registernewaccount.cpp moc_window_removebook.cpp moc_window_renewbook.cpp moc_window_reservebook.cpp moc_window_returnbook.cpp moc_window_search.cpp moc_window_updateaccount.cpp moc_window_viewaccount.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_mainwindow.cpp moc_window_addbook.cpp moc_window_cancelmembership.cpp moc_window_chechoutbook.cpp moc_window_editbook.cpp moc_window_issuebook.cpp moc_window_librarian.cpp moc_window_member.cpp moc_window_registernewaccount.cpp moc_window_removebook.cpp moc_window_removereservation.cpp moc_window_renewbook.cpp moc_window_reservebook.cpp moc_window_returnbook.cpp moc_window_search.cpp moc_window_updateaccount.cpp moc_window_viewaccount.cpp
+	-$(DEL_FILE) moc_mainwindow.cpp moc_window_addbook.cpp moc_window_cancelmembership.cpp moc_window_chechoutbook.cpp moc_window_editbook.cpp moc_window_issuebook.cpp moc_window_librarian.cpp moc_window_member.cpp moc_window_registernewaccount.cpp moc_window_removebook.cpp moc_window_renewbook.cpp moc_window_reservebook.cpp moc_window_returnbook.cpp moc_window_search.cpp moc_window_updateaccount.cpp moc_window_viewaccount.cpp
 moc_mainwindow.cpp: ../Login/window_librarian.h \
-		../Login/window_removereservation.h \
 		../Login/window_renewbook.h \
 		../Login/window_reservebook.h \
 		../Login/window_returnbook.h \
@@ -501,8 +497,7 @@ moc_window_issuebook.cpp: ../Login/window_issuebook.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/nilsa/Documents/AP/LibraryManagementSystem/Login -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../Login/window_issuebook.h -o moc_window_issuebook.cpp
 
-moc_window_librarian.cpp: ../Login/window_removereservation.h \
-		../Login/window_renewbook.h \
+moc_window_librarian.cpp: ../Login/window_renewbook.h \
 		../Login/window_reservebook.h \
 		../Login/window_returnbook.h \
 		../Login/window_search.h \
@@ -520,7 +515,6 @@ moc_window_librarian.cpp: ../Login/window_removereservation.h \
 	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/nilsa/Documents/AP/LibraryManagementSystem/Login -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../Login/window_librarian.h -o moc_window_librarian.cpp
 
 moc_window_member.cpp: ../Login/window_librarian.h \
-		../Login/window_removereservation.h \
 		../Login/window_renewbook.h \
 		../Login/window_reservebook.h \
 		../Login/window_returnbook.h \
@@ -548,11 +542,6 @@ moc_window_removebook.cpp: ../Login/window_removebook.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/nilsa/Documents/AP/LibraryManagementSystem/Login -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../Login/window_removebook.h -o moc_window_removebook.cpp
-
-moc_window_removereservation.cpp: ../Login/window_removereservation.h \
-		moc_predefs.h \
-		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/nilsa/Documents/AP/LibraryManagementSystem/Login -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../Login/window_removereservation.h -o moc_window_removereservation.cpp
 
 moc_window_renewbook.cpp: ../Login/window_renewbook.h \
 		moc_predefs.h \
@@ -586,9 +575,9 @@ moc_window_viewaccount.cpp: ../Login/window_viewaccount.h \
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_mainwindow.h ui_window_addbook.h ui_window_cancelmembership.h ui_window_chechoutbook.h ui_window_editbook.h ui_window_issuebook.h ui_window_librarian.h ui_window_member.h ui_window_registernewaccount.h ui_window_removebook.h ui_window_removereservation.h ui_window_renewbook.h ui_window_reservebook.h ui_window_returnbook.h ui_window_search.h ui_window_updateaccount.h ui_window_viewaccount.h
+compiler_uic_make_all: ui_mainwindow.h ui_window_addbook.h ui_window_cancelmembership.h ui_window_chechoutbook.h ui_window_editbook.h ui_window_issuebook.h ui_window_librarian.h ui_window_member.h ui_window_registernewaccount.h ui_window_removebook.h ui_window_renewbook.h ui_window_reservebook.h ui_window_returnbook.h ui_window_search.h ui_window_updateaccount.h ui_window_viewaccount.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_mainwindow.h ui_window_addbook.h ui_window_cancelmembership.h ui_window_chechoutbook.h ui_window_editbook.h ui_window_issuebook.h ui_window_librarian.h ui_window_member.h ui_window_registernewaccount.h ui_window_removebook.h ui_window_removereservation.h ui_window_renewbook.h ui_window_reservebook.h ui_window_returnbook.h ui_window_search.h ui_window_updateaccount.h ui_window_viewaccount.h
+	-$(DEL_FILE) ui_mainwindow.h ui_window_addbook.h ui_window_cancelmembership.h ui_window_chechoutbook.h ui_window_editbook.h ui_window_issuebook.h ui_window_librarian.h ui_window_member.h ui_window_registernewaccount.h ui_window_removebook.h ui_window_renewbook.h ui_window_reservebook.h ui_window_returnbook.h ui_window_search.h ui_window_updateaccount.h ui_window_viewaccount.h
 ui_mainwindow.h: ../Login/mainwindow.ui \
 		/usr/lib/qt5/bin/uic
 	/usr/lib/qt5/bin/uic ../Login/mainwindow.ui -o ui_mainwindow.h
@@ -629,10 +618,6 @@ ui_window_removebook.h: ../Login/window_removebook.ui \
 		/usr/lib/qt5/bin/uic
 	/usr/lib/qt5/bin/uic ../Login/window_removebook.ui -o ui_window_removebook.h
 
-ui_window_removereservation.h: ../Login/window_removereservation.ui \
-		/usr/lib/qt5/bin/uic
-	/usr/lib/qt5/bin/uic ../Login/window_removereservation.ui -o ui_window_removereservation.h
-
 ui_window_renewbook.h: ../Login/window_renewbook.ui \
 		/usr/lib/qt5/bin/uic
 	/usr/lib/qt5/bin/uic ../Login/window_renewbook.ui -o ui_window_renewbook.h
@@ -669,7 +654,6 @@ compiler_clean: compiler_rcc_clean compiler_moc_predefs_clean compiler_moc_heade
 
 main.o: ../Login/main.cpp ../Login/mainwindow.h \
 		../Login/window_librarian.h \
-		../Login/window_removereservation.h \
 		../Login/window_renewbook.h \
 		../Login/window_reservebook.h \
 		../Login/window_returnbook.h \
@@ -688,7 +672,6 @@ main.o: ../Login/main.cpp ../Login/mainwindow.h \
 
 mainwindow.o: ../Login/mainwindow.cpp ../Login/mainwindow.h \
 		../Login/window_librarian.h \
-		../Login/window_removereservation.h \
 		../Login/window_renewbook.h \
 		../Login/window_reservebook.h \
 		../Login/window_returnbook.h \
@@ -727,7 +710,6 @@ window_issuebook.o: ../Login/window_issuebook.cpp ../Login/window_issuebook.h \
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o window_issuebook.o ../Login/window_issuebook.cpp
 
 window_librarian.o: ../Login/window_librarian.cpp ../Login/window_librarian.h \
-		../Login/window_removereservation.h \
 		../Login/window_renewbook.h \
 		../Login/window_reservebook.h \
 		../Login/window_returnbook.h \
@@ -745,7 +727,6 @@ window_librarian.o: ../Login/window_librarian.cpp ../Login/window_librarian.h \
 
 window_member.o: ../Login/window_member.cpp ../Login/window_member.h \
 		../Login/window_librarian.h \
-		../Login/window_removereservation.h \
 		../Login/window_renewbook.h \
 		../Login/window_reservebook.h \
 		../Login/window_returnbook.h \
@@ -769,10 +750,6 @@ window_registernewaccount.o: ../Login/window_registernewaccount.cpp ../Login/win
 window_removebook.o: ../Login/window_removebook.cpp ../Login/window_removebook.h \
 		ui_window_removebook.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o window_removebook.o ../Login/window_removebook.cpp
-
-window_removereservation.o: ../Login/window_removereservation.cpp ../Login/window_removereservation.h \
-		ui_window_removereservation.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o window_removereservation.o ../Login/window_removereservation.cpp
 
 window_renewbook.o: ../Login/window_renewbook.cpp ../Login/window_renewbook.h \
 		ui_window_renewbook.h
@@ -830,9 +807,6 @@ moc_window_registernewaccount.o: moc_window_registernewaccount.cpp
 
 moc_window_removebook.o: moc_window_removebook.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_window_removebook.o moc_window_removebook.cpp
-
-moc_window_removereservation.o: moc_window_removereservation.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_window_removereservation.o moc_window_removereservation.cpp
 
 moc_window_renewbook.o: moc_window_renewbook.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_window_renewbook.o moc_window_renewbook.cpp

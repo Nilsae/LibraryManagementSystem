@@ -103,7 +103,7 @@ void Window_Member::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
         case 0: _t->on_pushButton_ReturnBook_clicked(); break;
         case 1: _t->on_pushButton_ViewAccount_clicked(); break;
         case 2: _t->on_pushButton_Logout_clicked(); break;
-        case 3: _t->on_pushButton_RemoveReservation_clicked(); break;
+//        case 3: _t->on_pushButton_RemoveReservation_clicked(); break;
         case 4: _t->on_pushButton_RenewBook_clicked(); break;
         case 5: _t->on_pushButton_ReserveBook_clicked(); break;
         case 6: _t->on_pushButton_Search_clicked(); break;

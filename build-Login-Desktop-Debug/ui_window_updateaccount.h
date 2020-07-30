@@ -19,6 +19,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QTableWidget>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -27,7 +28,7 @@ QT_BEGIN_NAMESPACE
 class Ui_Window_UpdateAccount
 {
 public:
-    QWidget *widget;
+    QWidget *layoutWidget;
     QVBoxLayout *verticalLayout_2;
     QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout;
@@ -42,29 +43,33 @@ public:
     QHBoxLayout *horizontalLayout_4;
     QLabel *label_ExpireDate;
     QLineEdit *lineEdit_ExpireDate;
-    QPushButton *pushButton;
+    QPushButton *pushButton_UpdateAccount;
+    QLabel *label;
+    QLineEdit *lineEdit_MemberId;
+    QPushButton *pushButton_search;
+    QTableWidget *tableWidget;
 
     void setupUi(QDialog *Window_UpdateAccount)
     {
         if (Window_UpdateAccount->objectName().isEmpty())
             Window_UpdateAccount->setObjectName(QStringLiteral("Window_UpdateAccount"));
         Window_UpdateAccount->resize(498, 416);
-        widget = new QWidget(Window_UpdateAccount);
-        widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(120, 70, 217, 221));
-        verticalLayout_2 = new QVBoxLayout(widget);
+        layoutWidget = new QWidget(Window_UpdateAccount);
+        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
+        layoutWidget->setGeometry(QRect(260, 110, 231, 271));
+        verticalLayout_2 = new QVBoxLayout(layoutWidget);
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
         verticalLayout_2->setContentsMargins(0, 0, 0, 0);
         verticalLayout = new QVBoxLayout();
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        label_Name = new QLabel(widget);
+        label_Name = new QLabel(layoutWidget);
         label_Name->setObjectName(QStringLiteral("label_Name"));
 
         horizontalLayout->addWidget(label_Name);
 
-        lineEdit_Name = new QLineEdit(widget);
+        lineEdit_Name = new QLineEdit(layoutWidget);
         lineEdit_Name->setObjectName(QStringLiteral("lineEdit_Name"));
         lineEdit_Name->setEnabled(true);
 
@@ -75,12 +80,12 @@ public:
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        label_Family = new QLabel(widget);
+        label_Family = new QLabel(layoutWidget);
         label_Family->setObjectName(QStringLiteral("label_Family"));
 
         horizontalLayout_2->addWidget(label_Family);
 
-        lineEdit_Family = new QLineEdit(widget);
+        lineEdit_Family = new QLineEdit(layoutWidget);
         lineEdit_Family->setObjectName(QStringLiteral("lineEdit_Family"));
 
         horizontalLayout_2->addWidget(lineEdit_Family);
@@ -90,12 +95,12 @@ public:
 
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
-        label_AccountType = new QLabel(widget);
+        label_AccountType = new QLabel(layoutWidget);
         label_AccountType->setObjectName(QStringLiteral("label_AccountType"));
 
         horizontalLayout_3->addWidget(label_AccountType);
 
-        lineEdit_AccountType = new QLineEdit(widget);
+        lineEdit_AccountType = new QLineEdit(layoutWidget);
         lineEdit_AccountType->setObjectName(QStringLiteral("lineEdit_AccountType"));
 
         horizontalLayout_3->addWidget(lineEdit_AccountType);
@@ -105,12 +110,12 @@ public:
 
         horizontalLayout_4 = new QHBoxLayout();
         horizontalLayout_4->setObjectName(QStringLiteral("horizontalLayout_4"));
-        label_ExpireDate = new QLabel(widget);
+        label_ExpireDate = new QLabel(layoutWidget);
         label_ExpireDate->setObjectName(QStringLiteral("label_ExpireDate"));
 
         horizontalLayout_4->addWidget(label_ExpireDate);
 
-        lineEdit_ExpireDate = new QLineEdit(widget);
+        lineEdit_ExpireDate = new QLineEdit(layoutWidget);
         lineEdit_ExpireDate->setObjectName(QStringLiteral("lineEdit_ExpireDate"));
 
         horizontalLayout_4->addWidget(lineEdit_ExpireDate);
@@ -121,11 +126,23 @@ public:
 
         verticalLayout_2->addLayout(verticalLayout);
 
-        pushButton = new QPushButton(widget);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
+        pushButton_UpdateAccount = new QPushButton(layoutWidget);
+        pushButton_UpdateAccount->setObjectName(QStringLiteral("pushButton_UpdateAccount"));
 
-        verticalLayout_2->addWidget(pushButton);
+        verticalLayout_2->addWidget(pushButton_UpdateAccount);
 
+        label = new QLabel(Window_UpdateAccount);
+        label->setObjectName(QStringLiteral("label"));
+        label->setGeometry(QRect(80, 20, 101, 16));
+        lineEdit_MemberId = new QLineEdit(Window_UpdateAccount);
+        lineEdit_MemberId->setObjectName(QStringLiteral("lineEdit_MemberId"));
+        lineEdit_MemberId->setGeometry(QRect(200, 20, 191, 25));
+        pushButton_search = new QPushButton(Window_UpdateAccount);
+        pushButton_search->setObjectName(QStringLiteral("pushButton_search"));
+        pushButton_search->setGeometry(QRect(160, 60, 89, 25));
+        tableWidget = new QTableWidget(Window_UpdateAccount);
+        tableWidget->setObjectName(QStringLiteral("tableWidget"));
+        tableWidget->setGeometry(QRect(10, 110, 211, 271));
 
         retranslateUi(Window_UpdateAccount);
 
@@ -139,7 +156,9 @@ public:
         label_Family->setText(QApplication::translate("Window_UpdateAccount", "Family", Q_NULLPTR));
         label_AccountType->setText(QApplication::translate("Window_UpdateAccount", "AcountType", Q_NULLPTR));
         label_ExpireDate->setText(QApplication::translate("Window_UpdateAccount", "ExpireDate", Q_NULLPTR));
-        pushButton->setText(QApplication::translate("Window_UpdateAccount", "UpdateAccount", Q_NULLPTR));
+        pushButton_UpdateAccount->setText(QApplication::translate("Window_UpdateAccount", "UpdateAccount", Q_NULLPTR));
+        label->setText(QApplication::translate("Window_UpdateAccount", "Member ID", Q_NULLPTR));
+        pushButton_search->setText(QApplication::translate("Window_UpdateAccount", "search", Q_NULLPTR));
     } // retranslateUi
 
 };
