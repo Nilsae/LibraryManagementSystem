@@ -18,6 +18,8 @@ public:
 private slots:
     void on_pushButton_Register_clicked();
 
+    void on_radioButton_Admin_clicked();
+
 private:
     Ui::Window_RegisterNewAccount *ui;
 };

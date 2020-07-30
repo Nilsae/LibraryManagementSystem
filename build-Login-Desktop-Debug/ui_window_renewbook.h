@@ -14,7 +14,6 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QDialog>
-#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
@@ -28,29 +27,30 @@ QT_BEGIN_NAMESPACE
 class Ui_Window_RenewBook
 {
 public:
-    QTableWidget *tableWidget_RentedBooks;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QVBoxLayout *verticalLayout;
-    QHBoxLayout *horizontalLayout;
+    QTableWidget *tableWidget_RentedBooks;
     QLabel *label;
+    QPushButton *pushButton_search;
     QLineEdit *lineEdit_BookId;
-    QHBoxLayout *horizontalLayout_2;
+    QLineEdit *lineEdit_renewdDate;
+    QLabel *label_2;
+    QPushButton *pushButton_Renew;
     QLabel *label_3;
     QLineEdit *lineEdit_MemberId;
-    QPushButton *pushButton_search;
-    QWidget *widget1;
-    QVBoxLayout *verticalLayout_2;
-    QHBoxLayout *horizontalLayout_3;
-    QLabel *label_2;
-    QLineEdit *lineEdit_renewdDate;
-    QPushButton *pushButton_Renew;
 
     void setupUi(QDialog *Window_RenewBook)
     {
         if (Window_RenewBook->objectName().isEmpty())
             Window_RenewBook->setObjectName(QStringLiteral("Window_RenewBook"));
         Window_RenewBook->resize(747, 538);
-        tableWidget_RentedBooks = new QTableWidget(Window_RenewBook);
+        layoutWidget = new QWidget(Window_RenewBook);
+        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
+        layoutWidget->setGeometry(QRect(110, 70, 521, 381));
+        verticalLayout = new QVBoxLayout(layoutWidget);
+        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        verticalLayout->setContentsMargins(0, 0, 0, 0);
+        tableWidget_RentedBooks = new QTableWidget(layoutWidget);
         if (tableWidget_RentedBooks->columnCount() < 4)
             tableWidget_RentedBooks->setColumnCount(4);
         QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
@@ -62,75 +62,34 @@ public:
         QTableWidgetItem *__qtablewidgetitem3 = new QTableWidgetItem();
         tableWidget_RentedBooks->setHorizontalHeaderItem(3, __qtablewidgetitem3);
         tableWidget_RentedBooks->setObjectName(QStringLiteral("tableWidget_RentedBooks"));
-        tableWidget_RentedBooks->setGeometry(QRect(20, 100, 401, 341));
         tableWidget_RentedBooks->setMouseTracking(true);
-        widget = new QWidget(Window_RenewBook);
-        widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(440, 110, 251, 141));
-        verticalLayout = new QVBoxLayout(widget);
-        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        verticalLayout->setContentsMargins(0, 0, 0, 0);
-        horizontalLayout = new QHBoxLayout();
-        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        label = new QLabel(widget);
+
+        verticalLayout->addWidget(tableWidget_RentedBooks);
+
+        label = new QLabel(Window_RenewBook);
         label->setObjectName(QStringLiteral("label"));
-
-        horizontalLayout->addWidget(label);
-
-        lineEdit_BookId = new QLineEdit(widget);
-        lineEdit_BookId->setObjectName(QStringLiteral("lineEdit_BookId"));
-
-        horizontalLayout->addWidget(lineEdit_BookId);
-
-
-        verticalLayout->addLayout(horizontalLayout);
-
-        horizontalLayout_2 = new QHBoxLayout();
-        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        label_3 = new QLabel(widget);
-        label_3->setObjectName(QStringLiteral("label_3"));
-
-        horizontalLayout_2->addWidget(label_3);
-
-        lineEdit_MemberId = new QLineEdit(widget);
-        lineEdit_MemberId->setObjectName(QStringLiteral("lineEdit_MemberId"));
-
-        horizontalLayout_2->addWidget(lineEdit_MemberId);
-
-
-        verticalLayout->addLayout(horizontalLayout_2);
-
-        pushButton_search = new QPushButton(widget);
+        label->setGeometry(QRect(150, 10, 67, 17));
+        pushButton_search = new QPushButton(Window_RenewBook);
         pushButton_search->setObjectName(QStringLiteral("pushButton_search"));
-
-        verticalLayout->addWidget(pushButton_search);
-
-        widget1 = new QWidget(Window_RenewBook);
-        widget1->setObjectName(QStringLiteral("widget1"));
-        widget1->setGeometry(QRect(440, 350, 244, 60));
-        verticalLayout_2 = new QVBoxLayout(widget1);
-        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
-        verticalLayout_2->setContentsMargins(0, 0, 0, 0);
-        horizontalLayout_3 = new QHBoxLayout();
-        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
-        label_2 = new QLabel(widget1);
-        label_2->setObjectName(QStringLiteral("label_2"));
-
-        horizontalLayout_3->addWidget(label_2);
-
-        lineEdit_renewdDate = new QLineEdit(widget1);
+        pushButton_search->setGeometry(QRect(520, 20, 89, 25));
+        lineEdit_BookId = new QLineEdit(Window_RenewBook);
+        lineEdit_BookId->setObjectName(QStringLiteral("lineEdit_BookId"));
+        lineEdit_BookId->setGeometry(QRect(260, 10, 201, 25));
+        lineEdit_renewdDate = new QLineEdit(Window_RenewBook);
         lineEdit_renewdDate->setObjectName(QStringLiteral("lineEdit_renewdDate"));
-
-        horizontalLayout_3->addWidget(lineEdit_renewdDate);
-
-
-        verticalLayout_2->addLayout(horizontalLayout_3);
-
-        pushButton_Renew = new QPushButton(widget1);
+        lineEdit_renewdDate->setGeometry(QRect(280, 480, 171, 25));
+        label_2 = new QLabel(Window_RenewBook);
+        label_2->setObjectName(QStringLiteral("label_2"));
+        label_2->setGeometry(QRect(150, 480, 121, 17));
+        pushButton_Renew = new QPushButton(Window_RenewBook);
         pushButton_Renew->setObjectName(QStringLiteral("pushButton_Renew"));
-
-        verticalLayout_2->addWidget(pushButton_Renew);
-
+        pushButton_Renew->setGeometry(QRect(510, 480, 89, 25));
+        label_3 = new QLabel(Window_RenewBook);
+        label_3->setObjectName(QStringLiteral("label_3"));
+        label_3->setGeometry(QRect(150, 50, 81, 17));
+        lineEdit_MemberId = new QLineEdit(Window_RenewBook);
+        lineEdit_MemberId->setObjectName(QStringLiteral("lineEdit_MemberId"));
+        lineEdit_MemberId->setGeometry(QRect(260, 40, 201, 25));
 
         retranslateUi(Window_RenewBook);
 
@@ -149,10 +108,10 @@ public:
         QTableWidgetItem *___qtablewidgetitem3 = tableWidget_RentedBooks->horizontalHeaderItem(3);
         ___qtablewidgetitem3->setText(QApplication::translate("Window_RenewBook", "RentedUntil", Q_NULLPTR));
         label->setText(QApplication::translate("Window_RenewBook", "Book ID", Q_NULLPTR));
-        label_3->setText(QApplication::translate("Window_RenewBook", "Member ID", Q_NULLPTR));
         pushButton_search->setText(QApplication::translate("Window_RenewBook", "search", Q_NULLPTR));
         label_2->setText(QApplication::translate("Window_RenewBook", "Renewd Date", Q_NULLPTR));
         pushButton_Renew->setText(QApplication::translate("Window_RenewBook", "Renew", Q_NULLPTR));
+        label_3->setText(QApplication::translate("Window_RenewBook", "Member ID", Q_NULLPTR));
     } // retranslateUi
 
 };

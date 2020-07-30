@@ -9,7 +9,9 @@
 #include <bits/stdc++.h>
 #include <QDateTime>
 #include <QString>
+#include <QMessageBox>
 #define AddedBooks "/home/nilsa/Documents/AP/LibraryManagementSystem/Login/RowData/AddedBooks.json"
+#define accounts "/home/nilsa/Documents/AP/LibraryManagementSystem/Login/RowData/accounts.json"
 Window_AddBook::Window_AddBook(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Window_AddBook)
@@ -28,7 +30,7 @@ void Window_AddBook::on_pushButton_AddBook_clicked()
      QString BookName = ui->lineEdit_BookName->text();
      QString Author = ui->lineEdit_AuthorName->text();
      QString Subject = ui->lineEdit_Subject->text();
-//    QFile AddedBooksFile("/home/nilsa/Documents/AP/LibraryManagementSystem/Login/RowData/AddedBooks.json"); // json file
+
     QFile AddedBooksFile(AddedBooks);
     AddedBooksFile.open(QIODevice::ReadWrite);
 
@@ -65,7 +67,7 @@ void Window_AddBook::on_pushButton_AddBook_clicked()
 
     AddedBooksFile.write(doc.toJson());
     AddedBooksFile.close();
-
+    QMessageBox::information(this," ","Book is added Succesfuly!");
 
 }
 

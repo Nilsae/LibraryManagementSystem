@@ -9,7 +9,11 @@
 #include <bits/stdc++.h>
 #include <QDateTime>
 #include <QString>
+#define AddedBooks "/home/nilsa/Documents/AP/LibraryManagementSystem/Login/RowData/AddedBooks.json"
 #define accounts "/home/nilsa/Documents/AP/LibraryManagementSystem/Login/RowData/accounts.json"
+//==========================================================================
+
+
 Window_RegisterNewAccount::Window_RegisterNewAccount(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Window_RegisterNewAccount)
@@ -28,9 +32,13 @@ void Window_RegisterNewAccount::on_pushButton_Register_clicked()
     QString Name = ui->lineEdit_Name->text();
     QString Family = ui->lineEdit_Family->text();
     QString ExpireDate = ui->lineEdit_ExpireDate->text();
-//    QString AccountType = ui->lineEdit_AccountType->text();
+    int AccountType=0;
+    if(ui->radioButton_Admin->isChecked()){
+        AccountType=1;
+    }
+
     QString Password = ui->lineEdit_Password->text();
-//    QFile AddedBooksFile("/home/nilsa/Documents/AP/LibraryManagementSystem/Login/RowData/accounts.json"); // json file
+
    QFile AccountsFile(accounts);
    AccountsFile.open(QIODevice::ReadWrite);
 
@@ -44,7 +52,7 @@ void Window_RegisterNewAccount::on_pushButton_Register_clicked()
                                   {"Family", Family},
                                   {"date_added", QDateTime::currentDateTime().toString( "yyyy-MM-dd hh:mm:ss" )},
                           {"ExpireDate", ExpireDate},
-//                                  {"AccountType", AccountType},
+                                  {"AccountType", AccountType},
                                   {"Password", Password},
                               {"RentedBooks",RentedBooks}
                                 };
@@ -61,3 +69,5 @@ void Window_RegisterNewAccount::on_pushButton_Register_clicked()
    AccountsFile.write(doc.toJson());
    AccountsFile.close();
 }
+
+

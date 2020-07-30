@@ -111,8 +111,8 @@ public:
     {
         Window_IssueBook->setWindowTitle(QApplication::translate("Window_IssueBook", "Dialog", Q_NULLPTR));
         label_BookName->setText(QApplication::translate("Window_IssueBook", "BookName", Q_NULLPTR));
-        label_AuthorName->setText(QApplication::translate("Window_IssueBook", "Author", Q_NULLPTR));
-        label_Subject->setText(QApplication::translate("Window_IssueBook", "Subject", Q_NULLPTR));
+        label_AuthorName->setText(QApplication::translate("Window_IssueBook", "Author     ", Q_NULLPTR));
+        label_Subject->setText(QApplication::translate("Window_IssueBook", "Subject    ", Q_NULLPTR));
         pushButton_IssueBook->setText(QApplication::translate("Window_IssueBook", "IssueBook", Q_NULLPTR));
     } // retranslateUi
 

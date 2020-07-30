@@ -12,6 +12,7 @@
 #include <QString>
 #include <QPair>
 #include<QMessageBox>
+#define AddedBooks "/home/nilsa/Documents/AP/LibraryManagementSystem/Login/RowData/AddedBooks.json"
 #define accounts "/home/nilsa/Documents/AP/LibraryManagementSystem/Login/RowData/accounts.json"
 
 Window_CancelMembership::Window_CancelMembership(QWidget *parent) :

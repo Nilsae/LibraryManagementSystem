@@ -13,16 +13,30 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QWidget" name="layoutWidget">
+  <widget class="QWidget" name="">
    <property name="geometry">
     <rect>
-     <x>310</x>
-     <y>110</y>
+     <x>160</x>
+     <y>70</y>
      <width>261</width>
-     <height>251</height>
+     <height>281</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <item>
+       <widget class="QLabel" name="label_BookId">
+        <property name="text">
+         <string>Book ID    </string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit_BookId"/>
+      </item>
+     </layout>
+    </item>
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
@@ -42,7 +56,7 @@
       <item>
        <widget class="QLabel" name="label_AuthorName">
         <property name="text">
-         <string>Author</string>
+         <string>Author     </string>
         </property>
        </widget>
       </item>
@@ -56,7 +70,7 @@
       <item>
        <widget class="QLabel" name="label_Subject">
         <property name="text">
-         <string>Subject</string>
+         <string>Subject    </string>
         </property>
        </widget>
       </item>
@@ -66,6 +80,13 @@
      </layout>
     </item>
     <item>
+     <widget class="QPushButton" name="pushButton_Search">
+      <property name="text">
+       <string>Search</string>
+      </property>
+     </widget>
+    </item>
+    <item>
      <widget class="QPushButton" name="pushButton_EditBook">
       <property name="text">
        <string>EditBook</string>
@@ -73,87 +94,6 @@
      </widget>
     </item>
    </layout>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit_BookId">
-   <property name="geometry">
-    <rect>
-     <x>222</x>
-     <y>30</y>
-     <width>151</width>
-     <height>25</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>150</x>
-     <y>30</y>
-     <width>67</width>
-     <height>17</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Book ID</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_Search">
-   <property name="geometry">
-    <rect>
-     <x>400</x>
-     <y>30</y>
-     <width>89</width>
-     <height>25</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Search</string>
-   </property>
-  </widget>
-  <widget class="QTableWidget" name="tableWidget">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>110</y>
-     <width>271</width>
-     <height>221</height>
-    </rect>
-   </property>
-   <row>
-    <property name="text">
-     <string>BookName</string>
-    </property>
-   </row>
-   <row>
-    <property name="text">
-     <string>Author</string>
-    </property>
-   </row>
-   <row>
-    <property name="text">
-     <string>Subject</string>
-    </property>
-   </row>
-   <column>
-    <property name="text">
-     <string>New Column</string>
-    </property>
-   </column>
-   <item row="0" column="0">
-    <property name="text">
-     <string/>
-    </property>
-   </item>
-   <item row="1" column="0">
-    <property name="text">
-     <string/>
-    </property>
-   </item>
-   <item row="2" column="0">
-    <property name="text">
-     <string/>
-    </property>
-   </item>
   </widget>
  </widget>
  <resources/>

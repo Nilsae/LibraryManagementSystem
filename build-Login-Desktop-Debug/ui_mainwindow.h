@@ -30,7 +30,7 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralwidget;
-    QWidget *layoutWidget;
+    QWidget *widget;
     QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout;
     QLabel *label_UsefrName;
@@ -49,20 +49,20 @@ public:
         MainWindow->resize(648, 524);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
-        layoutWidget = new QWidget(centralwidget);
-        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        layoutWidget->setGeometry(QRect(180, 50, 301, 351));
-        verticalLayout = new QVBoxLayout(layoutWidget);
+        widget = new QWidget(centralwidget);
+        widget->setObjectName(QStringLiteral("widget"));
+        widget->setGeometry(QRect(181, 52, 241, 291));
+        verticalLayout = new QVBoxLayout(widget);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        label_UsefrName = new QLabel(layoutWidget);
+        label_UsefrName = new QLabel(widget);
         label_UsefrName->setObjectName(QStringLiteral("label_UsefrName"));
 
         horizontalLayout->addWidget(label_UsefrName);
 
-        lineEdit_Username = new QLineEdit(layoutWidget);
+        lineEdit_Username = new QLineEdit(widget);
         lineEdit_Username->setObjectName(QStringLiteral("lineEdit_Username"));
 
         horizontalLayout->addWidget(lineEdit_Username);
@@ -72,12 +72,12 @@ public:
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        label_Password = new QLabel(layoutWidget);
+        label_Password = new QLabel(widget);
         label_Password->setObjectName(QStringLiteral("label_Password"));
 
         horizontalLayout_2->addWidget(label_Password);
 
-        lineEdit_Password = new QLineEdit(layoutWidget);
+        lineEdit_Password = new QLineEdit(widget);
         lineEdit_Password->setObjectName(QStringLiteral("lineEdit_Password"));
 
         horizontalLayout_2->addWidget(lineEdit_Password);
@@ -85,7 +85,7 @@ public:
 
         verticalLayout->addLayout(horizontalLayout_2);
 
-        pushButton_Login = new QPushButton(layoutWidget);
+        pushButton_Login = new QPushButton(widget);
         pushButton_Login->setObjectName(QStringLiteral("pushButton_Login"));
 
         verticalLayout->addWidget(pushButton_Login);
@@ -108,7 +108,7 @@ public:
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", Q_NULLPTR));
         label_UsefrName->setText(QApplication::translate("MainWindow", "UserName", Q_NULLPTR));
-        label_Password->setText(QApplication::translate("MainWindow", "Password", Q_NULLPTR));
+        label_Password->setText(QApplication::translate("MainWindow", "Password ", Q_NULLPTR));
         pushButton_Login->setText(QApplication::translate("MainWindow", "Login", Q_NULLPTR));
     } // retranslateUi
 

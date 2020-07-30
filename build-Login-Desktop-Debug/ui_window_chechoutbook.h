@@ -111,8 +111,8 @@ public:
     {
         Window_ChechOutBook->setWindowTitle(QApplication::translate("Window_ChechOutBook", "Dialog", Q_NULLPTR));
         label_BookName->setText(QApplication::translate("Window_ChechOutBook", "BookName", Q_NULLPTR));
-        label_AuthorName->setText(QApplication::translate("Window_ChechOutBook", "Author", Q_NULLPTR));
-        label_Subject->setText(QApplication::translate("Window_ChechOutBook", "Subject", Q_NULLPTR));
+        label_AuthorName->setText(QApplication::translate("Window_ChechOutBook", "Author     ", Q_NULLPTR));
+        label_Subject->setText(QApplication::translate("Window_ChechOutBook", "Subject    ", Q_NULLPTR));
         pushButton_CheckOut->setText(QApplication::translate("Window_ChechOutBook", "ChechOut", Q_NULLPTR));
     } // retranslateUi
 

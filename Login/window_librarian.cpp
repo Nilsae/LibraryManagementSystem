@@ -2,6 +2,7 @@
 #include "ui_window_librarian.h"
 #include <QMessageBox>
 
+
 Window_Librarian::Window_Librarian(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Window_Librarian)
@@ -17,7 +18,7 @@ Window_Librarian::~Window_Librarian()
 void Window_Librarian::on_pushButton_Logout_clicked()
 {
     QMessageBox::information(this," ","LogOut Succesful!");
- hide();
+    hide();
 
  //RETURN TO Login page
 }

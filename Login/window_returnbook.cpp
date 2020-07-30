@@ -41,6 +41,7 @@ void Window_ReturnBook::on_pushButton_ReturnBook_clicked()
    QString subject= found_obj["subject"].toString();
    QString status= found_obj["status"].toString(); //ADD AN IF
    if(status!="rented"){
+       QMessageBox::warning(this," ","This book is not rented by anyone");
        //notification that the book is not rented by anyone
        qDebug()<<"the book is not rented by anyone";
        return;
@@ -100,6 +101,7 @@ void Window_ReturnBook::on_pushButton_ReturnBook_clicked()
       RentedBooks.remove(BookId);
   }
   else{
+       QMessageBox::warning(this," ","This member does not have this book rented");
       qDebug()<<"This member does not have this book rented ";
       //notification that This member does not have this book rented
   }
@@ -126,5 +128,6 @@ void Window_ReturnBook::on_pushButton_ReturnBook_clicked()
  AccountsFile.write(final_acc_doc.toJson());
 
  AccountsFile.close();
+ QMessageBox::information(this," ","Book returned successfully");
 
 }

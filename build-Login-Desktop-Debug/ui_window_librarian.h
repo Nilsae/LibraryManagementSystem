@@ -27,25 +27,24 @@ QT_BEGIN_NAMESPACE
 class Ui_Window_Librarian
 {
 public:
-    QWidget *layoutWidget;
-    QVBoxLayout *verticalLayout_2;
-    QPushButton *pushButton_ReturnBook;
-    QPushButton *pushButton_RenewBook;
-    QPushButton *pushButton_ReserveBook;
-    QPushButton *pushButton_Search;
     QSplitter *splitter;
     QLabel *label_RentedBooks;
     QTableWidget *tableWidget_RentedBooks;
-    QPushButton *pushButton_IssueBook;
-    QWidget *layoutWidget1;
+    QWidget *layoutWidget;
     QVBoxLayout *verticalLayout_3;
     QPushButton *pushButton_AddBook;
     QPushButton *pushButton_RemoveBook;
     QPushButton *pushButton_EditBook;
     QPushButton *pushButton_RegisterNewAccount;
     QPushButton *pushButton_CancelMembership;
-    QWidget *layoutWidget2;
-    QVBoxLayout *verticalLayout_4;
+    QWidget *widget;
+    QVBoxLayout *verticalLayout_2;
+    QPushButton *pushButton_ReturnBook;
+    QPushButton *pushButton_RenewBook;
+    QPushButton *pushButton_ReserveBook;
+    QPushButton *pushButton_Search;
+    QPushButton *pushButton_IssueBook;
+    QWidget *widget1;
     QVBoxLayout *verticalLayout;
     QPushButton *pushButton_Logout;
     QPushButton *pushButton_ViewAccount;
@@ -56,32 +55,6 @@ public:
         if (Window_Librarian->objectName().isEmpty())
             Window_Librarian->setObjectName(QStringLiteral("Window_Librarian"));
         Window_Librarian->resize(723, 514);
-        layoutWidget = new QWidget(Window_Librarian);
-        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        layoutWidget->setGeometry(QRect(500, 160, 147, 170));
-        verticalLayout_2 = new QVBoxLayout(layoutWidget);
-        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
-        verticalLayout_2->setContentsMargins(0, 0, 0, 0);
-        pushButton_ReturnBook = new QPushButton(layoutWidget);
-        pushButton_ReturnBook->setObjectName(QStringLiteral("pushButton_ReturnBook"));
-
-        verticalLayout_2->addWidget(pushButton_ReturnBook);
-
-        pushButton_RenewBook = new QPushButton(layoutWidget);
-        pushButton_RenewBook->setObjectName(QStringLiteral("pushButton_RenewBook"));
-
-        verticalLayout_2->addWidget(pushButton_RenewBook);
-
-        pushButton_ReserveBook = new QPushButton(layoutWidget);
-        pushButton_ReserveBook->setObjectName(QStringLiteral("pushButton_ReserveBook"));
-
-        verticalLayout_2->addWidget(pushButton_ReserveBook);
-
-        pushButton_Search = new QPushButton(layoutWidget);
-        pushButton_Search->setObjectName(QStringLiteral("pushButton_Search"));
-
-        verticalLayout_2->addWidget(pushButton_Search);
-
         splitter = new QSplitter(Window_Librarian);
         splitter->setObjectName(QStringLiteral("splitter"));
         splitter->setGeometry(QRect(210, 110, 281, 291));
@@ -98,65 +71,88 @@ public:
         tableWidget_RentedBooks->setHorizontalHeaderItem(1, __qtablewidgetitem1);
         tableWidget_RentedBooks->setObjectName(QStringLiteral("tableWidget_RentedBooks"));
         splitter->addWidget(tableWidget_RentedBooks);
-        pushButton_IssueBook = new QPushButton(Window_Librarian);
-        pushButton_IssueBook->setObjectName(QStringLiteral("pushButton_IssueBook"));
-        pushButton_IssueBook->setGeometry(QRect(300, 410, 93, 28));
-        layoutWidget1 = new QWidget(Window_Librarian);
-        layoutWidget1->setObjectName(QStringLiteral("layoutWidget1"));
-        layoutWidget1->setGeometry(QRect(70, 160, 162, 170));
-        verticalLayout_3 = new QVBoxLayout(layoutWidget1);
+        layoutWidget = new QWidget(Window_Librarian);
+        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
+        layoutWidget->setGeometry(QRect(40, 170, 162, 170));
+        verticalLayout_3 = new QVBoxLayout(layoutWidget);
         verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
         verticalLayout_3->setContentsMargins(0, 0, 0, 0);
-        pushButton_AddBook = new QPushButton(layoutWidget1);
+        pushButton_AddBook = new QPushButton(layoutWidget);
         pushButton_AddBook->setObjectName(QStringLiteral("pushButton_AddBook"));
 
         verticalLayout_3->addWidget(pushButton_AddBook);
 
-        pushButton_RemoveBook = new QPushButton(layoutWidget1);
+        pushButton_RemoveBook = new QPushButton(layoutWidget);
         pushButton_RemoveBook->setObjectName(QStringLiteral("pushButton_RemoveBook"));
 
         verticalLayout_3->addWidget(pushButton_RemoveBook);
 
-        pushButton_EditBook = new QPushButton(layoutWidget1);
+        pushButton_EditBook = new QPushButton(layoutWidget);
         pushButton_EditBook->setObjectName(QStringLiteral("pushButton_EditBook"));
 
         verticalLayout_3->addWidget(pushButton_EditBook);
 
-        pushButton_RegisterNewAccount = new QPushButton(layoutWidget1);
+        pushButton_RegisterNewAccount = new QPushButton(layoutWidget);
         pushButton_RegisterNewAccount->setObjectName(QStringLiteral("pushButton_RegisterNewAccount"));
 
         verticalLayout_3->addWidget(pushButton_RegisterNewAccount);
 
-        pushButton_CancelMembership = new QPushButton(layoutWidget1);
+        pushButton_CancelMembership = new QPushButton(layoutWidget);
         pushButton_CancelMembership->setObjectName(QStringLiteral("pushButton_CancelMembership"));
 
         verticalLayout_3->addWidget(pushButton_CancelMembership);
 
-        layoutWidget2 = new QWidget(Window_Librarian);
-        layoutWidget2->setObjectName(QStringLiteral("layoutWidget2"));
-        layoutWidget2->setGeometry(QRect(620, 0, 116, 102));
-        verticalLayout_4 = new QVBoxLayout(layoutWidget2);
-        verticalLayout_4->setObjectName(QStringLiteral("verticalLayout_4"));
-        verticalLayout_4->setContentsMargins(0, 0, 0, 0);
-        verticalLayout = new QVBoxLayout();
+        widget = new QWidget(Window_Librarian);
+        widget->setObjectName(QStringLiteral("widget"));
+        widget->setGeometry(QRect(501, 168, 141, 170));
+        verticalLayout_2 = new QVBoxLayout(widget);
+        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
+        verticalLayout_2->setContentsMargins(0, 0, 0, 0);
+        pushButton_ReturnBook = new QPushButton(widget);
+        pushButton_ReturnBook->setObjectName(QStringLiteral("pushButton_ReturnBook"));
+
+        verticalLayout_2->addWidget(pushButton_ReturnBook);
+
+        pushButton_RenewBook = new QPushButton(widget);
+        pushButton_RenewBook->setObjectName(QStringLiteral("pushButton_RenewBook"));
+
+        verticalLayout_2->addWidget(pushButton_RenewBook);
+
+        pushButton_ReserveBook = new QPushButton(widget);
+        pushButton_ReserveBook->setObjectName(QStringLiteral("pushButton_ReserveBook"));
+
+        verticalLayout_2->addWidget(pushButton_ReserveBook);
+
+        pushButton_Search = new QPushButton(widget);
+        pushButton_Search->setObjectName(QStringLiteral("pushButton_Search"));
+
+        verticalLayout_2->addWidget(pushButton_Search);
+
+        pushButton_IssueBook = new QPushButton(widget);
+        pushButton_IssueBook->setObjectName(QStringLiteral("pushButton_IssueBook"));
+
+        verticalLayout_2->addWidget(pushButton_IssueBook);
+
+        widget1 = new QWidget(Window_Librarian);
+        widget1->setObjectName(QStringLiteral("widget1"));
+        widget1->setGeometry(QRect(610, 10, 96, 100));
+        verticalLayout = new QVBoxLayout(widget1);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        pushButton_Logout = new QPushButton(layoutWidget2);
+        verticalLayout->setContentsMargins(0, 0, 0, 0);
+        pushButton_Logout = new QPushButton(widget1);
         pushButton_Logout->setObjectName(QStringLiteral("pushButton_Logout"));
 
         verticalLayout->addWidget(pushButton_Logout);
 
-        pushButton_ViewAccount = new QPushButton(layoutWidget2);
+        pushButton_ViewAccount = new QPushButton(widget1);
         pushButton_ViewAccount->setObjectName(QStringLiteral("pushButton_ViewAccount"));
 
         verticalLayout->addWidget(pushButton_ViewAccount);
 
-
-        verticalLayout_4->addLayout(verticalLayout);
-
-        pushButton_UpdateAccount = new QPushButton(layoutWidget2);
+        pushButton_UpdateAccount = new QPushButton(widget1);
         pushButton_UpdateAccount->setObjectName(QStringLiteral("pushButton_UpdateAccount"));
 
-        verticalLayout_4->addWidget(pushButton_UpdateAccount);
+        verticalLayout->addWidget(pushButton_UpdateAccount);
 
 
         retranslateUi(Window_Librarian);
@@ -167,21 +163,21 @@ public:
     void retranslateUi(QDialog *Window_Librarian)
     {
         Window_Librarian->setWindowTitle(QApplication::translate("Window_Librarian", "Dialog", Q_NULLPTR));
-        pushButton_ReturnBook->setText(QApplication::translate("Window_Librarian", "ReturnBook", Q_NULLPTR));
-        pushButton_RenewBook->setText(QApplication::translate("Window_Librarian", "RenewBook", Q_NULLPTR));
-        pushButton_ReserveBook->setText(QApplication::translate("Window_Librarian", "Rent Book", Q_NULLPTR));
-        pushButton_Search->setText(QApplication::translate("Window_Librarian", "Search", Q_NULLPTR));
-        label_RentedBooks->setText(QApplication::translate("Window_Librarian", "             RentedBooks&ReservedBooks", Q_NULLPTR));
+        label_RentedBooks->setText(QApplication::translate("Window_Librarian", "                         RentedBooks", Q_NULLPTR));
         QTableWidgetItem *___qtablewidgetitem = tableWidget_RentedBooks->horizontalHeaderItem(0);
         ___qtablewidgetitem->setText(QApplication::translate("Window_Librarian", "BookName", Q_NULLPTR));
         QTableWidgetItem *___qtablewidgetitem1 = tableWidget_RentedBooks->horizontalHeaderItem(1);
         ___qtablewidgetitem1->setText(QApplication::translate("Window_Librarian", "RentedUntil", Q_NULLPTR));
-        pushButton_IssueBook->setText(QApplication::translate("Window_Librarian", "IssueBook", Q_NULLPTR));
         pushButton_AddBook->setText(QApplication::translate("Window_Librarian", "AddBook", Q_NULLPTR));
         pushButton_RemoveBook->setText(QApplication::translate("Window_Librarian", "RemoveBook", Q_NULLPTR));
         pushButton_EditBook->setText(QApplication::translate("Window_Librarian", "EditBook", Q_NULLPTR));
         pushButton_RegisterNewAccount->setText(QApplication::translate("Window_Librarian", "RegirsterNewAcoount", Q_NULLPTR));
         pushButton_CancelMembership->setText(QApplication::translate("Window_Librarian", "CancelMembership", Q_NULLPTR));
+        pushButton_ReturnBook->setText(QApplication::translate("Window_Librarian", "ReturnBook", Q_NULLPTR));
+        pushButton_RenewBook->setText(QApplication::translate("Window_Librarian", "RenewBook", Q_NULLPTR));
+        pushButton_ReserveBook->setText(QApplication::translate("Window_Librarian", "Rent Book", Q_NULLPTR));
+        pushButton_Search->setText(QApplication::translate("Window_Librarian", "Search", Q_NULLPTR));
+        pushButton_IssueBook->setText(QApplication::translate("Window_Librarian", "IssueBook", Q_NULLPTR));
         pushButton_Logout->setText(QApplication::translate("Window_Librarian", "Logout", Q_NULLPTR));
         pushButton_ViewAccount->setText(QApplication::translate("Window_Librarian", "ViewAccount", Q_NULLPTR));
         pushButton_UpdateAccount->setText(QApplication::translate("Window_Librarian", "UpdateAccount", Q_NULLPTR));

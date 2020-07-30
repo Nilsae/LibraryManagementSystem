@@ -16,6 +16,7 @@
 #include "window_issuebook.h"
 #include "window_registernewaccount.h"
 #include "window_cancelmembership.h"
+
 namespace Ui {
 class Window_Librarian;
 }
@@ -71,6 +72,7 @@ private:
     Window_RegisterNewAccount * RegisterNewAccountObj;
     Window_CancelMembership * CancelMembershipObj;
     Window_IssueBook * IssueBookObj;
+  //  MainWindow * mainwindow1;
 };
 
 #endif // WINDOW_LIBRARIAN_H

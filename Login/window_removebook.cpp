@@ -8,18 +8,12 @@
 #include<QJsonArray>
 #include<QJsonValueRef>
 #include <QJsonDocument>
-//#define AddedBooks ":/Data/RowData/AddedBooks.json"
-//<<<<<<< HEAD
-//<<<<<<< HEAD
+#include<QMessageBox>
 #define AddedBooks "/home/nilsa/Documents/AP/LibraryManagementSystem/Login/RowData/AddedBooks.json"
+#define accounts "/home/nilsa/Documents/AP/LibraryManagementSystem/Login/RowData/accounts.json"
+
 
 //=======
-////#define AddedBooks "/home/nilsa/Documents/AP/LibraryManagementSystem/Login/RowData/AddedBooks.json"
-//#define AddedBooks ":/AddBooks/RowData/AddedBooks.json"
-//>>>>>>> 5faffb79ed62ac4619190044e5907d48751b4ee1
-//=======
-//#define AddedBooks "/home/nilsa/Documents/AP/LibraryManagementSystem/Login/RowData/AddedBooks.json"
-//#define AddedBooks ":/AddBooks/RowData/AddedBooks.json"
 //>>>>>>> 5faffb79ed62ac4619190044e5907d48751b4ee1
 Window_RemoveBook::Window_RemoveBook(QWidget *parent) :
     QDialog(parent),
@@ -65,6 +59,11 @@ void Window_RemoveBook::on_pushButton_RemoveBook_clicked()
     QByteArray B = AddedBooksFile.readAll();
     QJsonDocument D = QJsonDocument::fromJson(B);
     QJsonObject Obj = D.object();
+
+    if(Obj.find(BookId)==Obj.end()){
+        QMessageBox::warning(this," ","Book not found!");
+        return;
+    }
     AddedBooksFile.close();
     QJsonObject empty ={};
     Obj.remove(BookId);
@@ -76,6 +75,9 @@ void Window_RemoveBook::on_pushButton_RemoveBook_clicked()
 
     AddedBooksFile.write(FinalD.toJson());
     AddedBooksFile.close();
+
+        QMessageBox::information(this," ","Book removed successfully!");
+
 
 //    QJsonParseError JsonParseError;
 //    QJsonDocument JsonDocument = QJsonDocument::fromJson(AddedBooksFile.readAll(), &JsonParseError);

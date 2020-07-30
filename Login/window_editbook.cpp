@@ -9,12 +9,23 @@
 #include <bits/stdc++.h>
 #include <QDateTime>
 #include <QString>
+#include<QMessageBox>
 #define AddedBooks "/home/nilsa/Documents/AP/LibraryManagementSystem/Login/RowData/AddedBooks.json"
+#define accounts "/home/nilsa/Documents/AP/LibraryManagementSystem/Login/RowData/accounts.json"
 Window_EditBook::Window_EditBook(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Window_EditBook)
 {
     ui->setupUi(this);
+   // ui->la
+    ui->label_Subject->hide();
+    ui->label_BookName->hide();
+    ui->label_AuthorName->hide();
+    ui->lineEdit_Subject->hide();
+    ui->lineEdit_BookName->hide();
+    ui->lineEdit_AuthorName->hide();
+    ui->pushButton_EditBook->hide();
+
 }
 
 Window_EditBook::~Window_EditBook()
@@ -24,13 +35,31 @@ Window_EditBook::~Window_EditBook()
 
 void Window_EditBook::on_pushButton_Search_clicked()
 {
+    //========================================
+      //put this codes in if(id==found)!!!!!!
+
+    ui->label_Subject->show();
+    ui->label_BookName->show();
+    ui->label_AuthorName->show();
+    ui->lineEdit_Subject->show();
+    ui->lineEdit_BookName->show();
+    ui->lineEdit_AuthorName->show();
+    ui->pushButton_EditBook->show();
+
+
+
+    //=======================================
     QString BookId = ui->lineEdit_BookId->text();
     QFile AddedBooksFile(AddedBooks);
    AddedBooksFile.open(QIODevice::ReadWrite | QIODevice::Text);
    QByteArray B = AddedBooksFile.readAll();
    QJsonDocument D = QJsonDocument::fromJson(B);
    QJsonObject Obj = D.object();
-
+   if(Obj.find(BookId)==Obj.end()){
+       QMessageBox::warning(this," ","Book not found!");
+       this->close();
+       return;
+   }
    AddedBooksFile.close();
 
    QJsonValueRef found_ref = Obj.find(BookId).value();
@@ -40,6 +69,11 @@ void Window_EditBook::on_pushButton_Search_clicked()
    QString date_added= found_obj["date_added"].toString();
    QString status= found_obj["status"].toString();
    QString author= found_obj["author"].toString();
+
+
+   ui->lineEdit_Subject->setText(subject);
+   ui->lineEdit_BookName->setText(BookName);
+   ui->lineEdit_AuthorName->setText(author);
     //show these in the table of the UI please!
 
 }
@@ -79,5 +113,8 @@ void Window_EditBook::on_pushButton_EditBook_clicked()
 
    AddedBooksFile.write(doc.toJson());
    AddedBooksFile.close();
+
+       QMessageBox::information(this," ","Book edited successfully!");
+
 
 }

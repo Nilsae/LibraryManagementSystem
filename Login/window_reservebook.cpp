@@ -11,6 +11,7 @@
 #include <QDateTime>
 #include <QString>
 #include <QPair>
+#include<QMessageBox>
 #define AddedBooks "/home/nilsa/Documents/AP/LibraryManagementSystem/Login/RowData/AddedBooks.json"
 #define accounts "/home/nilsa/Documents/AP/LibraryManagementSystem/Login/RowData/accounts.json"
 #define max_permitted_books 4
@@ -43,7 +44,7 @@ void Window_ReserveBook::on_pushButton_Reserve_clicked()
    QString subject= found_obj["subject"].toString();
    QString status= found_obj["status"].toString(); //ADD AN IF
    if(status!="available"){
-       //notification that the book is not available
+       QMessageBox::warning(this," ","This book is not available.");
        return;
    }
    QString author= found_obj["author"].toString();
@@ -92,6 +93,7 @@ void Window_ReserveBook::on_pushButton_Reserve_clicked()
   QString Password= Account_Obj["Password"].toString();
   QJsonObject RentedBooks= Account_Obj["RentedBooks"].toObject();
   if(RentedBooks.size()>max_permitted_books){
+      QMessageBox::warning(this,"Not Permitted!","The number of the rented books is more than the permitted amount.");
     //notification that it is not permitted
       return;
   }
@@ -124,4 +126,5 @@ void Window_ReserveBook::on_pushButton_Reserve_clicked()
 
  AccountsFile.write(final_acc_doc.toJson());
  AccountsFile.close();
+ QMessageBox::information(this," ","Book rented successfully");
 }

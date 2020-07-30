@@ -13,46 +13,6 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QWidget" name="layoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>500</x>
-     <y>160</y>
-     <width>147</width>
-     <height>170</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout_2">
-    <item>
-     <widget class="QPushButton" name="pushButton_ReturnBook">
-      <property name="text">
-       <string>ReturnBook</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="pushButton_RenewBook">
-      <property name="text">
-       <string>RenewBook</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="pushButton_ReserveBook">
-      <property name="text">
-       <string>Rent Book</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="pushButton_Search">
-      <property name="text">
-       <string>Search</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
   <widget class="QSplitter" name="splitter">
    <property name="geometry">
     <rect>
@@ -67,7 +27,7 @@
    </property>
    <widget class="QLabel" name="label_RentedBooks">
     <property name="text">
-     <string>             RentedBooks&amp;ReservedBooks</string>
+     <string>                         RentedBooks</string>
     </property>
    </widget>
    <widget class="QTableWidget" name="tableWidget_RentedBooks">
@@ -83,24 +43,11 @@
     </column>
    </widget>
   </widget>
-  <widget class="QPushButton" name="pushButton_IssueBook">
-   <property name="geometry">
-    <rect>
-     <x>300</x>
-     <y>410</y>
-     <width>93</width>
-     <height>28</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>IssueBook</string>
-   </property>
-  </widget>
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>70</x>
-     <y>160</y>
+     <x>40</x>
+     <y>170</y>
      <width>162</width>
      <height>170</height>
     </rect>
@@ -143,33 +90,76 @@
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="layoutWidget">
+  <widget class="QWidget" name="">
    <property name="geometry">
     <rect>
-     <x>620</x>
-     <y>0</y>
-     <width>116</width>
-     <height>102</height>
+     <x>501</x>
+     <y>168</y>
+     <width>141</width>
+     <height>170</height>
     </rect>
    </property>
-   <layout class="QVBoxLayout" name="verticalLayout_4">
+   <layout class="QVBoxLayout" name="verticalLayout_2">
     <item>
-     <layout class="QVBoxLayout" name="verticalLayout">
-      <item>
-       <widget class="QPushButton" name="pushButton_Logout">
-        <property name="text">
-         <string>Logout</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="pushButton_ViewAccount">
-        <property name="text">
-         <string>ViewAccount</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
+     <widget class="QPushButton" name="pushButton_ReturnBook">
+      <property name="text">
+       <string>ReturnBook</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButton_RenewBook">
+      <property name="text">
+       <string>RenewBook</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButton_ReserveBook">
+      <property name="text">
+       <string>Rent Book</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButton_Search">
+      <property name="text">
+       <string>Search</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButton_IssueBook">
+      <property name="text">
+       <string>IssueBook</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>610</x>
+     <y>10</y>
+     <width>96</width>
+     <height>100</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QPushButton" name="pushButton_Logout">
+      <property name="text">
+       <string>Logout</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButton_ViewAccount">
+      <property name="text">
+       <string>ViewAccount</string>
+      </property>
+     </widget>
     </item>
     <item>
      <widget class="QPushButton" name="pushButton_UpdateAccount">

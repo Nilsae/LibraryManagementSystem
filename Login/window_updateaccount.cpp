@@ -11,6 +11,7 @@
 #include <QString>
 #include <QPair>
 #include<QMessageBox>
+#define AddedBooks "/home/nilsa/Documents/AP/LibraryManagementSystem/Login/RowData/AddedBooks.json"
 #define accounts "/home/nilsa/Documents/AP/LibraryManagementSystem/Login/RowData/accounts.json"
 
 Window_UpdateAccount::Window_UpdateAccount(QWidget *parent) :
@@ -18,6 +19,15 @@ Window_UpdateAccount::Window_UpdateAccount(QWidget *parent) :
     ui(new Ui::Window_UpdateAccount)
 {
     ui->setupUi(this);
+    ui->label_Name->hide();
+    ui->label_Family->hide();
+    ui->label_ExpireDate->hide();
+    ui->label_DateAdded->hide();
+    ui->lineEdit_Name->hide();
+    ui->lineEdit_Family->hide();
+    ui->lineEdit_ExpireDate->hide();
+    ui->lineEdit_DateAdded->hide();
+    ui->pushButton_UpdateAccount->hide();
 }
 
 Window_UpdateAccount::~Window_UpdateAccount()
@@ -27,6 +37,21 @@ Window_UpdateAccount::~Window_UpdateAccount()
 
 void Window_UpdateAccount::on_pushButton_search_clicked()
 {
+    //======================================
+
+    //put this codes in if(id==found)!!!!!!
+    ui->label_Name->show();
+    ui->label_Family->show();
+    ui->label_ExpireDate->show();
+    ui->label_DateAdded->show();
+    ui->lineEdit_Name->show();
+    ui->lineEdit_Family->show();
+    ui->lineEdit_ExpireDate->show();
+    ui->lineEdit_DateAdded->show();
+    ui->pushButton_UpdateAccount->show();
+
+    //============================================
+
     QFile AccountsFile(accounts);
     AccountsFile.open(QIODevice::ReadWrite);
 
@@ -37,6 +62,12 @@ void Window_UpdateAccount::on_pushButton_search_clicked()
 
     QString MemberId = ui->lineEdit_MemberId->text();
 
+    if(Accounts_Obj.find(MemberId)==Accounts_Obj.end()){
+        QMessageBox::warning(this," ","Member Account not found!");
+        this->close();
+        return;
+    }
+
    QJsonValueRef Account_ref = Accounts_Obj.find(MemberId).value();
    QJsonObject Account_Obj= Account_ref.toObject();
 
@@ -45,7 +76,13 @@ void Window_UpdateAccount::on_pushButton_search_clicked()
    QString ExpireDate= Account_Obj["ExpireDate"].toString();
    QString date_added= Account_Obj["date_added"].toString();
    QJsonObject RentedBooks= Account_Obj["RentedBooks"].toObject();
+   ui->lineEdit_Name->setText(MemberName);
+   ui->lineEdit_Family->setText(Family);
+   ui->lineEdit_ExpireDate->setText(ExpireDate);
+   ui->lineEdit_DateAdded->setText(date_added);
    int RentedBooksCount=RentedBooks.size();
+
+
 }
 
 void Window_UpdateAccount::on_pushButton_UpdateAccount_clicked()
@@ -75,7 +112,7 @@ void Window_UpdateAccount::on_pushButton_UpdateAccount_clicked()
    QString newMemberName = ui->lineEdit_Name->text();
    QString newFamily = ui->lineEdit_Family->text();
    QString newExpireDate = ui->lineEdit_ExpireDate->text();
-   QString newAccountType = ui->lineEdit_AccountType->text();
+  // QString newAccountType = ui->lineEdit_AccountType->text();
    QJsonObject EditedAccount = { {"Name", newMemberName},
                                   {"Family", newFamily},
                                   {"date_added", date_added},
@@ -97,4 +134,8 @@ void Window_UpdateAccount::on_pushButton_UpdateAccount_clicked()
 
   AccountsFile.write(doc.toJson());
   AccountsFile.close();
+
+
+      QMessageBox::information(this," ","Account updated successfully");
+
 }

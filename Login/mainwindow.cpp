@@ -7,7 +7,8 @@
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
-#define UserAndPass ":/Data/RowData/User&Pass.json"
+#define UserAndPass "/home/nilsa/Documents/AP/LibraryManagementSystem/Login/RowData/accounts.json"
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -39,7 +40,7 @@ void MainWindow::on_pushButton_Login_clicked()
         QString Password=(x.toObject())["password"].toString();
         QString UserName_lineEdit=ui->lineEdit_Username->text();
         QString Password_lineEdit=ui->lineEdit_Password->text();
-        int UserLevel=(x.toObject())["type"].toInt();
+        int UserLevel=(x.toObject())["AccountType"].toInt();
         if(UserName_lineEdit==UserName&&Password_lineEdit==Password){
             if(UserLevel==1){
                 loginflag=1;
@@ -66,8 +67,8 @@ void MainWindow::on_pushButton_Login_clicked()
     }
 
 
-
-//====================================
+UserAndPassFile.close();
+//====================================old login codes===================
   //  QString UserName=ui->lineEdit_Username->text();
 //    QString Password=ui->lineEdit_Password->text();
 
@@ -88,5 +89,6 @@ void MainWindow::on_pushButton_Login_clicked()
    //      QMessageBox::warning(this," ","Incorrect UserName or Password");
 
  //   }
-    UserAndPassFile.close();
+//========================================================================
+
 }

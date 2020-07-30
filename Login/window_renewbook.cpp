@@ -13,6 +13,7 @@
 #include <QString>
 #include <QPair>
 #include<QMessageBox>
+#define AddedBooks "/home/nilsa/Documents/AP/LibraryManagementSystem/Login/RowData/AddedBooks.json"
 #define accounts "/home/nilsa/Documents/AP/LibraryManagementSystem/Login/RowData/accounts.json"
 
 Window_RenewBook::Window_RenewBook(QWidget *parent) :
@@ -61,6 +62,10 @@ QString newExpireDate= ui->lineEdit_renewdDate->text();
        RentedBooks[BookId]=newExpireDate;
    }
    else{
+
+           QMessageBox::warning(this," ","This member doesn't have this book rented ");
+           return;
+
        qDebug()<<"This member does not have this book rented ";
        //notification that This member does not have this book rented
    }
@@ -86,4 +91,5 @@ QString newExpireDate= ui->lineEdit_renewdDate->text();
 
   AccountsFile.write(final_acc_doc.toJson());
   AccountsFile.close();
+  QMessageBox::information(this," ","Book renewed successfully.");
 }

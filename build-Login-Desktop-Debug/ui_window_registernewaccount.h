@@ -28,8 +28,12 @@ QT_BEGIN_NAMESPACE
 class Ui_Window_RegisterNewAccount
 {
 public:
-    QWidget *layoutWidget;
+    QLabel *label;
+    QWidget *widget;
     QVBoxLayout *verticalLayout;
+    QHBoxLayout *horizontalLayout_6;
+    QLabel *label_2;
+    QLineEdit *lineEdit_ID;
     QHBoxLayout *horizontalLayout;
     QLabel *label_Name;
     QLineEdit *lineEdit_Name;
@@ -47,29 +51,44 @@ public:
     QLabel *label_Password;
     QLineEdit *lineEdit_Password;
     QPushButton *pushButton_Register;
-    QLabel *label;
-    QLabel *label_2;
-    QLineEdit *lineEdit_ID;
 
     void setupUi(QDialog *Window_RegisterNewAccount)
     {
         if (Window_RegisterNewAccount->objectName().isEmpty())
             Window_RegisterNewAccount->setObjectName(QStringLiteral("Window_RegisterNewAccount"));
-        Window_RegisterNewAccount->resize(593, 516);
-        layoutWidget = new QWidget(Window_RegisterNewAccount);
-        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        layoutWidget->setGeometry(QRect(32, 144, 281, 281));
-        verticalLayout = new QVBoxLayout(layoutWidget);
+        Window_RegisterNewAccount->resize(596, 370);
+        label = new QLabel(Window_RegisterNewAccount);
+        label->setObjectName(QStringLiteral("label"));
+        label->setGeometry(QRect(400, 200, 181, 16));
+        widget = new QWidget(Window_RegisterNewAccount);
+        widget->setObjectName(QStringLiteral("widget"));
+        widget->setGeometry(QRect(81, 31, 311, 291));
+        verticalLayout = new QVBoxLayout(widget);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
+        horizontalLayout_6 = new QHBoxLayout();
+        horizontalLayout_6->setObjectName(QStringLiteral("horizontalLayout_6"));
+        label_2 = new QLabel(widget);
+        label_2->setObjectName(QStringLiteral("label_2"));
+
+        horizontalLayout_6->addWidget(label_2);
+
+        lineEdit_ID = new QLineEdit(widget);
+        lineEdit_ID->setObjectName(QStringLiteral("lineEdit_ID"));
+
+        horizontalLayout_6->addWidget(lineEdit_ID);
+
+
+        verticalLayout->addLayout(horizontalLayout_6);
+
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        label_Name = new QLabel(layoutWidget);
+        label_Name = new QLabel(widget);
         label_Name->setObjectName(QStringLiteral("label_Name"));
 
         horizontalLayout->addWidget(label_Name);
 
-        lineEdit_Name = new QLineEdit(layoutWidget);
+        lineEdit_Name = new QLineEdit(widget);
         lineEdit_Name->setObjectName(QStringLiteral("lineEdit_Name"));
         lineEdit_Name->setEnabled(true);
 
@@ -80,12 +99,12 @@ public:
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        label_Family = new QLabel(layoutWidget);
+        label_Family = new QLabel(widget);
         label_Family->setObjectName(QStringLiteral("label_Family"));
 
         horizontalLayout_2->addWidget(label_Family);
 
-        lineEdit_Family = new QLineEdit(layoutWidget);
+        lineEdit_Family = new QLineEdit(widget);
         lineEdit_Family->setObjectName(QStringLiteral("lineEdit_Family"));
 
         horizontalLayout_2->addWidget(lineEdit_Family);
@@ -95,17 +114,17 @@ public:
 
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
-        label_AccountType = new QLabel(layoutWidget);
+        label_AccountType = new QLabel(widget);
         label_AccountType->setObjectName(QStringLiteral("label_AccountType"));
 
         horizontalLayout_3->addWidget(label_AccountType);
 
-        radioButton_Admin = new QRadioButton(layoutWidget);
+        radioButton_Admin = new QRadioButton(widget);
         radioButton_Admin->setObjectName(QStringLiteral("radioButton_Admin"));
 
         horizontalLayout_3->addWidget(radioButton_Admin);
 
-        radioButton_Member = new QRadioButton(layoutWidget);
+        radioButton_Member = new QRadioButton(widget);
         radioButton_Member->setObjectName(QStringLiteral("radioButton_Member"));
 
         horizontalLayout_3->addWidget(radioButton_Member);
@@ -115,12 +134,12 @@ public:
 
         horizontalLayout_4 = new QHBoxLayout();
         horizontalLayout_4->setObjectName(QStringLiteral("horizontalLayout_4"));
-        label_ExpireDate = new QLabel(layoutWidget);
+        label_ExpireDate = new QLabel(widget);
         label_ExpireDate->setObjectName(QStringLiteral("label_ExpireDate"));
 
         horizontalLayout_4->addWidget(label_ExpireDate);
 
-        lineEdit_ExpireDate = new QLineEdit(layoutWidget);
+        lineEdit_ExpireDate = new QLineEdit(widget);
         lineEdit_ExpireDate->setObjectName(QStringLiteral("lineEdit_ExpireDate"));
 
         horizontalLayout_4->addWidget(lineEdit_ExpireDate);
@@ -130,12 +149,12 @@ public:
 
         horizontalLayout_5 = new QHBoxLayout();
         horizontalLayout_5->setObjectName(QStringLiteral("horizontalLayout_5"));
-        label_Password = new QLabel(layoutWidget);
+        label_Password = new QLabel(widget);
         label_Password->setObjectName(QStringLiteral("label_Password"));
 
         horizontalLayout_5->addWidget(label_Password);
 
-        lineEdit_Password = new QLineEdit(layoutWidget);
+        lineEdit_Password = new QLineEdit(widget);
         lineEdit_Password->setObjectName(QStringLiteral("lineEdit_Password"));
 
         horizontalLayout_5->addWidget(lineEdit_Password);
@@ -143,20 +162,11 @@ public:
 
         verticalLayout->addLayout(horizontalLayout_5);
 
-        pushButton_Register = new QPushButton(layoutWidget);
+        pushButton_Register = new QPushButton(widget);
         pushButton_Register->setObjectName(QStringLiteral("pushButton_Register"));
 
         verticalLayout->addWidget(pushButton_Register);
 
-        label = new QLabel(Window_RegisterNewAccount);
-        label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(340, 290, 241, 31));
-        label_2 = new QLabel(Window_RegisterNewAccount);
-        label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(50, 110, 67, 17));
-        lineEdit_ID = new QLineEdit(Window_RegisterNewAccount);
-        lineEdit_ID->setObjectName(QStringLiteral("lineEdit_ID"));
-        lineEdit_ID->setGeometry(QRect(150, 110, 161, 25));
 
         retranslateUi(Window_RegisterNewAccount);
 
@@ -166,16 +176,16 @@ public:
     void retranslateUi(QDialog *Window_RegisterNewAccount)
     {
         Window_RegisterNewAccount->setWindowTitle(QApplication::translate("Window_RegisterNewAccount", "Dialog", Q_NULLPTR));
-        label_Name->setText(QApplication::translate("Window_RegisterNewAccount", "Name", Q_NULLPTR));
-        label_Family->setText(QApplication::translate("Window_RegisterNewAccount", "Family", Q_NULLPTR));
+        label->setText(QApplication::translate("Window_RegisterNewAccount", "format : yyyy-MM-dd hh:mm:ss", Q_NULLPTR));
+        label_2->setText(QApplication::translate("Window_RegisterNewAccount", "ID            ", Q_NULLPTR));
+        label_Name->setText(QApplication::translate("Window_RegisterNewAccount", "Name      ", Q_NULLPTR));
+        label_Family->setText(QApplication::translate("Window_RegisterNewAccount", "Family     ", Q_NULLPTR));
         label_AccountType->setText(QApplication::translate("Window_RegisterNewAccount", "AcountType", Q_NULLPTR));
         radioButton_Admin->setText(QApplication::translate("Window_RegisterNewAccount", "ADMIN", Q_NULLPTR));
         radioButton_Member->setText(QApplication::translate("Window_RegisterNewAccount", "MEMBER", Q_NULLPTR));
         label_ExpireDate->setText(QApplication::translate("Window_RegisterNewAccount", "ExpireDate", Q_NULLPTR));
-        label_Password->setText(QApplication::translate("Window_RegisterNewAccount", "Password", Q_NULLPTR));
+        label_Password->setText(QApplication::translate("Window_RegisterNewAccount", "Password ", Q_NULLPTR));
         pushButton_Register->setText(QApplication::translate("Window_RegisterNewAccount", "Register", Q_NULLPTR));
-        label->setText(QApplication::translate("Window_RegisterNewAccount", "format : yyyy-MM-dd hh:mm:ss", Q_NULLPTR));
-        label_2->setText(QApplication::translate("Window_RegisterNewAccount", "ID", Q_NULLPTR));
     } // retranslateUi
 
 };

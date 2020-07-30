@@ -14,42 +14,75 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QDialog>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QVBoxLayout>
+#include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
 
 class Ui_Window_ReturnBook
 {
 public:
+    QWidget *widget;
+    QVBoxLayout *verticalLayout;
+    QHBoxLayout *horizontalLayout;
+    QLabel *label;
     QLineEdit *lineEdit_MemberId;
+    QHBoxLayout *horizontalLayout_2;
+    QLabel *label_2;
     QLineEdit *lineEdit_BookId;
     QPushButton *pushButton_ReturnBook;
-    QLabel *label;
-    QLabel *label_2;
 
     void setupUi(QDialog *Window_ReturnBook)
     {
         if (Window_ReturnBook->objectName().isEmpty())
             Window_ReturnBook->setObjectName(QStringLiteral("Window_ReturnBook"));
         Window_ReturnBook->resize(673, 529);
-        lineEdit_MemberId = new QLineEdit(Window_ReturnBook);
-        lineEdit_MemberId->setObjectName(QStringLiteral("lineEdit_MemberId"));
-        lineEdit_MemberId->setGeometry(QRect(280, 200, 221, 25));
-        lineEdit_BookId = new QLineEdit(Window_ReturnBook);
-        lineEdit_BookId->setObjectName(QStringLiteral("lineEdit_BookId"));
-        lineEdit_BookId->setGeometry(QRect(242, 260, 261, 25));
-        pushButton_ReturnBook = new QPushButton(Window_ReturnBook);
-        pushButton_ReturnBook->setObjectName(QStringLiteral("pushButton_ReturnBook"));
-        pushButton_ReturnBook->setGeometry(QRect(120, 310, 391, 25));
-        label = new QLabel(Window_ReturnBook);
+        widget = new QWidget(Window_ReturnBook);
+        widget->setObjectName(QStringLiteral("widget"));
+        widget->setGeometry(QRect(140, 111, 301, 251));
+        verticalLayout = new QVBoxLayout(widget);
+        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        verticalLayout->setContentsMargins(0, 0, 0, 0);
+        horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        label = new QLabel(widget);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(120, 200, 121, 20));
-        label_2 = new QLabel(Window_ReturnBook);
+
+        horizontalLayout->addWidget(label);
+
+        lineEdit_MemberId = new QLineEdit(widget);
+        lineEdit_MemberId->setObjectName(QStringLiteral("lineEdit_MemberId"));
+
+        horizontalLayout->addWidget(lineEdit_MemberId);
+
+
+        verticalLayout->addLayout(horizontalLayout);
+
+        horizontalLayout_2 = new QHBoxLayout();
+        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
+        label_2 = new QLabel(widget);
         label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(120, 260, 67, 17));
+
+        horizontalLayout_2->addWidget(label_2);
+
+        lineEdit_BookId = new QLineEdit(widget);
+        lineEdit_BookId->setObjectName(QStringLiteral("lineEdit_BookId"));
+
+        horizontalLayout_2->addWidget(lineEdit_BookId);
+
+
+        verticalLayout->addLayout(horizontalLayout_2);
+
+        pushButton_ReturnBook = new QPushButton(widget);
+        pushButton_ReturnBook->setObjectName(QStringLiteral("pushButton_ReturnBook"));
+
+        verticalLayout->addWidget(pushButton_ReturnBook);
+
 
         retranslateUi(Window_ReturnBook);
 
@@ -59,9 +92,9 @@ public:
     void retranslateUi(QDialog *Window_ReturnBook)
     {
         Window_ReturnBook->setWindowTitle(QApplication::translate("Window_ReturnBook", "Dialog", Q_NULLPTR));
-        pushButton_ReturnBook->setText(QApplication::translate("Window_ReturnBook", "Return Book", Q_NULLPTR));
         label->setText(QApplication::translate("Window_ReturnBook", "Member ID", Q_NULLPTR));
-        label_2->setText(QApplication::translate("Window_ReturnBook", "Book ID", Q_NULLPTR));
+        label_2->setText(QApplication::translate("Window_ReturnBook", "Book ID     ", Q_NULLPTR));
+        pushButton_ReturnBook->setText(QApplication::translate("Window_ReturnBook", "Return Book", Q_NULLPTR));
     } // retranslateUi
 
 };

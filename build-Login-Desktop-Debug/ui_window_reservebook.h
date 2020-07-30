@@ -110,8 +110,8 @@ public:
     void retranslateUi(QDialog *Window_ReserveBook)
     {
         Window_ReserveBook->setWindowTitle(QApplication::translate("Window_ReserveBook", "Dialog", Q_NULLPTR));
-        label_Author->setText(QApplication::translate("Window_ReserveBook", "Memeber ID", Q_NULLPTR));
-        label_Subject->setText(QApplication::translate("Window_ReserveBook", "Book ID", Q_NULLPTR));
+        label_Author->setText(QApplication::translate("Window_ReserveBook", "Memeber ID     ", Q_NULLPTR));
+        label_Subject->setText(QApplication::translate("Window_ReserveBook", "Book ID            ", Q_NULLPTR));
         label->setText(QApplication::translate("Window_ReserveBook", "ExpireRentDate", Q_NULLPTR));
         pushButton_Reserve->setText(QApplication::translate("Window_ReserveBook", "Reserve", Q_NULLPTR));
     } // retranslateUi

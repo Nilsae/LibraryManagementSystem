@@ -42,7 +42,7 @@
       <item>
        <widget class="QLabel" name="label_AuthorName">
         <property name="text">
-         <string>Author</string>
+         <string>Author     </string>
         </property>
        </widget>
       </item>
@@ -56,7 +56,7 @@
       <item>
        <widget class="QLabel" name="label_Subject">
         <property name="text">
-         <string>Subject</string>
+         <string>Subject    </string>
         </property>
        </widget>
       </item>
