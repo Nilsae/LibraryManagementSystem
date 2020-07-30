@@ -27,7 +27,6 @@ SOURCES += \
     window_member.cpp \
     window_registernewaccount.cpp \
     window_removebook.cpp \
-    window_removereservation.cpp \
     window_renewbook.cpp \
     window_reservebook.cpp \
     window_returnbook.cpp \
@@ -46,7 +45,6 @@ HEADERS += \
     window_member.h \
     window_registernewaccount.h \
     window_removebook.h \
-    window_removereservation.h \
     window_renewbook.h \
     window_reservebook.h \
     window_returnbook.h \
@@ -65,7 +63,6 @@ FORMS += \
     window_member.ui \
     window_registernewaccount.ui \
     window_removebook.ui \
-    window_removereservation.ui \
     window_renewbook.ui \
     window_reservebook.ui \
     window_returnbook.ui \
