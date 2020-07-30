@@ -1,0 +1,25 @@
+{
+	"member":{
+		"username":"MEMBER",
+		"password":"MEMBERPASS",
+		"type":0
+		
+		
+	
+	},
+	"admin":{
+		"username":"ADMIN",
+		"password":"ADMINPASS",
+		"type":1
+		
+	
+	
+	
+	
+	
+	}
+
+
+
+
+}
