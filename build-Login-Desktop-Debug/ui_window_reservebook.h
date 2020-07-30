@@ -30,12 +30,14 @@ public:
     QWidget *layoutWidget;
     QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout;
+    QLabel *label_Author;
+    QLineEdit *lineEdit_MemberId;
     QHBoxLayout *horizontalLayout_2;
     QLabel *label_Subject;
     QLineEdit *lineEdit_BookId;
     QHBoxLayout *horizontalLayout_3;
-    QLabel *label_Author;
-    QLineEdit *lineEdit_MemberId;
+    QLabel *label;
+    QLineEdit *lineEdit_ExpireRentDate;
     QPushButton *pushButton_Reserve;
 
     void setupUi(QDialog *Window_ReserveBook)
@@ -51,6 +53,16 @@ public:
         verticalLayout->setContentsMargins(0, 0, 0, 0);
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        label_Author = new QLabel(layoutWidget);
+        label_Author->setObjectName(QStringLiteral("label_Author"));
+
+        horizontalLayout->addWidget(label_Author);
+
+        lineEdit_MemberId = new QLineEdit(layoutWidget);
+        lineEdit_MemberId->setObjectName(QStringLiteral("lineEdit_MemberId"));
+
+        horizontalLayout->addWidget(lineEdit_MemberId);
+
 
         verticalLayout->addLayout(horizontalLayout);
 
@@ -71,15 +83,15 @@ public:
 
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
-        label_Author = new QLabel(layoutWidget);
-        label_Author->setObjectName(QStringLiteral("label_Author"));
+        label = new QLabel(layoutWidget);
+        label->setObjectName(QStringLiteral("label"));
 
-        horizontalLayout_3->addWidget(label_Author);
+        horizontalLayout_3->addWidget(label);
 
-        lineEdit_MemberId = new QLineEdit(layoutWidget);
-        lineEdit_MemberId->setObjectName(QStringLiteral("lineEdit_MemberId"));
+        lineEdit_ExpireRentDate = new QLineEdit(layoutWidget);
+        lineEdit_ExpireRentDate->setObjectName(QStringLiteral("lineEdit_ExpireRentDate"));
 
-        horizontalLayout_3->addWidget(lineEdit_MemberId);
+        horizontalLayout_3->addWidget(lineEdit_ExpireRentDate);
 
 
         verticalLayout->addLayout(horizontalLayout_3);
@@ -98,8 +110,9 @@ public:
     void retranslateUi(QDialog *Window_ReserveBook)
     {
         Window_ReserveBook->setWindowTitle(QApplication::translate("Window_ReserveBook", "Dialog", Q_NULLPTR));
-        label_Subject->setText(QApplication::translate("Window_ReserveBook", "Book ID", Q_NULLPTR));
         label_Author->setText(QApplication::translate("Window_ReserveBook", "Memeber ID", Q_NULLPTR));
+        label_Subject->setText(QApplication::translate("Window_ReserveBook", "Book ID", Q_NULLPTR));
+        label->setText(QApplication::translate("Window_ReserveBook", "ExpireRentDate", Q_NULLPTR));
         pushButton_Reserve->setText(QApplication::translate("Window_ReserveBook", "Reserve", Q_NULLPTR));
     } // retranslateUi
 

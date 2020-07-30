@@ -36,6 +36,8 @@ public:
     QLineEdit *lineEdit_renewdDate;
     QLabel *label_2;
     QPushButton *pushButton_Renew;
+    QLabel *label_3;
+    QLineEdit *lineEdit_MemberId;
 
     void setupUi(QDialog *Window_RenewBook)
     {
@@ -66,13 +68,13 @@ public:
 
         label = new QLabel(Window_RenewBook);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(150, 20, 67, 17));
+        label->setGeometry(QRect(150, 10, 67, 17));
         pushButton_search = new QPushButton(Window_RenewBook);
         pushButton_search->setObjectName(QStringLiteral("pushButton_search"));
         pushButton_search->setGeometry(QRect(520, 20, 89, 25));
         lineEdit_BookId = new QLineEdit(Window_RenewBook);
         lineEdit_BookId->setObjectName(QStringLiteral("lineEdit_BookId"));
-        lineEdit_BookId->setGeometry(QRect(260, 20, 201, 25));
+        lineEdit_BookId->setGeometry(QRect(260, 10, 201, 25));
         lineEdit_renewdDate = new QLineEdit(Window_RenewBook);
         lineEdit_renewdDate->setObjectName(QStringLiteral("lineEdit_renewdDate"));
         lineEdit_renewdDate->setGeometry(QRect(280, 480, 171, 25));
@@ -82,6 +84,12 @@ public:
         pushButton_Renew = new QPushButton(Window_RenewBook);
         pushButton_Renew->setObjectName(QStringLiteral("pushButton_Renew"));
         pushButton_Renew->setGeometry(QRect(510, 480, 89, 25));
+        label_3 = new QLabel(Window_RenewBook);
+        label_3->setObjectName(QStringLiteral("label_3"));
+        label_3->setGeometry(QRect(150, 50, 81, 17));
+        lineEdit_MemberId = new QLineEdit(Window_RenewBook);
+        lineEdit_MemberId->setObjectName(QStringLiteral("lineEdit_MemberId"));
+        lineEdit_MemberId->setGeometry(QRect(260, 40, 201, 25));
 
         retranslateUi(Window_RenewBook);
 
@@ -103,6 +111,7 @@ public:
         pushButton_search->setText(QApplication::translate("Window_RenewBook", "search", Q_NULLPTR));
         label_2->setText(QApplication::translate("Window_RenewBook", "Renewd Date", Q_NULLPTR));
         pushButton_Renew->setText(QApplication::translate("Window_RenewBook", "Renew", Q_NULLPTR));
+        label_3->setText(QApplication::translate("Window_RenewBook", "Member ID", Q_NULLPTR));
     } // retranslateUi
 
 };

@@ -10,7 +10,7 @@
 #include <QJsonObject>
 #include "window_librarian.h"
 #include "window_member.h"
-#include "window_removereservation.h"
+
 #include "window_renewbook.h"
 #include "window_reservebook.h"
 #include "window_returnbook.h"
@@ -40,6 +40,6 @@ private:
     Window_ReturnBook * ReturnBookObj;
     Window_ReserveBook * ReserveBookObj;
     Window_ViewAccount * ViewAccountObj;
-    Window_RemoveReservation *RemoveReservationObj;
+
 };
 #endif // MAINWINDOW_H

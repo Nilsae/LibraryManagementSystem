@@ -100,7 +100,8 @@ void Window_ReserveBook::on_pushButton_Reserve_clicked()
 //  BookDatePair.second=QDate::currentDate().toString( "yyyy-MM-dd" );
 //  QJsonObject RBook;
 //  RBook[BookId]=QDate::currentDate().toString( "yyyy-MM-dd" );
-  RentedBooks.insert(BookId,QDate::currentDate().toString( "yyyy-MM-dd" ));
+  QString ExpireRentDate =ui->lineEdit_ExpireRentDate->text();
+  RentedBooks.insert(BookId,ExpireRentDate);
   QJsonObject newAccount = { {"Name", MemberName},
                                  {"Family", Family},
                                  {"date_added", date_added_account},
