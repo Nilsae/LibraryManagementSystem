@@ -3,7 +3,7 @@
 
 #include <QDialog>
 #include <QMainWindow>
-#include "window_removereservation.h"
+
 #include "window_renewbook.h"
 #include "window_reservebook.h"
 #include "window_returnbook.h"
@@ -63,7 +63,7 @@ private:
     Window_ReturnBook * ReturnBookObj;
     Window_ReserveBook * ReserveBookObj;
     Window_ViewAccount * ViewAccountObj;
-    Window_RemoveReservation *RemoveReservationObj;
+
     Window_UpdateAccount *UpdateAccountObj;
     Window_AddBook * AddBookObj;
     Window_RemoveBook * RemobeBookObj;

@@ -24,7 +24,18 @@
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout"/>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLabel" name="label_Author">
+        <property name="text">
+         <string>Memeber ID</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit_MemberId"/>
+      </item>
+     </layout>
     </item>
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -43,14 +54,14 @@
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_3">
       <item>
-       <widget class="QLabel" name="label_Author">
+       <widget class="QLabel" name="label">
         <property name="text">
-         <string>Memeber ID</string>
+         <string>ExpireRentDate</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit_MemberId"/>
+       <widget class="QLineEdit" name="lineEdit_ExpireRentDate"/>
       </item>
      </layout>
     </item>

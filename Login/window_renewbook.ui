@@ -56,7 +56,7 @@
    <property name="geometry">
     <rect>
      <x>150</x>
-     <y>20</y>
+     <y>10</y>
      <width>67</width>
      <height>17</height>
     </rect>
@@ -82,7 +82,7 @@
    <property name="geometry">
     <rect>
      <x>260</x>
-     <y>20</y>
+     <y>10</y>
      <width>201</width>
      <height>25</height>
     </rect>
@@ -122,6 +122,29 @@
    </property>
    <property name="text">
     <string>Renew</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>50</y>
+     <width>81</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Member ID</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_MemberId">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>40</y>
+     <width>201</width>
+     <height>25</height>
+    </rect>
    </property>
   </widget>
  </widget>
