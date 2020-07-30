@@ -13,139 +13,118 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QWidget" name="layoutWidget">
+  <widget class="QTableWidget" name="tableWidget_RentedBooks">
    <property name="geometry">
     <rect>
-     <x>110</x>
-     <y>70</y>
-     <width>521</width>
-     <height>381</height>
+     <x>20</x>
+     <y>100</y>
+     <width>401</width>
+     <height>341</height>
+    </rect>
+   </property>
+   <property name="mouseTracking">
+    <bool>true</bool>
+   </property>
+   <column>
+    <property name="text">
+     <string>BookName</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Subject</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Author</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>RentedUntil</string>
+    </property>
+   </column>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>440</x>
+     <y>110</y>
+     <width>251</width>
+     <height>141</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QTableWidget" name="tableWidget_RentedBooks">
-      <property name="mouseTracking">
-       <bool>true</bool>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>Book ID</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit_BookId"/>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QLabel" name="label_3">
+        <property name="text">
+         <string>Member ID</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit_MemberId"/>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButton_search">
+      <property name="text">
+       <string>search</string>
       </property>
-      <column>
-       <property name="text">
-        <string>BookName</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Subject</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Author</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>RentedUntil</string>
-       </property>
-      </column>
      </widget>
     </item>
    </layout>
   </widget>
-  <widget class="QLabel" name="label">
+  <widget class="QWidget" name="">
    <property name="geometry">
     <rect>
-     <x>150</x>
-     <y>10</y>
-     <width>67</width>
-     <height>17</height>
+     <x>440</x>
+     <y>350</y>
+     <width>244</width>
+     <height>60</height>
     </rect>
    </property>
-   <property name="text">
-    <string>Book ID</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_search">
-   <property name="geometry">
-    <rect>
-     <x>520</x>
-     <y>20</y>
-     <width>89</width>
-     <height>25</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>search</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit_BookId">
-   <property name="geometry">
-    <rect>
-     <x>260</x>
-     <y>10</y>
-     <width>201</width>
-     <height>25</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit_renewdDate">
-   <property name="geometry">
-    <rect>
-     <x>280</x>
-     <y>480</y>
-     <width>171</width>
-     <height>25</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_2">
-   <property name="geometry">
-    <rect>
-     <x>150</x>
-     <y>480</y>
-     <width>121</width>
-     <height>17</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Renewd Date</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_Renew">
-   <property name="geometry">
-    <rect>
-     <x>510</x>
-     <y>480</y>
-     <width>89</width>
-     <height>25</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Renew</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_3">
-   <property name="geometry">
-    <rect>
-     <x>150</x>
-     <y>50</y>
-     <width>81</width>
-     <height>17</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Member ID</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit_MemberId">
-   <property name="geometry">
-    <rect>
-     <x>260</x>
-     <y>40</y>
-     <width>201</width>
-     <height>25</height>
-    </rect>
-   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>Renewd Date</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit_renewdDate"/>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButton_Renew">
+      <property name="text">
+       <string>Renew</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
  </widget>
  <resources/>
