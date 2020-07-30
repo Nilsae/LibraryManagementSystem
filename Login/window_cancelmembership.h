@@ -15,6 +15,9 @@ public:
     explicit Window_CancelMembership(QWidget *parent = nullptr);
     ~Window_CancelMembership();
 
+private slots:
+    void on_pushButton_CacnelMembership_clicked();
+
 private:
     Ui::Window_CancelMembership *ui;
 };

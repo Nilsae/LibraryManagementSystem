@@ -41,7 +41,7 @@ void Window_RegisterNewAccount::on_pushButton_Register_clicked()
 
    QJsonObject RentedBooks;
    QJsonObject newAccount = { {"Name", Name},
-                                  {"Family", "Family"},
+                                  {"Family", Family},
                                   {"date_added", QDateTime::currentDateTime().toString( "yyyy-MM-dd hh:mm:ss" )},
                           {"ExpireDate", ExpireDate},
 //                                  {"AccountType", AccountType},

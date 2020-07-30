@@ -35,7 +35,6 @@ private slots:
 
     void on_pushButton_ReturnBook_clicked();
 
-    void on_pushButton_RemoveReservation_clicked();
 
     void on_pushButton_RenewBook_clicked();
 

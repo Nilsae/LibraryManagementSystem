@@ -34,11 +34,11 @@ void Window_Librarian::on_pushButton_ReturnBook_clicked()
     ReturnBookObj->show();
 }
 
-void Window_Librarian::on_pushButton_RemoveReservation_clicked()
-{
-    RemoveReservationObj=new Window_RemoveReservation(this);
-    RemoveReservationObj->show();
-}
+//void Window_Librarian::on_pushButton_RemoveReservation_clicked()
+//{
+//    RemoveReservationObj=new Window_RemoveReservation(this);
+//    RemoveReservationObj->show();
+//}
 
 void Window_Librarian::on_pushButton_RenewBook_clicked()
 {

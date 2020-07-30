@@ -18,7 +18,7 @@
     <rect>
      <x>500</x>
      <y>160</y>
-     <width>124</width>
+     <width>147</width>
      <height>170</height>
     </rect>
    </property>
@@ -27,13 +27,6 @@
      <widget class="QPushButton" name="pushButton_ReturnBook">
       <property name="text">
        <string>ReturnBook</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="pushButton_RemoveReservation">
-      <property name="text">
-       <string>RemoveReservation</string>
       </property>
      </widget>
     </item>
@@ -47,7 +40,7 @@
     <item>
      <widget class="QPushButton" name="pushButton_ReserveBook">
       <property name="text">
-       <string>ReserveBook</string>
+       <string>Rent Book</string>
       </property>
      </widget>
     </item>
@@ -103,12 +96,12 @@
     <string>IssueBook</string>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>70</x>
      <y>160</y>
-     <width>134</width>
+     <width>162</width>
      <height>170</height>
     </rect>
    </property>
@@ -150,12 +143,12 @@
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>620</x>
      <y>0</y>
-     <width>97</width>
+     <width>116</width>
      <height>102</height>
     </rect>
    </property>

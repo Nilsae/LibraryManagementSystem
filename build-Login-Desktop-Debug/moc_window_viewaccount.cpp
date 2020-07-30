@@ -22,7 +22,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Window_ViewAccount_t {
     QByteArrayData data[3];
-    char stringdata0[59];
+    char stringdata0[54];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -32,12 +32,11 @@ struct qt_meta_stringdata_Window_ViewAccount_t {
 static const qt_meta_stringdata_Window_ViewAccount_t qt_meta_stringdata_Window_ViewAccount = {
     {
 QT_MOC_LITERAL(0, 0, 18), // "Window_ViewAccount"
-QT_MOC_LITERAL(1, 19, 38), // "on_pushButton_CancelMembershi..."
-QT_MOC_LITERAL(2, 58, 0) // ""
+QT_MOC_LITERAL(1, 19, 33), // "on_pushButton_ViewAccount_cli..."
+QT_MOC_LITERAL(2, 53, 0) // ""
 
     },
-    "Window_ViewAccount\0"
-    "on_pushButton_CancelMembership_clicked\0"
+    "Window_ViewAccount\0on_pushButton_ViewAccount_clicked\0"
     ""
 };
 #undef QT_MOC_LITERAL
@@ -70,7 +69,7 @@ void Window_ViewAccount::qt_static_metacall(QObject *_o, QMetaObject::Call _c, i
         Window_ViewAccount *_t = static_cast<Window_ViewAccount *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->on_pushButton_CancelMembership_clicked(); break;
+        case 0: _t->on_pushButton_ViewAccount_clicked(); break;
         default: ;
         }
     }

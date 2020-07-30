@@ -16,7 +16,9 @@ public:
     ~Window_ViewAccount();
 
 private slots:
-    void on_pushButton_CancelMembership_clicked();
+
+
+    void on_pushButton_ViewAccount_clicked();
 
 private:
     Ui::Window_ViewAccount *ui;
