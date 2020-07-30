@@ -85,7 +85,7 @@ void Window_ReturnBook::on_pushButton_ReturnBook_clicked()
 
   QString MemberName= Account_Obj["Name"].toString();
 
-  QString Family= Account_Obj["Family"].toString();
+  QString Username= Account_Obj["Username"].toString();
   QString date_added_account= Account_Obj["date_added"].toString();
   QString ExpireDate= Account_Obj["ExpireDate"].toString();
   QString AccountType= Account_Obj["AccountType"].toString();
@@ -107,7 +107,7 @@ void Window_ReturnBook::on_pushButton_ReturnBook_clicked()
   }
 
   QJsonObject newAccount = { {"Name", MemberName},
-                                 {"Family", Family},
+                                 {"Username", Username},
                                  {"date_added", date_added_account},
                          {"ExpireDate", ExpireDate},
 //                                  {"AccountType", AccountType},

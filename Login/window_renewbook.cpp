@@ -45,7 +45,7 @@ void Window_RenewBook::on_pushButton_search_clicked()
    QJsonValueRef Account_ref = Accounts_Obj.find(MemberId).value();
    QJsonObject Account_Obj= Account_ref.toObject();
    QString MemberName= Account_Obj["Name"].toString();
-    QString Family= Account_Obj["Family"].toString();
+    QString Username= Account_Obj["Username"].toString();
    QString ExpireDate= Account_Obj["ExpireDate"].toString();
    QString date_added_account= Account_Obj["date_added"].toString();
    QString Password= Account_Obj["Password"].toString();
@@ -71,7 +71,7 @@ QString newExpireDate= ui->lineEdit_renewdDate->text();
    }
 
    QJsonObject newAccount = { {"Name", MemberName},
-                                  {"Family", Family},
+                                  {"Username", Username},
                                   {"date_added", date_added_account},
                           {"ExpireDate", ExpireDate},
  //                                  {"AccountType", AccountType},

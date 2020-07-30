@@ -20,11 +20,11 @@ Window_UpdateAccount::Window_UpdateAccount(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->label_Name->hide();
-    ui->label_Family->hide();
+    ui->label_Username->hide();
     ui->label_ExpireDate->hide();
     ui->label_DateAdded->hide();
     ui->lineEdit_Name->hide();
-    ui->lineEdit_Family->hide();
+    ui->lineEdit_Username->hide();
     ui->lineEdit_ExpireDate->hide();
     ui->lineEdit_DateAdded->hide();
     ui->pushButton_UpdateAccount->hide();
@@ -41,11 +41,11 @@ void Window_UpdateAccount::on_pushButton_search_clicked()
 
     //put this codes in if(id==found)!!!!!!
     ui->label_Name->show();
-    ui->label_Family->show();
+    ui->label_Username->show();
     ui->label_ExpireDate->show();
     ui->label_DateAdded->show();
     ui->lineEdit_Name->show();
-    ui->lineEdit_Family->show();
+    ui->lineEdit_Username->show();
     ui->lineEdit_ExpireDate->show();
     ui->lineEdit_DateAdded->show();
     ui->pushButton_UpdateAccount->show();
@@ -72,12 +72,12 @@ void Window_UpdateAccount::on_pushButton_search_clicked()
    QJsonObject Account_Obj= Account_ref.toObject();
 
    QString MemberName= Account_Obj["Name"].toString();
-    QString Family= Account_Obj["Family"].toString();
+    QString Username= Account_Obj["Username"].toString();
    QString ExpireDate= Account_Obj["ExpireDate"].toString();
    QString date_added= Account_Obj["date_added"].toString();
    QJsonObject RentedBooks= Account_Obj["RentedBooks"].toObject();
    ui->lineEdit_Name->setText(MemberName);
-   ui->lineEdit_Family->setText(Family);
+   ui->lineEdit_Username->setText(Username);
    ui->lineEdit_ExpireDate->setText(ExpireDate);
    ui->lineEdit_DateAdded->setText(date_added);
    int RentedBooksCount=RentedBooks.size();
@@ -101,7 +101,7 @@ void Window_UpdateAccount::on_pushButton_UpdateAccount_clicked()
    QJsonObject Account_Obj= Account_ref.toObject();
 
    QString MemberName= Account_Obj["Name"].toString();
-    QString Family= Account_Obj["Family"].toString();
+    QString Username= Account_Obj["Username"].toString();
    QString ExpireDate= Account_Obj["ExpireDate"].toString();
    QString date_added= Account_Obj["date_added"].toString();
    QString Password= Account_Obj["Password"].toString();
@@ -110,11 +110,11 @@ void Window_UpdateAccount::on_pushButton_UpdateAccount_clicked()
 
 
    QString newMemberName = ui->lineEdit_Name->text();
-   QString newFamily = ui->lineEdit_Family->text();
+   QString newUsername = ui->lineEdit_Username->text();
    QString newExpireDate = ui->lineEdit_ExpireDate->text();
   // QString newAccountType = ui->lineEdit_AccountType->text();
    QJsonObject EditedAccount = { {"Name", newMemberName},
-                                  {"Family", newFamily},
+                                  {"Username", newUsername},
                                   {"date_added", date_added},
                           {"ExpireDate", newExpireDate},
 //                                  {"AccountType", newAccountType},

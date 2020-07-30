@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>170</x>
@@ -44,14 +44,14 @@
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_3">
       <item>
-       <widget class="QLabel" name="label_Family">
+       <widget class="QLabel" name="label_Username">
         <property name="text">
-         <string>Family      </string>
+         <string>Username</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit_Family">
+       <widget class="QLineEdit" name="lineEdit_Username">
         <property name="readOnly">
          <bool>true</bool>
         </property>

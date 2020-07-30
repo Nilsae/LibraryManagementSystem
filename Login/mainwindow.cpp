@@ -33,11 +33,11 @@ void MainWindow::on_pushButton_Login_clicked()
     QJsonDocument UserAndPassDoc=QJsonDocument::fromJson(UserAndPassByte);
     QJsonObject UserAndPassObj=UserAndPassDoc.object();
     //QString UserName1
-    QString UserName1=(UserAndPassObj["admin"].toObject())["username"].toString();
+    QString UserName1=(UserAndPassObj["admin"].toObject())["Username"].toString();
     foreach(QJsonValue x,UserAndPassObj){
 
-        QString UserName=(x.toObject())["username"].toString();
-        QString Password=(x.toObject())["password"].toString();
+        QString UserName=(x.toObject())["Username"].toString();
+        QString Password=(x.toObject())["Password"].toString();
         QString UserName_lineEdit=ui->lineEdit_Username->text();
         QString Password_lineEdit=ui->lineEdit_Password->text();
         int UserLevel=(x.toObject())["AccountType"].toInt();

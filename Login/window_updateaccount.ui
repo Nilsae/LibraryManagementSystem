@@ -44,14 +44,14 @@
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_6">
       <item>
-       <widget class="QLabel" name="label_Family">
+       <widget class="QLabel" name="label_Username">
         <property name="text">
-         <string>Family      </string>
+         <string>Username</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit_Family">
+       <widget class="QLineEdit" name="lineEdit_Username">
         <property name="readOnly">
          <bool>false</bool>
         </property>

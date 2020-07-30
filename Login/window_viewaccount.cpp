@@ -1,3 +1,6 @@
+
+
+
 #include "window_viewaccount.h"
 #include "ui_window_viewaccount.h"
 
@@ -21,11 +24,11 @@ Window_ViewAccount::Window_ViewAccount(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->label_Name->hide();
-    ui->label_Family->hide();
+    ui->label_Username->hide();
     ui->label_ExpireDate->hide();
     ui->label_DateAdded->hide();
     ui->lineEdit_Name->hide();
-    ui->lineEdit_Family->hide();
+    ui->lineEdit_Username->hide();
     ui->lineEdit_ExpireDate->hide();
     ui->lineEdit_DateAdded->hide();
 }
@@ -41,11 +44,11 @@ void Window_ViewAccount::on_pushButton_ViewAccount_clicked()
     //=======================================
     //put this codes in if(id==found)!!!!!!
     ui->label_Name->show();
-    ui->label_Family->show();
+    ui->label_Username->show();
     ui->label_ExpireDate->show();
     ui->label_DateAdded->show();
     ui->lineEdit_Name->show();
-    ui->lineEdit_Family->show();
+    ui->lineEdit_Username->show();
     ui->lineEdit_ExpireDate->show();
     ui->lineEdit_DateAdded->show();
 
@@ -68,12 +71,12 @@ void Window_ViewAccount::on_pushButton_ViewAccount_clicked()
    QJsonObject Account_Obj= Account_ref.toObject();
 
    QString MemberName= Account_Obj["Name"].toString();
-    QString Family= Account_Obj["Family"].toString();
+    QString Username= Account_Obj["Username"].toString();
    QString ExpireDate= Account_Obj["ExpireDate"].toString();
    QString date_added= Account_Obj["date_added"].toString();
    QJsonObject RentedBooks= Account_Obj["RentedBooks"].toObject();
    ui->lineEdit_Name->setText(MemberName);
-   ui->lineEdit_Family->setText(Family);
+   ui->lineEdit_Username->setText(Username);
    ui->lineEdit_ExpireDate->setText(ExpireDate);
    ui->lineEdit_DateAdded->setText(date_added);
    int RentedBooksCount=RentedBooks.size();

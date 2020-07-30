@@ -86,7 +86,7 @@ void Window_ReserveBook::on_pushButton_Reserve_clicked()
 
   QString MemberName= Account_Obj["Name"].toString();
 
-  QString Family= Account_Obj["Family"].toString();
+  QString Username= Account_Obj["Username"].toString();
   QString date_added_account= Account_Obj["date_added"].toString();
   QString ExpireDate= Account_Obj["ExpireDate"].toString();
   QString AccountType= Account_Obj["AccountType"].toString();
@@ -105,7 +105,7 @@ void Window_ReserveBook::on_pushButton_Reserve_clicked()
   QString ExpireRentDate =ui->lineEdit_ExpireRentDate->text();
   RentedBooks.insert(BookId,ExpireRentDate);
   QJsonObject newAccount = { {"Name", MemberName},
-                                 {"Family", Family},
+                                 {"Username", Username},
                                  {"date_added", date_added_account},
                          {"ExpireDate", ExpireDate},
 //                                  {"AccountType", AccountType},

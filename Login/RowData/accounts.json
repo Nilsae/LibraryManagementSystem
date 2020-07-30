@@ -1,13 +1,13 @@
 {
-    "1212": {
+    
+    "ADMIN": {
+        "AccountType": 1,
         "ExpireDate": "2030-01-01",
-        "Family": "RAZAVI",
-        "Name": "SAEED",
-        "Password": "1212",
+        "Name": "ADMIN",
+        "Password": "ADMINPASS",
         "RentedBooks": {
-            "122": "",
-            "BookId": null
         },
-        "date_added": "2020-07-29 13:15:55"
+        "Username": "ADMIN",
+        "date_added": "2020-07-31 01:09:24"
     }
 }

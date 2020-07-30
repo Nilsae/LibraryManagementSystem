@@ -33,8 +33,8 @@ public:
     QLabel *label_Name;
     QLineEdit *lineEdit_Name;
     QHBoxLayout *horizontalLayout_6;
-    QLabel *label_Family;
-    QLineEdit *lineEdit_Family;
+    QLabel *label_Username;
+    QLineEdit *lineEdit_Username;
     QHBoxLayout *horizontalLayout_7;
     QLabel *label_ExpireDate;
     QLineEdit *lineEdit_ExpireDate;
@@ -76,16 +76,16 @@ public:
 
         horizontalLayout_6 = new QHBoxLayout();
         horizontalLayout_6->setObjectName(QStringLiteral("horizontalLayout_6"));
-        label_Family = new QLabel(layoutWidget);
-        label_Family->setObjectName(QStringLiteral("label_Family"));
+        label_Username = new QLabel(layoutWidget);
+        label_Username->setObjectName(QStringLiteral("label_Username"));
 
-        horizontalLayout_6->addWidget(label_Family);
+        horizontalLayout_6->addWidget(label_Username);
 
-        lineEdit_Family = new QLineEdit(layoutWidget);
-        lineEdit_Family->setObjectName(QStringLiteral("lineEdit_Family"));
-        lineEdit_Family->setReadOnly(false);
+        lineEdit_Username = new QLineEdit(layoutWidget);
+        lineEdit_Username->setObjectName(QStringLiteral("lineEdit_Username"));
+        lineEdit_Username->setReadOnly(false);
 
-        horizontalLayout_6->addWidget(lineEdit_Family);
+        horizontalLayout_6->addWidget(lineEdit_Username);
 
 
         verticalLayout->addLayout(horizontalLayout_6);
@@ -158,7 +158,7 @@ public:
     {
         Window_UpdateAccount->setWindowTitle(QApplication::translate("Window_UpdateAccount", "Dialog", Q_NULLPTR));
         label_Name->setText(QApplication::translate("Window_UpdateAccount", "Name       ", Q_NULLPTR));
-        label_Family->setText(QApplication::translate("Window_UpdateAccount", "Family      ", Q_NULLPTR));
+        label_Username->setText(QApplication::translate("Window_UpdateAccount", "Username", Q_NULLPTR));
         label_ExpireDate->setText(QApplication::translate("Window_UpdateAccount", "ExpireDate", Q_NULLPTR));
         label_DateAdded->setText(QApplication::translate("Window_UpdateAccount", "DateAdded", Q_NULLPTR));
         label_MemberId->setText(QApplication::translate("Window_UpdateAccount", "Member ID", Q_NULLPTR));

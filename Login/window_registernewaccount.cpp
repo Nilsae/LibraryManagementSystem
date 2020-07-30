@@ -9,6 +9,7 @@
 #include <bits/stdc++.h>
 #include <QDateTime>
 #include <QString>
+#include<QMessageBox>
 #define AddedBooks "/home/nilsa/Documents/AP/LibraryManagementSystem/Login/RowData/AddedBooks.json"
 #define accounts "/home/nilsa/Documents/AP/LibraryManagementSystem/Login/RowData/accounts.json"
 //==========================================================================
@@ -30,7 +31,7 @@ void Window_RegisterNewAccount::on_pushButton_Register_clicked()
 {
     QString ID = ui->lineEdit_ID->text();
     QString Name = ui->lineEdit_Name->text();
-    QString Family = ui->lineEdit_Family->text();
+    QString Username = ui->lineEdit_Username->text();
     QString ExpireDate = ui->lineEdit_ExpireDate->text();
     int AccountType=0;
     if(ui->radioButton_Admin->isChecked()){
@@ -49,7 +50,7 @@ void Window_RegisterNewAccount::on_pushButton_Register_clicked()
 
    QJsonObject RentedBooks;
    QJsonObject newAccount = { {"Name", Name},
-                                  {"Family", Family},
+                                  {"Username", Username},
                                   {"date_added", QDateTime::currentDateTime().toString( "yyyy-MM-dd hh:mm:ss" )},
                           {"ExpireDate", ExpireDate},
                                   {"AccountType", AccountType},
@@ -68,6 +69,7 @@ void Window_RegisterNewAccount::on_pushButton_Register_clicked()
 
    AccountsFile.write(doc.toJson());
    AccountsFile.close();
+   QMessageBox::information(this," ","Account registered succcessfully");
 }
 
 

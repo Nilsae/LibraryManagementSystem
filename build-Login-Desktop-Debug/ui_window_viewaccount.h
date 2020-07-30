@@ -27,14 +27,14 @@ QT_BEGIN_NAMESPACE
 class Ui_Window_ViewAccount
 {
 public:
-    QWidget *widget;
+    QWidget *layoutWidget;
     QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout_2;
     QLabel *label_Name;
     QLineEdit *lineEdit_Name;
     QHBoxLayout *horizontalLayout_3;
-    QLabel *label_Family;
-    QLineEdit *lineEdit_Family;
+    QLabel *label_Username;
+    QLineEdit *lineEdit_Username;
     QHBoxLayout *horizontalLayout_4;
     QLabel *label_ExpireDate;
     QLineEdit *lineEdit_ExpireDate;
@@ -51,20 +51,20 @@ public:
         if (Window_ViewAccount->objectName().isEmpty())
             Window_ViewAccount->setObjectName(QStringLiteral("Window_ViewAccount"));
         Window_ViewAccount->resize(643, 480);
-        widget = new QWidget(Window_ViewAccount);
-        widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(170, 70, 271, 271));
-        verticalLayout = new QVBoxLayout(widget);
+        layoutWidget = new QWidget(Window_ViewAccount);
+        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
+        layoutWidget->setGeometry(QRect(170, 70, 271, 271));
+        verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        label_Name = new QLabel(widget);
+        label_Name = new QLabel(layoutWidget);
         label_Name->setObjectName(QStringLiteral("label_Name"));
 
         horizontalLayout_2->addWidget(label_Name);
 
-        lineEdit_Name = new QLineEdit(widget);
+        lineEdit_Name = new QLineEdit(layoutWidget);
         lineEdit_Name->setObjectName(QStringLiteral("lineEdit_Name"));
         lineEdit_Name->setReadOnly(true);
 
@@ -75,28 +75,28 @@ public:
 
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
-        label_Family = new QLabel(widget);
-        label_Family->setObjectName(QStringLiteral("label_Family"));
+        label_Username = new QLabel(layoutWidget);
+        label_Username->setObjectName(QStringLiteral("label_Username"));
 
-        horizontalLayout_3->addWidget(label_Family);
+        horizontalLayout_3->addWidget(label_Username);
 
-        lineEdit_Family = new QLineEdit(widget);
-        lineEdit_Family->setObjectName(QStringLiteral("lineEdit_Family"));
-        lineEdit_Family->setReadOnly(true);
+        lineEdit_Username = new QLineEdit(layoutWidget);
+        lineEdit_Username->setObjectName(QStringLiteral("lineEdit_Username"));
+        lineEdit_Username->setReadOnly(true);
 
-        horizontalLayout_3->addWidget(lineEdit_Family);
+        horizontalLayout_3->addWidget(lineEdit_Username);
 
 
         verticalLayout->addLayout(horizontalLayout_3);
 
         horizontalLayout_4 = new QHBoxLayout();
         horizontalLayout_4->setObjectName(QStringLiteral("horizontalLayout_4"));
-        label_ExpireDate = new QLabel(widget);
+        label_ExpireDate = new QLabel(layoutWidget);
         label_ExpireDate->setObjectName(QStringLiteral("label_ExpireDate"));
 
         horizontalLayout_4->addWidget(label_ExpireDate);
 
-        lineEdit_ExpireDate = new QLineEdit(widget);
+        lineEdit_ExpireDate = new QLineEdit(layoutWidget);
         lineEdit_ExpireDate->setObjectName(QStringLiteral("lineEdit_ExpireDate"));
         lineEdit_ExpireDate->setReadOnly(true);
 
@@ -107,12 +107,12 @@ public:
 
         horizontalLayout_5 = new QHBoxLayout();
         horizontalLayout_5->setObjectName(QStringLiteral("horizontalLayout_5"));
-        label_DateAdded = new QLabel(widget);
+        label_DateAdded = new QLabel(layoutWidget);
         label_DateAdded->setObjectName(QStringLiteral("label_DateAdded"));
 
         horizontalLayout_5->addWidget(label_DateAdded);
 
-        lineEdit_DateAdded = new QLineEdit(widget);
+        lineEdit_DateAdded = new QLineEdit(layoutWidget);
         lineEdit_DateAdded->setObjectName(QStringLiteral("lineEdit_DateAdded"));
         lineEdit_DateAdded->setReadOnly(true);
 
@@ -123,12 +123,12 @@ public:
 
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        label_MemberId = new QLabel(widget);
+        label_MemberId = new QLabel(layoutWidget);
         label_MemberId->setObjectName(QStringLiteral("label_MemberId"));
 
         horizontalLayout->addWidget(label_MemberId);
 
-        lineEdit_MemberId = new QLineEdit(widget);
+        lineEdit_MemberId = new QLineEdit(layoutWidget);
         lineEdit_MemberId->setObjectName(QStringLiteral("lineEdit_MemberId"));
 
         horizontalLayout->addWidget(lineEdit_MemberId);
@@ -136,7 +136,7 @@ public:
 
         verticalLayout->addLayout(horizontalLayout);
 
-        pushButton_ViewAccount = new QPushButton(widget);
+        pushButton_ViewAccount = new QPushButton(layoutWidget);
         pushButton_ViewAccount->setObjectName(QStringLiteral("pushButton_ViewAccount"));
 
         verticalLayout->addWidget(pushButton_ViewAccount);
@@ -151,7 +151,7 @@ public:
     {
         Window_ViewAccount->setWindowTitle(QApplication::translate("Window_ViewAccount", "Dialog", Q_NULLPTR));
         label_Name->setText(QApplication::translate("Window_ViewAccount", "Name       ", Q_NULLPTR));
-        label_Family->setText(QApplication::translate("Window_ViewAccount", "Family      ", Q_NULLPTR));
+        label_Username->setText(QApplication::translate("Window_ViewAccount", "Username", Q_NULLPTR));
         label_ExpireDate->setText(QApplication::translate("Window_ViewAccount", "ExpireDate", Q_NULLPTR));
         label_DateAdded->setText(QApplication::translate("Window_ViewAccount", "DateAdded", Q_NULLPTR));
         label_MemberId->setText(QApplication::translate("Window_ViewAccount", "Member ID", Q_NULLPTR));

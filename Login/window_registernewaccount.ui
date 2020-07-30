@@ -26,7 +26,7 @@
     <string>format : yyyy-MM-dd hh:mm:ss</string>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>81</x>
@@ -53,6 +53,20 @@
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
+       <widget class="QLabel" name="label_Family">
+        <property name="text">
+         <string>Username</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit_Username"/>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
        <widget class="QLabel" name="label_Name">
         <property name="text">
          <string>Name      </string>
@@ -65,20 +79,6 @@
          <bool>true</bool>
         </property>
        </widget>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_2">
-      <item>
-       <widget class="QLabel" name="label_Family">
-        <property name="text">
-         <string>Family     </string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="lineEdit_Family"/>
       </item>
      </layout>
     </item>
