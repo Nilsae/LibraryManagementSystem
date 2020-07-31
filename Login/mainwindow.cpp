@@ -13,6 +13,12 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    setAutoFillBackground(true);
+      QPalette palatte;
+      QPixmap pixmap(":/img/img/back.jpg");
+      palatte.setBrush(backgroundRole(),QBrush(pixmap));
+      this->setPalette(palatte);
+     //background
 }
 
 MainWindow::~MainWindow()

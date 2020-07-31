@@ -1,0 +1,24 @@
+<RCC>
+    <qresource prefix="/img">
+        <file>img/back.jpg</file>
+        <file>img/pngguru.com (2).png</file>
+        <file>img/addbook.png</file>
+        <file>img/readdbook.png</file>
+        <file>img/delete.png</file>
+        <file>img/retrash.png</file>
+        <file>img/redel.png</file>
+        <file>img/return2.png</file>
+        <file>img/rent.png</file>
+        <file>img/newmember.png</file>
+        <file>img/add3.png</file>
+        <file>img/Addicon.png</file>
+        <file>img/checkout.png</file>
+        <file>img/searchpic.png</file>
+        <file>img/icons8-search-24 (1).png</file>
+        <file>img/reedit.png</file>
+        <file>img/Detective_icon-icons.com_54187.png</file>
+        <file>img/view.png</file>
+        <file>img/256-256-93d6a0d17d38f2153741af30cad5b41e.png</file>
+        <file>img/issue.png</file>
+    </qresource>
+</RCC>

@@ -13,147 +13,263 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QWidget" name="layoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>32</x>
-     <y>144</y>
-     <width>281</width>
-     <height>281</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout">
-      <item>
-       <widget class="QLabel" name="label_Name">
-        <property name="text">
-         <string>Name</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="lineEdit_Name">
-        <property name="enabled">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_2">
-      <item>
-       <widget class="QLabel" name="label_Family">
-        <property name="text">
-         <string>Family</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="lineEdit_Family"/>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_3">
-      <item>
-       <widget class="QLabel" name="label_AccountType">
-        <property name="text">
-         <string>AcountType</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QRadioButton" name="radioButton_Admin">
-        <property name="text">
-         <string>ADMIN</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QRadioButton" name="radioButton_Member">
-        <property name="text">
-         <string>MEMBER</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_4">
-      <item>
-       <widget class="QLabel" name="label_ExpireDate">
-        <property name="text">
-         <string>ExpireDate</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="lineEdit_ExpireDate"/>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_5">
-      <item>
-       <widget class="QLabel" name="label_Password">
-        <property name="text">
-         <string>Password</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="lineEdit_Password"/>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <widget class="QPushButton" name="pushButton_Register">
-      <property name="text">
-       <string>Register</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>340</x>
-     <y>290</y>
-     <width>241</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>format : yyyy-MM-dd hh:mm:ss</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_2">
-   <property name="geometry">
-    <rect>
-     <x>50</x>
-     <y>110</y>
-     <width>67</width>
-     <height>17</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>ID</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit_ID">
-   <property name="geometry">
-    <rect>
-     <x>150</x>
-     <y>110</y>
-     <width>161</width>
-     <height>25</height>
-    </rect>
-   </property>
-  </widget>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(242, 187, 255);</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <item>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="1">
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLineEdit" name="lineEdit_ID">
+       <property name="maximumSize">
+        <size>
+         <width>230</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Microsoft Sans Serif</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(213, 162, 255);
+color: rgb(158, 55, 91);</string>
+       </property>
+       <property name="placeholderText">
+        <string>ID</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="2">
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="4" column="1">
+      <widget class="QLineEdit" name="lineEdit_Family">
+       <property name="maximumSize">
+        <size>
+         <width>230</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Microsoft Sans Serif</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(213, 162, 255);
+color: rgb(158, 55, 91);</string>
+       </property>
+       <property name="placeholderText">
+        <string>Family</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="1">
+      <widget class="QLineEdit" name="lineEdit_Password">
+       <property name="maximumSize">
+        <size>
+         <width>230</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Microsoft Sans Serif</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(213, 162, 255);
+color: rgb(158, 55, 91);</string>
+       </property>
+       <property name="placeholderText">
+        <string>Password</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QLineEdit" name="lineEdit_Name">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>230</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Microsoft Sans Serif</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(213, 162, 255);
+color: rgb(158, 55, 91);</string>
+       </property>
+       <property name="placeholderText">
+        <string>Name</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="1">
+      <widget class="QPushButton" name="pushButton_Register">
+       <property name="maximumSize">
+        <size>
+         <width>230</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Microsoft Sans Serif</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(216, 216, 216);
+color: rgb(136, 67, 102);</string>
+       </property>
+       <property name="text">
+        <string>Register</string>
+       </property>
+       <property name="icon">
+        <iconset resource="image.qrc">
+         <normaloff>:/img/img/Addicon.png</normaloff>:/img/img/Addicon.png</iconset>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="1">
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QLabel" name="label_AccountType">
+         <property name="font">
+          <font>
+           <family>Microsoft Sans Serif</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(143, 71, 107);</string>
+         </property>
+         <property name="text">
+          <string>AcountType</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="radioButton_Member">
+         <property name="font">
+          <font>
+           <family>Microsoft Sans Serif</family>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(143, 71, 107);</string>
+         </property>
+         <property name="text">
+          <string>MEMBER</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="radioButton_Admin">
+         <property name="font">
+          <font>
+           <family>Microsoft Sans Serif</family>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(143, 71, 107);</string>
+         </property>
+         <property name="text">
+          <string>ADMIN</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item row="9" column="1">
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="1">
+      <widget class="QLineEdit" name="lineEdit_ExpireDate">
+       <property name="maximumSize">
+        <size>
+         <width>230</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Microsoft Sans Serif</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(213, 162, 255);
+color: rgb(158, 55, 91);</string>
+       </property>
+       <property name="placeholderText">
+        <string>ExpireDate</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0">
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLabel" name="label_3">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="image.qrc">:/img/img/newmember.png</pixmap>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="image.qrc"/>
+ </resources>
  <connections/>
 </ui>
