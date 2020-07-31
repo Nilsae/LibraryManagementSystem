@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>format : yyyy-MM-dd hh:mm:ss</string>
+    <string>format : yyyy-MM-dd</string>
    </property>
   </widget>
   <widget class="QWidget" name="layoutWidget">

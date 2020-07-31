@@ -7,7 +7,7 @@
 #include <QJsonObject>
 #include <QJsonArray>
 #include <bits/stdc++.h>
-#include <QDateTime>
+#include <QDate>
 #include <QString>
 #include<QMessageBox>
 #define AddedBooks "/home/nilsa/Documents/AP/LibraryManagementSystem/Login/RowData/AddedBooks.json"
@@ -51,7 +51,7 @@ void Window_RegisterNewAccount::on_pushButton_Register_clicked()
    QJsonObject RentedBooks;
    QJsonObject newAccount = { {"Name", Name},
                                   {"Username", Username},
-                                  {"date_added", QDateTime::currentDateTime().toString( "yyyy-MM-dd hh:mm:ss" )},
+                                  {"date_added", QDate::currentDate().toString( "yyyy-MM-dd" )},
                           {"ExpireDate", ExpireDate},
                                   {"AccountType", AccountType},
                                   {"Password", Password},
@@ -70,6 +70,7 @@ void Window_RegisterNewAccount::on_pushButton_Register_clicked()
    AccountsFile.write(doc.toJson());
    AccountsFile.close();
    QMessageBox::information(this," ","Account registered succcessfully");
+   this->close();
 }
 
 

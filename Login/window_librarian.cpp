@@ -2,11 +2,40 @@
 #include "ui_window_librarian.h"
 #include <QMessageBox>
 
+#include "window_registernewaccount.h"
+#include "ui_window_registernewaccount.h"
+#include <QFile>
+#include <QTextStream>
+#include <QDebug>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QJsonArray>
+#include <bits/stdc++.h>
+#include <QDate>
+#include <QString>
 
+#define AddedBooks "/home/nilsa/Documents/AP/LibraryManagementSystem/Login/RowData/AddedBooks.json"
+#define accounts "/home/nilsa/Documents/AP/LibraryManagementSystem/Login/RowData/accounts.json"
 Window_Librarian::Window_Librarian(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Window_Librarian)
 {
+
+
+    QFile AccountsFile(accounts);
+    AccountsFile.open(QIODevice::ReadWrite);
+
+    QJsonDocument jsonDocAcc = QJsonDocument::fromJson( AccountsFile.readAll() );
+
+    QJsonObject Accounts_Obj=jsonDocAcc.object();
+    AccountsFile.close();
+
+//    QString MemberId = CurrentAccountId;
+
+//   QJsonValueRef Account_ref = Accounts_Obj.find(MemberId).value();
+//   QJsonObject Account_Obj= Account_ref.toObject();
+//   QJsonObject RentedBooks= Account_Obj["RentedBooks"].toObject();
+//   int RentedBooksCount=RentedBooks.size();
     ui->setupUi(this);
 }
 

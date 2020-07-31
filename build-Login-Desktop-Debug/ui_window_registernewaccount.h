@@ -176,7 +176,7 @@ public:
     void retranslateUi(QDialog *Window_RegisterNewAccount)
     {
         Window_RegisterNewAccount->setWindowTitle(QApplication::translate("Window_RegisterNewAccount", "Dialog", Q_NULLPTR));
-        label->setText(QApplication::translate("Window_RegisterNewAccount", "format : yyyy-MM-dd hh:mm:ss", Q_NULLPTR));
+        label->setText(QApplication::translate("Window_RegisterNewAccount", "format : yyyy-MM-dd", Q_NULLPTR));
         label_2->setText(QApplication::translate("Window_RegisterNewAccount", "ID            ", Q_NULLPTR));
         label_Family->setText(QApplication::translate("Window_RegisterNewAccount", "Username", Q_NULLPTR));
         label_Name->setText(QApplication::translate("Window_RegisterNewAccount", "Name      ", Q_NULLPTR));

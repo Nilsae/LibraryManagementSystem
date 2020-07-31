@@ -1,11 +1,42 @@
 #include "window_member.h"
 #include "ui_window_member.h"
-#include <QMessageBox>
+#include "window_registernewaccount.h"
+#include "ui_window_registernewaccount.h"
+#include <QFile>
+#include <QTextStream>
+#include <QDebug>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QJsonArray>
+#include <bits/stdc++.h>
+#include <QDate>
+#include <QString>
+#include<QMessageBox>
+#define AddedBooks "/home/nilsa/Documents/AP/LibraryManagementSystem/Login/RowData/AddedBooks.json"
+#define accounts "/home/nilsa/Documents/AP/LibraryManagementSystem/Login/RowData/accounts.json"
 
 Window_Member::Window_Member(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Window_Member)
 {
+
+    QFile AccountsFile(accounts);
+    AccountsFile.open(QIODevice::ReadWrite);
+
+    QJsonDocument jsonDocAcc = QJsonDocument::fromJson( AccountsFile.readAll() );
+
+    QJsonObject Accounts_Obj=jsonDocAcc.object();
+    AccountsFile.close();
+
+//    QString MemberId = CurrentAccountId;
+
+//   QJsonValueRef Account_ref = Accounts_Obj.find(MemberId).value();
+//   QJsonObject Account_Obj= Account_ref.toObject();
+//   QJsonObject RentedBooks= Account_Obj["RentedBooks"].toObject();
+//   int RentedBooksCount=RentedBooks.size();
+
+
+
     ui->setupUi(this);
 }
 
@@ -66,6 +97,8 @@ void Window_Member::on_pushButton_UpdateAccount_clicked()
 
 void Window_Member::on_pushButton_ChechOutBook_clicked()
 {
-    CheckOutBookObj=new Window_ChechOutBook(this);
-    CheckOutBookObj->show();
+//    CheckOutBookObj=new Window_ChechOutBook(this);
+//    CheckOutBookObj->show();
+    SearchObj=new Window_Search(this);
+    SearchObj->show();
 }

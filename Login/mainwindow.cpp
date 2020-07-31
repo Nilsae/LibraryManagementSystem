@@ -38,6 +38,7 @@ void MainWindow::on_pushButton_Login_clicked()
 
         QString UserName=(x.toObject())["Username"].toString();
         QString Password=(x.toObject())["Password"].toString();
+        QString CurrentAccountId=(x.toObject())["id"].toString();
         QString UserName_lineEdit=ui->lineEdit_Username->text();
         QString Password_lineEdit=ui->lineEdit_Password->text();
         int UserLevel=(x.toObject())["AccountType"].toInt();

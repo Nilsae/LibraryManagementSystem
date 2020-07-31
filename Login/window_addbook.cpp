@@ -7,7 +7,7 @@
 #include <QJsonObject>
 #include <QJsonArray>
 #include <bits/stdc++.h>
-#include <QDateTime>
+#include <QDate>
 #include <QString>
 #include <QMessageBox>
 #define AddedBooks "/home/nilsa/Documents/AP/LibraryManagementSystem/Login/RowData/AddedBooks.json"
@@ -42,7 +42,7 @@ void Window_AddBook::on_pushButton_AddBook_clicked()
 
     QJsonObject Books = { {"id", BookId},
                                    {"status", "available"},
-                                   {"date_added", QDateTime::currentDateTime().toString( "yyyy-MM-dd hh:mm:ss" )},
+                                   {"date_added", QDate::currentDate().toString( "yyyy-MM-dd" )},
                                    {"name", BookName},
                                    {"author", Author},
                                    {"subject", Subject}

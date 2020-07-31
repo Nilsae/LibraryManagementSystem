@@ -8,7 +8,7 @@
 #include <QJsonObject>
 #include <QJsonArray>
 #include <bits/stdc++.h>
-#include <QDateTime>
+#include <QDate>
 #include <QString>
 #include <QPair>
 #include <QMessageBox>
@@ -96,7 +96,6 @@ void Window_ReturnBook::on_pushButton_ReturnBook_clicked()
   qDebug()<<RentedBooks;
 
 
-
   if(RentedBooks.find(BookId)!=RentedBooks.end()){
       RentedBooks.remove(BookId);
   }
@@ -105,6 +104,10 @@ void Window_ReturnBook::on_pushButton_ReturnBook_clicked()
       qDebug()<<"This member does not have this book rented ";
       //notification that This member does not have this book rented
   }
+  QString date_rented_string=RentedBooks[BookId].toString();
+  QDate date_rented = QDate::fromString(date_rented_string,"yyyy-MM-dd");
+  QDate current_date =QDate::currentDate();
+  int difference_days= date_rented.daysTo(current_date);
 
   QJsonObject newAccount = { {"Name", MemberName},
                                  {"Username", Username},
@@ -128,6 +131,13 @@ void Window_ReturnBook::on_pushButton_ReturnBook_clicked()
  AccountsFile.write(final_acc_doc.toJson());
 
  AccountsFile.close();
+ if (difference_days>0){
+
+     QString str = QString("The book returned after %1 delay").arg(difference_days);
+     QMessageBox::information(this, "", str);
+ }
+ else{
  QMessageBox::information(this," ","Book returned successfully");
 
+ }
 }
