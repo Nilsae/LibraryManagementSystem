@@ -20,6 +20,8 @@ private slots:
 
     void on_radioButton_Admin_clicked();
 
+    void on_lineEdit_ConfirmPassword_cursorPositionChanged(int arg1, int arg2);
+
 private:
     Ui::Window_RegisterNewAccount *ui;
 };

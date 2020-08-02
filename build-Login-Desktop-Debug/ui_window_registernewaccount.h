@@ -50,6 +50,9 @@ public:
     QHBoxLayout *horizontalLayout_5;
     QLabel *label_Password;
     QLineEdit *lineEdit_Password;
+    QHBoxLayout *horizontalLayout_7;
+    QLabel *label_ConfirmPassword;
+    QLineEdit *lineEdit_ConfirmedPassword;
     QPushButton *pushButton_Register;
 
     void setupUi(QDialog *Window_RegisterNewAccount)
@@ -59,10 +62,10 @@ public:
         Window_RegisterNewAccount->resize(596, 370);
         label = new QLabel(Window_RegisterNewAccount);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(400, 200, 181, 16));
+        label->setGeometry(QRect(450, 180, 181, 16));
         layoutWidget = new QWidget(Window_RegisterNewAccount);
         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        layoutWidget->setGeometry(QRect(81, 31, 311, 291));
+        layoutWidget->setGeometry(QRect(110, 32, 331, 291));
         verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
@@ -162,6 +165,21 @@ public:
 
         verticalLayout->addLayout(horizontalLayout_5);
 
+        horizontalLayout_7 = new QHBoxLayout();
+        horizontalLayout_7->setObjectName(QStringLiteral("horizontalLayout_7"));
+        label_ConfirmPassword = new QLabel(layoutWidget);
+        label_ConfirmPassword->setObjectName(QStringLiteral("label_ConfirmPassword"));
+
+        horizontalLayout_7->addWidget(label_ConfirmPassword);
+
+        lineEdit_ConfirmedPassword = new QLineEdit(layoutWidget);
+        lineEdit_ConfirmedPassword->setObjectName(QStringLiteral("lineEdit_ConfirmedPassword"));
+
+        horizontalLayout_7->addWidget(lineEdit_ConfirmedPassword);
+
+
+        verticalLayout->addLayout(horizontalLayout_7);
+
         pushButton_Register = new QPushButton(layoutWidget);
         pushButton_Register->setObjectName(QStringLiteral("pushButton_Register"));
 
@@ -177,14 +195,15 @@ public:
     {
         Window_RegisterNewAccount->setWindowTitle(QApplication::translate("Window_RegisterNewAccount", "Dialog", Q_NULLPTR));
         label->setText(QApplication::translate("Window_RegisterNewAccount", "format : yyyy-MM-dd", Q_NULLPTR));
-        label_2->setText(QApplication::translate("Window_RegisterNewAccount", "ID            ", Q_NULLPTR));
-        label_Family->setText(QApplication::translate("Window_RegisterNewAccount", "Username", Q_NULLPTR));
-        label_Name->setText(QApplication::translate("Window_RegisterNewAccount", "Name      ", Q_NULLPTR));
+        label_2->setText(QApplication::translate("Window_RegisterNewAccount", "ID                      ", Q_NULLPTR));
+        label_Family->setText(QApplication::translate("Window_RegisterNewAccount", "Username           ", Q_NULLPTR));
+        label_Name->setText(QApplication::translate("Window_RegisterNewAccount", "Name                 ", Q_NULLPTR));
         label_AccountType->setText(QApplication::translate("Window_RegisterNewAccount", "AcountType", Q_NULLPTR));
         radioButton_Admin->setText(QApplication::translate("Window_RegisterNewAccount", "ADMIN", Q_NULLPTR));
         radioButton_Member->setText(QApplication::translate("Window_RegisterNewAccount", "MEMBER", Q_NULLPTR));
-        label_ExpireDate->setText(QApplication::translate("Window_RegisterNewAccount", "ExpireDate", Q_NULLPTR));
-        label_Password->setText(QApplication::translate("Window_RegisterNewAccount", "Password ", Q_NULLPTR));
+        label_ExpireDate->setText(QApplication::translate("Window_RegisterNewAccount", "ExpireDate          ", Q_NULLPTR));
+        label_Password->setText(QApplication::translate("Window_RegisterNewAccount", "Password            ", Q_NULLPTR));
+        label_ConfirmPassword->setText(QApplication::translate("Window_RegisterNewAccount", "ConfirmPassword", Q_NULLPTR));
         pushButton_Register->setText(QApplication::translate("Window_RegisterNewAccount", "Register", Q_NULLPTR));
     } // retranslateUi
 

@@ -1,13 +1,14 @@
 {
     "1": {
-        "AccountType": 1,
+        "AccountType": "",
         "ExpireDate": "2030-01-01",
         "Name": "ADMIN",
         "Password": "36f8d9ce920097647b28d2a4138f3f5b8f11ee061429e9075e88854d81bb0d3cbf7ed28b90476b179a37da6e97755daa4181c61403719286aa1781f5daf939e6",
         "RentedBooks": {
         },
         "Username": "ADMIN",
-        "date_added": "2020-08-01"
+        "date_added": "2020-08-01",
+        "id": "1"
     },
     "2": {
         "AccountType": 0,

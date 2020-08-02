@@ -12,8 +12,8 @@
 #include <QDate>
 #include <QString>
 #include <QMessageBox>
-#define accounts "C:/Users/User/Desktop/project/nilou code/V1.9/Login_/RowData/accounts.json"
-#define AddedBooks "C:/Users/User/Desktop/project/nilou code/V1.9/Login_/RowData/AddedBooks.json"
+#define accounts "/home/nilsa/Documents/AP/LibraryManagementSystem/Login_MY_FINAL/RowData/accounts.json"
+#define AddedBooks "/home/nilsa/Documents/AP/LibraryManagementSystem/Login_MY_FINAL/RowData/AddedBooks.json"
 //==============================================================================================
 Window_IssueBook::Window_IssueBook(QWidget *parent) :
     QDialog(parent),

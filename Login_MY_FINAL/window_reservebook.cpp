@@ -13,8 +13,8 @@
 #include <QPair>
 #include<QMessageBox>
 #define max_permitted_books 4
-#define accounts "C:/Users/User/Desktop/project/nilou code/V1.9/Login_/RowData/accounts.json"
-#define AddedBooks "C:/Users/User/Desktop/project/nilou code/V1.9/Login_/RowData/AddedBooks.json"
+#define accounts "/home/nilsa/Documents/AP/LibraryManagementSystem/Login_MY_FINAL/RowData/accounts.json"
+#define AddedBooks "/home/nilsa/Documents/AP/LibraryManagementSystem/Login_MY_FINAL/RowData/AddedBooks.json"
 //==============================================================================================
 Window_ReserveBook::Window_ReserveBook(QWidget *parent) :
     QDialog(parent),

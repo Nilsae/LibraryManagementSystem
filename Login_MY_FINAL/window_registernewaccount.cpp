@@ -11,8 +11,8 @@
 #include <QString>
 #include<QMessageBox>
 #include <QCryptographicHash>
-#define accounts "C:/Users/User/Desktop/project/nilou code/V1.9/Login_/RowData/accounts.json"
-#define AddedBooks "C:/Users/User/Desktop/project/nilou code/V1.9/Login_/RowData/AddedBooks.json"
+#define accounts "/home/nilsa/Documents/AP/LibraryManagementSystem/Login_MY_FINAL/RowData/accounts.json"
+#define AddedBooks "/home/nilsa/Documents/AP/LibraryManagementSystem/Login_MY_FINAL/RowData/AddedBooks.json"
 //==============================================================================================
 Window_RegisterNewAccount::Window_RegisterNewAccount(QWidget *parent) :
     QDialog(parent),
@@ -39,7 +39,7 @@ void Window_RegisterNewAccount::on_pushButton_Register_clicked()
     }
 
     QString Password = ui->lineEdit_Password->text();
-    QString ConfirmedPassword = ui->lineEdit_ConfirmPassword->text();
+    QString ConfirmedPassword = ui->lineEdit_ConfirmedPassword->text();
     if(Password!=ConfirmedPassword){
         QMessageBox::warning(this,"","confirmed password did not match");
         this->close();
@@ -82,3 +82,8 @@ void Window_RegisterNewAccount::on_pushButton_Register_clicked()
 }
 
 
+
+void Window_RegisterNewAccount::on_lineEdit_ConfirmPassword_cursorPositionChanged(int arg1, int arg2)
+{
+
+}

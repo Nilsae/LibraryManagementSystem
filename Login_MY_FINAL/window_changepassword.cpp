@@ -16,8 +16,8 @@
 #include<QCryptographicHash>
 #include<globalvaribals.h>
 #include<QByteArray>
-#define accounts "C:/Users/User/Desktop/project/nilou code/V1.9/Login_/RowData/accounts.json"
-#define AddedBooks "C:/Users/User/Desktop/project/nilou code/V1.9/Login_/RowData/AddedBooks.json"
+#define accounts "/home/nilsa/Documents/AP/LibraryManagementSystem/Login_MY_FINAL/RowData/accounts.json"
+#define AddedBooks "/home/nilsa/Documents/AP/LibraryManagementSystem/Login_MY_FINAL/RowData/AddedBooks.json"
 Window_ChangePassword::Window_ChangePassword(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Window_ChangePassword)
@@ -41,8 +41,10 @@ void Window_ChangePassword::on_pushButton_ChangePassword_clicked()
     QJsonObject Accounts_Obj=jsonDocAcc.object();
     AccountsFile.close();
 
-    QString MemberId = QString::number(GlobalVaribals::CurrentId);
-
+//    QString MemberId = QString::number(GlobalVaribals::CurrentId);
+//    qDebug()<<GlobalVaribals::CurrentId;
+//    qDebug()<<MemberId;
+    QString MemberId = ui->lineEdit_MemberId->text();
     if(Accounts_Obj.find(MemberId)==Accounts_Obj.end()){
         QMessageBox::warning(this," ","Member Account not found!");
         this->close();
@@ -52,17 +54,21 @@ void Window_ChangePassword::on_pushButton_ChangePassword_clicked()
     QJsonObject Account_Obj= Account_ref.toObject();
 
     QString RealHashedPassword= Account_Obj["Password"].toString();
-    QString EnteredPassword = ui->lineEdit_OldPassword->text();
+    QString EnteredOLDPassword = ui->lineEdit_OldPassword->text();
+    QString EnteredNEWPassword = ui->lineEdit_NewPassword->text();
     QString EnteredConfirmPassword =ui->lineEdit_ConfirmNewPassword->text();
-    if(EnteredConfirmPassword!=EnteredPassword){
+    if(EnteredConfirmPassword!=EnteredNEWPassword){
         QMessageBox::warning(this,"","New Password and confirmed password did not match");
         this->close();
     }
     char*  ch;
-    QByteArray ba = EnteredPassword.toLatin1();
+    QByteArray ba = EnteredOLDPassword.toLatin1();
     ch=ba.data ();
-    QString HashedEnteredPassword = QString(QCryptographicHash::hash((ch),QCryptographicHash::Keccak_512).toHex());
-    if(RealHashedPassword==HashedEnteredPassword){
+    QString HashedOLDEnteredPassword = QString(QCryptographicHash::hash((ch),QCryptographicHash::Keccak_512).toHex());
+     ba = EnteredNEWPassword.toLatin1();
+    ch=ba.data ();
+    QString HashedNEWEnteredPassword = QString(QCryptographicHash::hash((ch),QCryptographicHash::Keccak_512).toHex());
+    if(RealHashedPassword==HashedOLDEnteredPassword&&EnteredConfirmPassword==EnteredNEWPassword){
         QString newPassword= ui->lineEdit_NewPassword->text();
         QString MemberName= Account_Obj["Name"].toString();
          QString Username= Account_Obj["Username"].toString();
@@ -76,7 +82,7 @@ void Window_ChangePassword::on_pushButton_ChangePassword_clicked()
                                        {"date_added", date_added},
                                {"ExpireDate", ExpireDate},
                                        {"AccountType", AccountType},
-                                       {"Password", newPassword},
+                                       {"Password", HashedNEWEnteredPassword},
                                    {"RentedBooks",RentedBooks}
                                      };
         Accounts_Obj.remove(MemberId);
@@ -97,7 +103,7 @@ void Window_ChangePassword::on_pushButton_ChangePassword_clicked()
            QMessageBox::information(this,"","Password updated successfully");
 
     }
-    else{
+    if(RealHashedPassword!=HashedOLDEnteredPassword){
         QMessageBox::warning(this,"","Incorrect old password");
         this->close();
     }
