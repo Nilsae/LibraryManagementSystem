@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Window_RenewBook</class>
+ <widget class="QDialog" name="Window_RenewBook">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>747</width>
+    <height>538</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(201, 255, 198);</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="4" column="1">
+      <widget class="QLineEdit" name="lineEdit_MemberId">
+       <property name="maximumSize">
+        <size>
+         <width>200</width>
+         <height>35</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Microsoft Sans Serif</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(200, 255, 148);
+color: rgb(47, 94, 69);</string>
+       </property>
+       <property name="placeholderText">
+        <string> Member ID</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="3">
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="lineEdit_BookId">
+       <property name="maximumSize">
+        <size>
+         <width>200</width>
+         <height>35</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Microsoft Sans Serif</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(200, 255, 148);
+color: rgb(47, 94, 69);</string>
+       </property>
+       <property name="placeholderText">
+        <string> Book ID</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="image.qrc">:/img/img/renew.png</pixmap>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="2">
+      <widget class="QPushButton" name="pushButton_search">
+       <property name="maximumSize">
+        <size>
+         <width>100</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Microsoft Sans Serif</family>
+         <pointsize>9</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(255, 255, 255,0);
+color: rgb(52, 104, 77);</string>
+       </property>
+       <property name="text">
+        <string>Search</string>
+       </property>
+       <property name="icon">
+        <iconset resource="image.qrc">
+         <normaloff>:/img/img/search.png</normaloff>:/img/img/search.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>25</width>
+         <height>25</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="1">
+      <widget class="QLineEdit" name="lineEdit_renewdDate">
+       <property name="maximumSize">
+        <size>
+         <width>200</width>
+         <height>35</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Microsoft Sans Serif</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(101, 204, 151);
+color: rgb(217, 255, 235);</string>
+       </property>
+       <property name="placeholderText">
+        <string> Renewd Date</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="2">
+      <widget class="QPushButton" name="pushButton_Renew">
+       <property name="maximumSize">
+        <size>
+         <width>100</width>
+         <height>35</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Microsoft Sans Serif</family>
+         <pointsize>9</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(255, 255, 255,0);
+color: rgb(52, 104, 77);</string>
+       </property>
+       <property name="text">
+        <string>Renew</string>
+       </property>
+       <property name="icon">
+        <iconset resource="image.qrc">
+         <normaloff>:/img/img/book-education-renew-borrow-reload-system-512.png</normaloff>:/img/img/book-education-renew-borrow-reload-system-512.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>25</width>
+         <height>25</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="1">
+      <widget class="QLabel" name="label_3">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QTableWidget" name="tableWidget_RentedBooks">
+       <property name="mouseTracking">
+        <bool>true</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="rowCount">
+        <number>4</number>
+       </property>
+       <row/>
+       <row/>
+       <row/>
+       <row/>
+       <column>
+        <property name="text">
+         <string>Bookid</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Rented Until</string>
+        </property>
+       </column>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="image.qrc"/>
+ </resources>
+ <connections/>
+</ui>

@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Window_Search</class>
+ <widget class="QDialog" name="Window_Search">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>710</width>
+    <height>437</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 187, 148);</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="7" column="1">
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QLineEdit" name="lineEdit_AuthorName">
+       <property name="maximumSize">
+        <size>
+         <width>210</width>
+         <height>35</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Microsoft Sans Serif</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color:rgb(35, 90, 127);
+color: rgb(207, 207, 155);</string>
+       </property>
+       <property name="placeholderText">
+        <string> Author</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="image.qrc">:/img/img/searchpic.png</pixmap>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLineEdit" name="lineEdit_BookName">
+       <property name="maximumSize">
+        <size>
+         <width>210</width>
+         <height>35</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Microsoft Sans Serif</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(71, 186, 144);
+color: rgb(99, 99, 74);</string>
+       </property>
+       <property name="placeholderText">
+        <string> Book Name</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="2">
+      <widget class="QPushButton" name="pushButton_subject">
+       <property name="maximumSize">
+        <size>
+         <width>100</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(0, 69, 102);
+background-color: rgba(255, 255, 255,0);</string>
+       </property>
+       <property name="text">
+        <string> By Subject</string>
+       </property>
+       <property name="icon">
+        <iconset resource="image.qrc">
+         <normaloff>:/img/img/icons8-search-24 (1).png</normaloff>:/img/img/icons8-search-24 (1).png</iconset>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="2">
+      <widget class="QPushButton" name="pushButton_name">
+       <property name="maximumSize">
+        <size>
+         <width>100</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(0, 69, 102);
+background-color: rgba(255, 255, 255,0);</string>
+       </property>
+       <property name="text">
+        <string> By Name</string>
+       </property>
+       <property name="icon">
+        <iconset resource="image.qrc">
+         <normaloff>:/img/img/icons8-search-24 (1).png</normaloff>:/img/img/icons8-search-24 (1).png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>20</width>
+         <height>20</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="2">
+      <widget class="QPushButton" name="pushButton_ID">
+       <property name="maximumSize">
+        <size>
+         <width>100</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(0, 69, 102);
+background-color: rgba(255, 255, 255,0);</string>
+       </property>
+       <property name="text">
+        <string> By ID</string>
+       </property>
+       <property name="icon">
+        <iconset resource="image.qrc">
+         <normaloff>:/img/img/icons8-search-24 (1).png</normaloff>:/img/img/icons8-search-24 (1).png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>20</width>
+         <height>20</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="3">
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="lineEdit_BookId">
+       <property name="maximumSize">
+        <size>
+         <width>210</width>
+         <height>35</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Microsoft Sans Serif</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 119, 85);
+color: rgb(79, 79, 59);</string>
+       </property>
+       <property name="placeholderText">
+        <string> Book ID </string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="4" column="1">
+      <widget class="QLineEdit" name="lineEdit_Subject">
+       <property name="maximumSize">
+        <size>
+         <width>210</width>
+         <height>35</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Microsoft Sans Serif</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(137, 244, 255);
+color: rgb(99, 99, 74);</string>
+       </property>
+       <property name="placeholderText">
+        <string> Subject</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="2">
+      <widget class="QPushButton" name="pushButton_author">
+       <property name="maximumSize">
+        <size>
+         <width>100</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(0, 69, 102);
+background-color: rgba(255, 255, 255,0);</string>
+       </property>
+       <property name="text">
+        <string> By Author</string>
+       </property>
+       <property name="icon">
+        <iconset resource="image.qrc">
+         <normaloff>:/img/img/icons8-search-24 (1).png</normaloff>:/img/img/icons8-search-24 (1).png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>20</width>
+         <height>20</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="1">
+      <widget class="QTableWidget" name="tableWidget">
+       <property name="maximumSize">
+        <size>
+         <width>210</width>
+         <height>100</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Microsoft Sans Serif</family>
+         <pointsize>9</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 78, 115);
+</string>
+       </property>
+       <property name="columnCount">
+        <number>0</number>
+       </property>
+       <row>
+        <property name="text">
+         <string>BookName</string>
+        </property>
+        <property name="background">
+         <color>
+          <red>255</red>
+          <green>170</green>
+          <blue>127</blue>
+         </color>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>Author</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>Subject</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>Statue</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>Id</string>
+        </property>
+       </row>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="image.qrc"/>
+ </resources>
+ <connections/>
+</ui>
