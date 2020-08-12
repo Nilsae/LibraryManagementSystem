@@ -13,12 +13,17 @@
 #include <QString>
 #include<QMessageBox>
 #include<QDir>
+#include<QSystemTrayIcon>
 //==============================================================================================
 Window_Member::Window_Member(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Window_Member)
 {
      ui->setupUi(this);
+     mSystemTrayIcon= new QSystemTrayIcon(this);
+     mSystemTrayIcon->setIcon(QIcon(":/myappico.png"));
+    mSystemTrayIcon->setVisible(true);
+
    setAutoFillBackground(true);
       QPalette palatte;
        QPixmap pixmap(":/img/img/700.jpg");
@@ -113,4 +118,9 @@ void Window_Member::on_pushButton_clicked()
 {
     RentedBooksObj=new Window_RentedBooks(this);
     RentedBooksObj->show();
+}
+
+void Window_Member::on_showMessageBtn_clicked()
+{
+    mSystemTrayIcon->showMessage(tr("notification"),tr("Hi:)"));
 }

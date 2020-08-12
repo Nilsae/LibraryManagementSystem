@@ -17,6 +17,7 @@ Window_AddBook::Window_AddBook(QWidget *parent) :
     ui(new Ui::Window_AddBook)
 {
     ui->setupUi(this);
+    ui->lineEdit_BookId->setFocus();
 }
 
 Window_AddBook::~Window_AddBook()

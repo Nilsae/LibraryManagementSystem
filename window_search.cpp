@@ -17,6 +17,7 @@ Window_Search::Window_Search(QWidget *parent) :
     ui(new Ui::Window_Search)
 {
     ui->setupUi(this);
+    ui->lineEdit_BookId->setFocus();
     ui->tableWidget->insertColumn ( ui->tableWidget->columnCount() );
     ui->tableWidget->hide();
 }

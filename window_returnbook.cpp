@@ -18,6 +18,7 @@ Window_ReturnBook::Window_ReturnBook(QWidget *parent) :
     ui(new Ui::Window_ReturnBook)
 {
     ui->setupUi(this);
+    ui->lineEdit_BookId->setFocus();
 }
 
 Window_ReturnBook::~Window_ReturnBook()

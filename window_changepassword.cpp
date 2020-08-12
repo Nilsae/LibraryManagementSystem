@@ -24,6 +24,7 @@ Window_ChangePassword::Window_ChangePassword(QWidget *parent) :
     ui(new Ui::Window_ChangePassword)
 {
     ui->setupUi(this);
+    ui->lineEdit_MemberId->setFocus();
 
 }
 

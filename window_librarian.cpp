@@ -1,6 +1,7 @@
 #include "window_librarian.h"
 #include "ui_window_librarian.h"
 #include <QMessageBox>
+#include <QWidget>
 #include "globalvaribals.h"
 #include "window_registernewaccount.h"
 #include "ui_window_registernewaccount.h"
@@ -15,12 +16,16 @@
 #include <QString>
 #include "globalvaribals.h"
 #include<QDir>
+#include<QSystemTrayIcon>
 //==============================================================================================
 Window_Librarian::Window_Librarian(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Window_Librarian)
 { QDir account;
      ui->setupUi(this);
+     mSystemTrayIcon= new QSystemTrayIcon(this);
+     mSystemTrayIcon->setIcon(QIcon(":/myappico.png"));
+    mSystemTrayIcon->setVisible(true);
      setAutoFillBackground(true);
         QPalette palatte;
         QPixmap pixmap(":/img/img/back2.jpg");
@@ -171,4 +176,9 @@ void Window_Librarian::on_pushButton_RentedBooks_clicked()
     RentedBooksObj=new Window_RentedBooks(this);
     RentedBooksObj->show();
 
+}
+
+void Window_Librarian::on_notification_btn_clicked()
+{
+    mSystemTrayIcon->showMessage(tr("notification"),tr("Hi:)"));
 }

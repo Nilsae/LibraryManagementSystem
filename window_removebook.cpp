@@ -16,6 +16,7 @@ Window_RemoveBook::Window_RemoveBook(QWidget *parent) :
     ui(new Ui::Window_RemoveBook)
 {
     ui->setupUi(this);
+    ui->lineEdit_BookId->setFocus();
 }
 
 Window_RemoveBook::~Window_RemoveBook()

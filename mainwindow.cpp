@@ -23,6 +23,7 @@ MainWindow::MainWindow(QWidget *parent)
        QPixmap pixmap(":/img/img/back.jpg");
        palatte.setBrush(backgroundRole(),QBrush(pixmap));
        this->setPalette(palatte);
+       ui->lineEdit_Username->setFocus();
       //background
 
 }

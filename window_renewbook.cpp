@@ -20,7 +20,10 @@ Window_RenewBook::Window_RenewBook(QWidget *parent) :
     ui(new Ui::Window_RenewBook)
 {
     ui->setupUi(this);
+    ui->lineEdit_BookId->setFocus();
     ui->tableWidget_RentedBooks->hide();
+    ui->pushButton_Renew->hide();
+    ui->lineEdit_renewdDate->hide();
 }
 
 Window_RenewBook::~Window_RenewBook()
@@ -72,6 +75,7 @@ QString newExpireDate= ui->lineEdit_renewdDate->text();
    if(RentedBooks.find(BookId)!=RentedBooks.end()){
        RentedBooks[BookId]=newExpireDate;
        ui->tableWidget_RentedBooks->setItem(0,0,new QTableWidgetItem(BookId));
+       ui->tableWidget_RentedBooks->setItem(0,1,new QTableWidgetItem(RentedUntil));
 
 
        //===========================================!!!!!!!ATTENTION!!!!!!!================================
@@ -80,8 +84,13 @@ QString newExpireDate= ui->lineEdit_renewdDate->text();
        //============================================
 
 
-
+       ui->pushButton_Renew->show();
+       ui->lineEdit_renewdDate->show();
+       ui->lineEdit_BookId->hide();
+       ui->lineEdit_MemberId->hide();
+       ui->pushButton_search->hide();
        QMessageBox::information(this," ","Please enter the new date");
+
    }
    else{
 

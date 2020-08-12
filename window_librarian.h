@@ -22,7 +22,7 @@
 namespace Ui {
 class Window_Librarian;
 }
-
+class QSystemTrayIcon;
 class Window_Librarian : public QDialog
 {
     Q_OBJECT
@@ -63,6 +63,10 @@ private slots:
 
     void on_pushButton_RentedBooks_clicked();
 
+    void on_pushButton_clicked();
+
+    void on_notification_btn_clicked();
+
 private:
     Ui::Window_Librarian *ui;
     Window_Search * SearchObj;
@@ -70,7 +74,6 @@ private:
     Window_ReturnBook * ReturnBookObj;
     Window_ReserveBook * ReserveBookObj;
     Window_ViewAccount * ViewAccountObj;
-
     Window_UpdateAccount *UpdateAccountObj;
     Window_AddBook * AddBookObj;
     Window_RemoveBook * RemobeBookObj;
@@ -80,6 +83,7 @@ private:
     Window_IssueBook * IssueBookObj;
     Window_ChangePassword *ChangePasswordObj;
     Window_RentedBooks *RentedBooksObj;
+    QSystemTrayIcon *mSystemTrayIcon;
 };
 
 #endif // WINDOW_LIBRARIAN_H

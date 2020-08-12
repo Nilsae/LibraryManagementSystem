@@ -85,4 +85,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     UserAndPass.qrc \
-    image.qrc
+    image.qrc \
+    resi.qrc
+RC_ICONS = myappico.ico

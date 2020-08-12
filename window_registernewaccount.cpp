@@ -18,6 +18,7 @@ Window_RegisterNewAccount::Window_RegisterNewAccount(QWidget *parent) :
     ui(new Ui::Window_RegisterNewAccount)
 {
     ui->setupUi(this);
+    ui->lineEdit_ID->setFocus();
 }
 
 Window_RegisterNewAccount::~Window_RegisterNewAccount()

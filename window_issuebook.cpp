@@ -19,6 +19,7 @@ Window_IssueBook::Window_IssueBook(QWidget *parent) :
     ui(new Ui::Window_IssueBook)
 {
     ui->setupUi(this);
+    ui->lineEdit_BookId->setFocus();
     ui->pushButton_IssueBook->hide();
 }
 

@@ -20,6 +20,7 @@ Window_ReserveBook::Window_ReserveBook(QWidget *parent) :
     ui(new Ui::Window_ReserveBook)
 {
     ui->setupUi(this);
+    ui->lineEdit_BookId->setFocus();
 }
 
 Window_ReserveBook::~Window_ReserveBook()

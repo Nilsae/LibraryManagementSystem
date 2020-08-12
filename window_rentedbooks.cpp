@@ -18,6 +18,13 @@ Window_RentedBooks::Window_RentedBooks(QWidget *parent) :
 {
         QDir account;
     ui->setupUi(this);
+    setAutoFillBackground(true);
+       QPalette palatte;
+       QPixmap pixmap(":/img/img/462696091c37a9b6447730996cfb4109_book-backgrounds-illustrations-royalty-free-vector-graphics-_612-612.jpeg");
+       palatte.setBrush(backgroundRole(),QBrush(pixmap));
+       this->setPalette(palatte);
+      //background
+
     account.cd("..");
     account.cd("Login_MY_FINAL");
     account.cd("RowData");
