@@ -13,6 +13,7 @@ class Window_ReserveBook : public QDialog
 
 public:
     explicit Window_ReserveBook(QWidget *parent = nullptr);
+    int userflag;
     ~Window_ReserveBook();
 
 private slots:

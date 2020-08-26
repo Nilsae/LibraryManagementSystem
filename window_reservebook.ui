@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Reserve Book</string>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(161, 211, 255);</string>

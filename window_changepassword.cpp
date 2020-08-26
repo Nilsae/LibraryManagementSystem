@@ -58,6 +58,12 @@ void Window_ChangePassword::on_pushButton_ChangePassword_clicked()
     QString RealHashedPassword= Account_Obj["Password"].toString();
     QString EnteredOLDPassword = ui->lineEdit_OldPassword->text();
     QString EnteredNEWPassword = ui->lineEdit_NewPassword->text();
+    if(EnteredNEWPassword.size()<8){
+        QMessageBox::warning(this,"","Password can not be less than 8 characters.");
+        this->close();
+        return;
+
+    }
     QString EnteredConfirmPassword =ui->lineEdit_ConfirmNewPassword->text();
     if(EnteredNEWPassword==""||EnteredConfirmPassword==""){
         QMessageBox::warning(this,"","All sections haven't filled out");

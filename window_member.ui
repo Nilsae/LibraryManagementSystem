@@ -17,7 +17,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Member Menu</string>
   </property>
   <property name="windowIcon">
    <iconset resource="resi.qrc">
@@ -109,38 +109,6 @@ color: rgb(113, 56, 84);</string>
       <widget class="QLabel" name="label_3">
        <property name="text">
         <string/>
-       </property>
-      </widget>
-     </item>
-     <item row="5" column="2">
-      <widget class="QPushButton" name="pushButton_ViewAccount">
-       <property name="maximumSize">
-        <size>
-         <width>140</width>
-         <height>30</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>Microsoft Sans Serif</family>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgba(146, 89, 170,0);
-color: rgb(113, 56, 84);</string>
-       </property>
-       <property name="text">
-        <string>View Account</string>
-       </property>
-       <property name="icon">
-        <iconset resource="image.qrc">
-         <normaloff>:/img/img/A.png</normaloff>:/img/img/A.png</iconset>
-       </property>
-       <property name="iconSize">
-        <size>
-         <width>20</width>
-         <height>20</height>
-        </size>
        </property>
       </widget>
      </item>
@@ -345,7 +313,7 @@ color: rgb(113, 56, 84);</string>
        </property>
       </widget>
      </item>
-     <item row="7" column="2">
+     <item row="5" column="2">
       <widget class="QSplitter" name="splitter">
        <property name="orientation">
         <enum>Qt::Vertical</enum>

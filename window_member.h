@@ -15,6 +15,7 @@
 #include "window_chechoutbook.h"
 #include "window_changepassword.h"
 #include "window_rentedbooks.h"
+#include "window_changepassmember.h"
 
 namespace Ui {
 class Window_Member;
@@ -31,7 +32,7 @@ public:
 private slots:
     void on_pushButton_ReturnBook_clicked();
 
-    void on_pushButton_ViewAccount_clicked();
+    //void on_pushButton_ViewAccount_clicked();
 
     void on_pushButton_Logout_clicked();
 
@@ -68,6 +69,7 @@ private:
    Window_ChangePassword *ChangePasswordObj;
     Window_RentedBooks *RentedBooksObj;
     QSystemTrayIcon *mSystemTrayIcon;
+    Window_ChangePassMember *ChangePassMemberObj;
 };
 
 #endif // WINDOW_MEMBER_H

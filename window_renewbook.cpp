@@ -14,6 +14,7 @@
 #include <QPair>
 #include<QMessageBox>
 #include<QDir>
+#include "globalvaribals.h"
 //==============================================================================================
 Window_RenewBook::Window_RenewBook(QWidget *parent) :
     QDialog(parent),
@@ -24,6 +25,15 @@ Window_RenewBook::Window_RenewBook(QWidget *parent) :
     ui->tableWidget_RentedBooks->hide();
     ui->pushButton_Renew->hide();
     ui->lineEdit_renewdDate->hide();
+    if(GlobalVaribals::CurrentAccType==1){
+        userflag=1;
+
+    }
+    if(GlobalVaribals::CurrentAccType==0){
+        ui->lineEdit_MemberId->hide();
+        userflag=0;
+
+    }
 }
 
 Window_RenewBook::~Window_RenewBook()
@@ -44,8 +54,15 @@ void Window_RenewBook::on_pushButton_search_clicked()
 
     QJsonObject Accounts_Obj=jsonDocAcc.object();
     AccountsFile.close();
+    QString MemberId;
+  if(userflag==0){
+       MemberId =QString::number(GlobalVaribals::CurrentId);
+  }
+  if(userflag==1){
+     MemberId = ui->lineEdit_MemberId->text();
+  }
 
-    QString MemberId = ui->lineEdit_MemberId->text();
+
     QString BookId = ui->lineEdit_BookId->text();
 
    QJsonValueRef Account_ref = Accounts_Obj.find(MemberId).value();
@@ -57,22 +74,14 @@ void Window_RenewBook::on_pushButton_search_clicked()
    QString Password= Account_Obj["Password"].toString();
    QJsonObject RentedBooks= Account_Obj["RentedBooks"].toObject();
    QString RentedUntil = RentedBooks[BookId].toString();
-    qDebug()<<RentedUntil;
+
    int RentedBooksCount=RentedBooks.size();
-  // ui-> tableWidget->setItem   (  0, 0 , new QTableWidgetItem(BookName));
-  //  ui-> tableWidget->setItem   (  1, 0 , new QTableWidgetItem(author));
-  //  ui-> tableWidget->setItem   ( 2, 0 , new QTableWidgetItem(subject));
-  //  ui-> tableWidget->setItem   (  3, 0 , new QTableWidgetItem(status));
-   //  ui-> tableWidget->setItem   ( 4, 0 , new QTableWidgetItem(BookId));
 
-
-  // qDebug()<<"HI :/";
-  // qDebug()<<MemberName;
-  // qDebug()<<RentedBooks;
-//show RentedBooks[BookId] as previous expire date in the UI
 QString newExpireDate= ui->lineEdit_renewdDate->text();
-
-   if(RentedBooks.find(BookId)!=RentedBooks.end()){
+    if(RentedBooks[BookId].toString()!=""){
+//    qDebug()<<"book id = "<<BookId;
+//    qDebug()<<"member id = "<<MemberId;
+//    qDebug()<<"RentedBooks[BookId]"<<RentedBooks[BookId];
        RentedBooks[BookId]=newExpireDate;
        ui->tableWidget_RentedBooks->setItem(0,0,new QTableWidgetItem(BookId));
        ui->tableWidget_RentedBooks->setItem(0,1,new QTableWidgetItem(RentedUntil));
@@ -98,7 +107,6 @@ QString newExpireDate= ui->lineEdit_renewdDate->text();
            this->close();
            return;
 
-       qDebug()<<"This member does not have this book rented ";
        //notification that This member does not have this book rented
    }
 
@@ -135,9 +143,7 @@ void Window_RenewBook::on_pushButton_Renew_clicked()
    QJsonObject RentedBooks= Account_Obj["RentedBooks"].toObject();
    int RentedBooksCount=RentedBooks.size();
 
-   qDebug()<<"HI :/";
-   qDebug()<<MemberName;
-   qDebug()<<RentedBooks;
+
 //show RentedBooks[BookId] as previous expire date in the UI
 QString newExpireDate= ui->lineEdit_renewdDate->text();
 
@@ -149,7 +155,7 @@ QString newExpireDate= ui->lineEdit_renewdDate->text();
            QMessageBox::warning(this," ","This member doesn't have this book rented ");
            return;
 
-       qDebug()<<"This member does not have this book rented ";
+
        //notification that This member does not have this book rented
    }
 
@@ -177,4 +183,5 @@ QString newExpireDate= ui->lineEdit_renewdDate->text();
   AccountsFile.write(final_acc_doc.toJson());
   AccountsFile.close();
   QMessageBox::information(this," ","Renewd successfully ");
+  this->close();
 }

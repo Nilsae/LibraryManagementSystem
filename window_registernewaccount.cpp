@@ -51,6 +51,12 @@ void Window_RegisterNewAccount::on_pushButton_Register_clicked()
         return;
 
     }
+    if(Password.size()<8){
+        QMessageBox::warning(this,"","Password can not be less than 8 characters.");
+        this->close();
+        return;
+
+    }
     QDir account;
         account.cd("..");
         account.cd("Login_MY_FINAL");

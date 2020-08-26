@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Window_ChangePassword</class>
- <widget class="QDialog" name="Window_ChangePassword">
+ <class>Window_ChangePassMember</class>
+ <widget class="QDialog" name="Window_ChangePassMember">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>497</width>
-    <height>371</height>
+    <width>484</width>
+    <height>404</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,15 +19,8 @@
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <layout class="QGridLayout" name="gridLayout">
-     <item row="6" column="1">
-      <widget class="QLabel" name="label_2">
-       <property name="text">
-        <string/>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="0">
-      <spacer name="horizontalSpacer">
+     <item row="1" column="2">
+      <spacer name="horizontalSpacer_2">
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>
@@ -39,64 +32,11 @@
        </property>
       </spacer>
      </item>
-     <item row="2" column="1">
-      <widget class="QLineEdit" name="lineEdit_OldPassword">
-       <property name="maximumSize">
-        <size>
-         <width>230</width>
-         <height>35</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>Microsoft Sans Serif</family>
-         <pointsize>9</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(255, 193, 46);
-color: rgb(0, 127, 93);
-</string>
-       </property>
-       <property name="echoMode">
-        <enum>QLineEdit::Password</enum>
-       </property>
-       <property name="placeholderText">
-        <string> Old Password             </string>
-       </property>
-      </widget>
-     </item>
      <item row="4" column="1">
-      <widget class="QLineEdit" name="lineEdit_ConfirmNewPassword">
+      <widget class="QPushButton" name="pushButton_ChangePass">
        <property name="maximumSize">
         <size>
-         <width>230</width>
-         <height>35</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>Microsoft Sans Serif</family>
-         <pointsize>9</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(255, 193, 46);
-color: rgb(0, 127, 93);</string>
-       </property>
-       <property name="echoMode">
-        <enum>QLineEdit::Password</enum>
-       </property>
-       <property name="placeholderText">
-        <string> Confirm New Password</string>
-       </property>
-      </widget>
-     </item>
-     <item row="5" column="1">
-      <widget class="QPushButton" name="pushButton_ChangePassword">
-       <property name="maximumSize">
-        <size>
-         <width>230</width>
+         <width>220</width>
          <height>35</height>
         </size>
        </property>
@@ -125,24 +65,21 @@ color: rgb(234, 156, 0);</string>
        </property>
       </widget>
      </item>
-     <item row="2" column="2">
-      <spacer name="horizontalSpacer_2">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
+     <item row="0" column="1">
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string/>
        </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
+       <property name="pixmap">
+        <pixmap resource="image.qrc">:/img/img/change2.png</pixmap>
        </property>
-      </spacer>
+      </widget>
      </item>
-     <item row="3" column="1">
-      <widget class="QLineEdit" name="lineEdit_NewPassword">
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="lineEdit_OldPass">
        <property name="maximumSize">
         <size>
-         <width>230</width>
+         <width>220</width>
          <height>35</height>
         </size>
        </property>
@@ -160,40 +97,79 @@ color: rgb(0, 127, 93);</string>
         <enum>QLineEdit::Password</enum>
        </property>
        <property name="placeholderText">
-        <string> New Pssword             </string>
+        <string> Old Password</string>
        </property>
       </widget>
      </item>
-     <item row="1" column="1">
-      <widget class="QLineEdit" name="lineEdit_MemberId">
+     <item row="2" column="1">
+      <widget class="QLineEdit" name="lineEdit_NewPass">
        <property name="maximumSize">
         <size>
-         <width>230</width>
+         <width>220</width>
          <height>35</height>
         </size>
        </property>
        <property name="font">
         <font>
          <family>Microsoft Sans Serif</family>
-         <pointsize>10</pointsize>
+         <pointsize>9</pointsize>
         </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(255, 193, 46);
 color: rgb(0, 127, 93);</string>
        </property>
+       <property name="echoMode">
+        <enum>QLineEdit::Password</enum>
+       </property>
        <property name="placeholderText">
-        <string> ID</string>
+        <string> New Password</string>
        </property>
       </widget>
      </item>
-     <item row="0" column="1">
+     <item row="3" column="1">
+      <widget class="QLineEdit" name="lineEdit_ConfirmPass">
+       <property name="maximumSize">
+        <size>
+         <width>220</width>
+         <height>35</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Microsoft Sans Serif</family>
+         <pointsize>9</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 193, 46);
+color: rgb(0, 127, 93);</string>
+       </property>
+       <property name="echoMode">
+        <enum>QLineEdit::Password</enum>
+       </property>
+       <property name="placeholderText">
+        <string> Confirm New Password</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="5" column="1">
       <widget class="QLabel" name="label">
        <property name="text">
         <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap resource="image.qrc">:/img/img/change2.png</pixmap>
        </property>
       </widget>
      </item>

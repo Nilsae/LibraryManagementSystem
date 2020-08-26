@@ -7,11 +7,11 @@
     <x>0</x>
     <y>0</y>
     <width>596</width>
-    <height>370</height>
+    <height>422</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Regiser New Account</string>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(255, 197, 248);</string>
@@ -56,6 +56,9 @@ color: rgb(216, 216, 216);</string>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(204, 121, 255);
 color: rgb(216, 216, 216);</string>
+       </property>
+       <property name="echoMode">
+        <enum>QLineEdit::Password</enum>
        </property>
        <property name="placeholderText">
         <string> Confirm Password</string>
@@ -208,6 +211,9 @@ color: rgb(216, 216, 216);</string>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(204, 121, 255);
 color: rgb(216, 216, 216);</string>
+       </property>
+       <property name="echoMode">
+        <enum>QLineEdit::Password</enum>
        </property>
        <property name="placeholderText">
         <string> Password            </string>
