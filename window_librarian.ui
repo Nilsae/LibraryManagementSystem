@@ -11,17 +11,10 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Libarian Menu</string>
-  </property>
-  <property name="windowIcon">
-   <iconset resource="resi.qrc">
-    <normaloff>:/myappico.png</normaloff>:/myappico.png</iconset>
+   <string>Dialog</string>
   </property>
   <property name="styleSheet">
    <string notr="true"/>
-  </property>
-  <property name="modal">
-   <bool>false</bool>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
    <item>
@@ -258,6 +251,33 @@ background-color: rgba(255, 255, 127,0);</string>
        </property>
       </widget>
      </item>
+     <item row="11" column="0">
+      <widget class="QPushButton" name="pushButton_Logout">
+       <property name="maximumSize">
+        <size>
+         <width>160</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(50, 100, 0);
+background-color: rgba(255, 255, 127,0);</string>
+       </property>
+       <property name="text">
+        <string>Logout</string>
+       </property>
+       <property name="icon">
+        <iconset resource="image.qrc">
+         <normaloff>:/img/img/vippng.com-logout-icon-png-2967.png</normaloff>:/img/img/vippng.com-logout-icon-png-2967.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>26</width>
+         <height>26</height>
+        </size>
+       </property>
+      </widget>
+     </item>
      <item row="3" column="3">
       <widget class="QPushButton" name="pushButton_ReturnBook">
        <property name="maximumSize">
@@ -351,7 +371,7 @@ background-color: rgba(255, 255, 127,0);</string>
      <item row="3" column="0">
       <widget class="QLabel" name="label_2">
        <property name="text">
-        <string/>
+        <string>                                        </string>
        </property>
       </widget>
      </item>
@@ -432,7 +452,7 @@ background-color: rgba(255, 255, 127,0);</string>
      <item row="1" column="2">
       <widget class="QLabel" name="label_3">
        <property name="text">
-        <string/>
+        <string>                                   </string>
        </property>
       </widget>
      </item>
@@ -542,67 +562,12 @@ background-color: rgba(255, 255, 127,0);</string>
        </property>
       </widget>
      </item>
-     <item row="8" column="1">
-      <widget class="QPushButton" name="notification_btn">
-       <property name="maximumSize">
-        <size>
-         <width>160</width>
-         <height>30</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: rgb(56, 112, 0);
-background-color: rgba(255, 255, 127,0);</string>
-       </property>
-       <property name="text">
-        <string>Notifications</string>
-       </property>
-       <property name="icon">
-        <iconset resource="image.qrc">
-         <normaloff>:/img/img/kindpng_1509057.png</normaloff>:/img/img/kindpng_1509057.png</iconset>
-       </property>
-       <property name="iconSize">
-        <size>
-         <width>24</width>
-         <height>24</height>
-        </size>
-       </property>
-      </widget>
-     </item>
-     <item row="8" column="3">
-      <widget class="QPushButton" name="pushButton_Logout">
-       <property name="maximumSize">
-        <size>
-         <width>160</width>
-         <height>30</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: rgb(56, 112, 0);
-background-color: rgba(255, 255, 127,0);</string>
-       </property>
-       <property name="text">
-        <string>Logout</string>
-       </property>
-       <property name="icon">
-        <iconset resource="image.qrc">
-         <normaloff>:/img/img/vippng.com-logout-icon-png-2967.png</normaloff>:/img/img/vippng.com-logout-icon-png-2967.png</iconset>
-       </property>
-       <property name="iconSize">
-        <size>
-         <width>26</width>
-         <height>26</height>
-        </size>
-       </property>
-      </widget>
-     </item>
     </layout>
    </item>
   </layout>
  </widget>
  <resources>
   <include location="image.qrc"/>
-  <include location="resi.qrc"/>
  </resources>
  <connections/>
 </ui>

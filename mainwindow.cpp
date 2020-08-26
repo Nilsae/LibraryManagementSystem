@@ -11,21 +11,18 @@
 #include<QByteArray>
 #include "globalvaribals.h"
 #include<QDir>
-#include<QSystemTrayIcon>
+
 //==============================================================================================
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
-
     setAutoFillBackground(true);
        QPalette palatte;
        QPixmap pixmap(":/img/img/back.jpg");
        palatte.setBrush(backgroundRole(),QBrush(pixmap));
        this->setPalette(palatte);
-       ui->lineEdit_Username->setFocus();
       //background
 
 }
@@ -58,7 +55,8 @@ void MainWindow::on_pushButton_Login_clicked()
         QString CurrentAccountId=(x.toObject())["id"].toString();
         QString UserName_lineEdit=ui->lineEdit_Username->text();
         QString Password_lineEdit=ui->lineEdit_Password->text();
-
+       // qDebug()<<UserName;
+         // qDebug()<<Password;
         char*  ch;
         QByteArray ba = Password_lineEdit.toLatin1();
         ch=ba.data ();
@@ -72,7 +70,7 @@ void MainWindow::on_pushButton_Login_clicked()
                 QMessageBox::information(this," ","Login Succesful!");
                 GlobalVaribals::CurrentId=CurrentAccountId.toInt();
                   GlobalVaribals::CurrentAccType=1;;
-
+                //qDebug()<<GlobalVaribals::CurrentId;
                 hide();
                 Libaririan =new Window_Librarian(this);
                 Libaririan->show();
@@ -82,11 +80,10 @@ void MainWindow::on_pushButton_Login_clicked()
                 QMessageBox::information(this," ","Login Succesful!");
                 GlobalVaribals::CurrentId=CurrentAccountId.toInt();
                    GlobalVaribals::CurrentAccType=0;
-
+               // qDebug()<<GlobalVaribals::CurrentId;
                 hide();
                 Member=new Window_Member(this);
                 Member->show();
-
             }
 
 
@@ -100,5 +97,27 @@ void MainWindow::on_pushButton_Login_clicked()
 
 
 UserAndPassFile.close();
+//====================================old login codes===================
+  //  QString UserName=ui->lineEdit_Username->text();
+//    QString Password=ui->lineEdit_Password->text();
+
+    //if(UserName=="ADMIN"&&Password=="ADMINPASS"){
+        //QMessageBox::information(this," ","Login Succesful!");
+       // hide();
+      //  Libaririan =new Window_Librarian(this);
+    //    Libaririan->show();
+  // }
+    //else if(UserName=="MEMBER"&&Password=="MEMBERPASS"){
+          //QMessageBox::information(this," ","Login Succesful!");
+          //hide();
+        //  Member=new Window_Member(this);
+      //    Member->show();
+
+  //  }
+ //   else{
+   //      QMessageBox::warning(this," ","Incorrect UserName or Password");
+
+ //   }
+//========================================================================
 
 }

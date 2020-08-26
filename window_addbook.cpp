@@ -17,7 +17,6 @@ Window_AddBook::Window_AddBook(QWidget *parent) :
     ui(new Ui::Window_AddBook)
 {
     ui->setupUi(this);
-    ui->lineEdit_BookId->setFocus();
 }
 
 Window_AddBook::~Window_AddBook()
@@ -50,8 +49,16 @@ void Window_AddBook::on_pushButton_AddBook_clicked()
                                    {"author", Author},
                                    {"subject", Subject}
                                  };
-
+//    QJsonObject ObjID =  {{ BookId, Books }};
+    //...................................
+//    QJsonObject jobj;
+//    jobj[BookId]=Books;
+//    jArr.append(jobj);
+//    QJsonObject main;
     main[BookId]=Books;
+    //................................................
+//    QJsonArray jArr = jsonDoc.array();
+//    jArr.push_back( jobj);
 
     QJsonDocument doc( main );
 

@@ -17,7 +17,6 @@ Window_EditBook::Window_EditBook(QWidget *parent) :
     ui(new Ui::Window_EditBook)
 {
     ui->setupUi(this);
-    ui->lineEdit_BookId->setFocus();
    ui->label_BookId->hide();
     ui->label_Subject->hide();
     ui->label_BookName->hide();
@@ -26,7 +25,6 @@ Window_EditBook::Window_EditBook(QWidget *parent) :
     ui->lineEdit_BookName->hide();
     ui->lineEdit_AuthorName->hide();
     ui->pushButton_EditBook->hide();
-
 
 }
 

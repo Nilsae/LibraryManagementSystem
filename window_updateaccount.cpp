@@ -18,7 +18,6 @@ Window_UpdateAccount::Window_UpdateAccount(QWidget *parent) :
     ui(new Ui::Window_UpdateAccount)
 {
     ui->setupUi(this);
-    ui->lineEdit_MemberId->setFocus();
      ui->label_Id->hide();
     ui->label_Name->hide();
     ui->label_Username->hide();

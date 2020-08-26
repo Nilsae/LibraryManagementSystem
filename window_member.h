@@ -4,8 +4,7 @@
 #include <QDialog>
 #include "window_librarian.h"
 #include <QMainWindow>
-#include<QMessageBox>
-#include<QWidget>
+
 #include "window_renewbook.h"
 #include "window_reservebook.h"
 #include "window_returnbook.h"
@@ -15,12 +14,11 @@
 #include "window_chechoutbook.h"
 #include "window_changepassword.h"
 #include "window_rentedbooks.h"
-#include "window_changepassmember.h"
 
 namespace Ui {
 class Window_Member;
 }
-class QSystemTrayIcon;
+
 class Window_Member : public QDialog
 {
     Q_OBJECT
@@ -32,7 +30,7 @@ public:
 private slots:
     void on_pushButton_ReturnBook_clicked();
 
-    //void on_pushButton_ViewAccount_clicked();
+    void on_pushButton_ViewAccount_clicked();
 
     void on_pushButton_Logout_clicked();
 
@@ -54,8 +52,6 @@ private slots:
 
     void on_pushButton_clicked();
 
-    void on_showMessageBtn_clicked();
-
 private:
     Ui::Window_Member *ui;
     Window_Search * SearchObj;
@@ -68,8 +64,6 @@ private:
     Window_ChechOutBook *CheckOutBookObj;
    Window_ChangePassword *ChangePasswordObj;
     Window_RentedBooks *RentedBooksObj;
-    QSystemTrayIcon *mSystemTrayIcon;
-    Window_ChangePassMember *ChangePassMemberObj;
 };
 
 #endif // WINDOW_MEMBER_H

@@ -14,23 +14,12 @@
 #include<QMessageBox>
 #define max_permitted_books 4
 #include<QDir>
-#include "globalvaribals.h"
 //==============================================================================================
 Window_ReserveBook::Window_ReserveBook(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Window_ReserveBook)
 {
     ui->setupUi(this);
-    ui->lineEdit_BookId->setFocus();
-    if(GlobalVaribals::CurrentAccType==1){
-        userflag=1;
-
-    }
-    if(GlobalVaribals::CurrentAccType==0){
-        ui->lineEdit_MemberId->hide();
-        userflag=0;
-
-    }
 }
 
 Window_ReserveBook::~Window_ReserveBook()
@@ -97,14 +86,8 @@ void Window_ReserveBook::on_pushButton_Reserve_clicked()
 
    QJsonObject Accounts_Obj=jsonDocAcc.object();
    AccountsFile.close();
-     QString MemberId;
-   if(userflag==0){
-        MemberId =QString::number(GlobalVaribals::CurrentId);
-   }
-   if(userflag==1){
-      MemberId = ui->lineEdit_MemberId->text();
-   }
 
+   QString MemberId = ui->lineEdit_MemberId->text();
   QJsonValueRef Account_ref = Accounts_Obj.find(MemberId).value();
   QJsonObject Account_Obj= Account_ref.toObject();
 
@@ -118,9 +101,14 @@ void Window_ReserveBook::on_pushButton_Reserve_clicked()
   QJsonObject RentedBooks= Account_Obj["RentedBooks"].toObject();
   if(RentedBooks.size()>max_permitted_books){
       QMessageBox::warning(this,"Not Permitted!","The number of the rented books is more than the permitted amount.");
+    //notification that it is not permitted
       return;
   }
-
+//  QPair<QString,QString> BookDatePair ;
+//  BookDatePair.first=BookId;
+//  BookDatePair.second=QDate::currentDate().toString( "yyyy-MM-dd" );
+//  QJsonObject RBook;
+//  RBook[BookId]=QDate::currentDate().toString( "yyyy-MM-dd" );
   QString ExpireRentDate =ui->lineEdit_ExpireRentDate->text();
   RentedBooks.insert(BookId,ExpireRentDate);
 

@@ -13,7 +13,6 @@ class Window_RentedBooks : public QDialog
 
 public:
     explicit Window_RentedBooks(QWidget *parent = nullptr);
-    int userflag;
     ~Window_RentedBooks();
 
 private:

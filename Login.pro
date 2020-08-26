@@ -21,7 +21,6 @@ SOURCES += \
     mainwindow.cpp \
     window_addbook.cpp \
     window_cancelmembership.cpp \
-    window_changepassmember.cpp \
     window_changepassword.cpp \
     window_chechoutbook.cpp \
     window_editbook.cpp \
@@ -43,7 +42,6 @@ HEADERS += \
     mainwindow.h \
     window_addbook.h \
     window_cancelmembership.h \
-    window_changepassmember.h \
     window_changepassword.h \
     window_chechoutbook.h \
     window_editbook.h \
@@ -64,7 +62,6 @@ FORMS += \
     mainwindow.ui \
     window_addbook.ui \
     window_cancelmembership.ui \
-    window_changepassmember.ui \
     window_changepassword.ui \
     window_chechoutbook.ui \
     window_editbook.ui \
@@ -88,6 +85,4 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     UserAndPass.qrc \
-    image.qrc \
-    resi.qrc
-RC_ICONS = myappico.ico
+    image.qrc
