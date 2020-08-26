@@ -13,6 +13,7 @@ class Window_ReturnBook : public QDialog
 
 public:
     explicit Window_ReturnBook(QWidget *parent = nullptr);
+    int userflag;
     ~Window_ReturnBook();
 
 private slots:

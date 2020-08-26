@@ -16,6 +16,7 @@ Window_RemoveBook::Window_RemoveBook(QWidget *parent) :
     ui(new Ui::Window_RemoveBook)
 {
     ui->setupUi(this);
+    ui->lineEdit_BookId->setFocus();
 }
 
 Window_RemoveBook::~Window_RemoveBook()
@@ -26,28 +27,7 @@ Window_RemoveBook::~Window_RemoveBook()
 void Window_RemoveBook::on_pushButton_RemoveBook_clicked()
 {
     const QString & BookId = ui->lineEdit_BookId->text();
-//    QFile file("/home/nilsa/Documents/AP/LibraryManagementSystem/Login/AddedBooks.json"); // json file
-//    if( !file.open( QIODevice::ReadWrite ) ) //write json content to file.
-//    {
-//        qDebug()<<"error opening file for removing the book.\n";
-//    }
-//     QJsonDocument jsonDoc = QJsonDocument::fromJson( file.readAll() );
-////    char book_id[30];
-////    strcpy(book_id,BookId);
-////      jsonDoc.remove(BookId);
-//      QJsonArray jArr = jsonDoc.array();
-////      remove(jArr.find(BookId));
-//      QJsonObject element [jArr.count];
-//      for(int i=0;i<jArr.count();i++) {
-//      element[i] = jArr.at(i).toObject();
-//      }
-////      qDebug() << element.value("number").toInt();
-//      QJsonDocument doc( jArr );
 
-//      file.write(doc.toJson());
-//      file.close();
-////    file.write(doc.toJson());
-//    file.close();
     QDir AddedBook;
     AddedBook.cd("..");
     AddedBook.cd("Login_MY_FINAL");
@@ -64,6 +44,60 @@ void Window_RemoveBook::on_pushButton_RemoveBook_clicked()
     }
     AddedBooksFile.close();
     QJsonObject empty ={};
+    QDir account;
+        account.cd("..");
+        account.cd("Login_MY_FINAL");
+        account.cd("RowData");
+        QFile AccountsFile (account.path()+"/accounts.json");
+    AccountsFile.open(QIODevice::ReadWrite);
+
+    QJsonDocument jsonDocAcc = QJsonDocument::fromJson( AccountsFile.readAll() );
+
+    QJsonObject Accounts_Obj=jsonDocAcc.object();
+    AccountsFile.close();
+
+    foreach(QJsonValue x,Accounts_Obj){
+
+        QJsonObject RentedBook=(x.toObject())["RentedBooks"].toObject();
+
+        if(RentedBook.find(BookId)!=RentedBook.end()){
+            QString MemberName= (x.toObject())["Name"].toString();
+
+            QString Username= (x.toObject())["Username"].toString();
+            QString date_added_account= (x.toObject())["date_added"].toString();
+            QString ExpireDate= (x.toObject())["ExpireDate"].toString();
+            int AccountType= (x.toObject())["AccountType"].toInt();
+            QString Password=(x.toObject())["Password"].toString();
+            QString MemberId = (x.toObject()["id"]).toString();
+
+
+            RentedBook.remove(BookId);
+            QJsonObject newAccount = { {"Name", MemberName},
+                                           {"Username", Username},
+                                       {"id", MemberId},
+                                           {"date_added", date_added_account},
+                                   {"ExpireDate", ExpireDate},
+                                           {"AccountType", AccountType},
+                                           {"Password", Password},
+                                       {"RentedBooks",RentedBook}
+                                         };
+
+            Accounts_Obj.remove(MemberId);
+           Accounts_Obj[MemberId]=newAccount;
+
+            QMessageBox::information(this, "", "Book was rented,also removed from the account.");
+            QJsonDocument FinalAccounts(Accounts_Obj);
+            if( !AccountsFile.open( QIODevice::WriteOnly ) ) //write json content to file.
+            {
+                qDebug()<<"error opening file for write.\n";
+            }
+
+            AccountsFile.write(FinalAccounts.toJson());
+            AccountsFile.close();
+            break;
+        }
+
+    }
     Obj.remove(BookId);
     QJsonDocument FinalD(Obj);
     if( !AddedBooksFile.open( QIODevice::WriteOnly ) ) //write json content to file.
@@ -77,28 +111,4 @@ void Window_RemoveBook::on_pushButton_RemoveBook_clicked()
         QMessageBox::information(this," ","Book removed successfully!");
 
 
-//    QJsonParseError JsonParseError;
-//    QJsonDocument JsonDocument = QJsonDocument::fromJson(AddedBooksFile.readAll(), &JsonParseError);
-
-//    AddedBooksFile.close();
-
-//    QJsonObject RootObject = JsonDocument.object();
-//    QJsonValueRef ArrayRef = RootObject.find(BookId).value();
-//    QJsonArray Array = ArrayRef.toArray();
-//    qDebug()<<Array[0];
-//    QJsonArray::iterator ArrayIterator = Array.begin();
-//    QJsonValueRef ElementOneValueRef = ArrayIterator[0];
-
-//    QJsonObject ElementOneObject = ElementOneValueRef.toObject();
-
-//    // Make modifications to ElementOneObject
-//    ElementOneObject=QJsonObject();
-
-//    ElementOneValueRef = ElementOneObject;
-//    ArrayRef = Array;
-//    JsonDocument.setObject(RootObject);
-
-//    AddedBooksFile.open(QFile::WriteOnly | QFile::Text | QFile::Truncate);
-//    AddedBooksFile.write(JsonDocument.toJson());
-//    AddedBooksFile.close();
 }

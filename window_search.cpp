@@ -17,6 +17,7 @@ Window_Search::Window_Search(QWidget *parent) :
     ui(new Ui::Window_Search)
 {
     ui->setupUi(this);
+    ui->lineEdit_BookId->setFocus();
     ui->tableWidget->insertColumn ( ui->tableWidget->columnCount() );
     ui->tableWidget->hide();
 }
@@ -26,27 +27,10 @@ Window_Search::~Window_Search()
     delete ui;
 }
 
-//void Window_Search::on_pushButton_SearchBook_clicked()
-//{
-//    QString BookId = ui->lineEdit_BookId->text();
-//    QString BookName = ui->lineEdit_BookName->text();
-//    QString Author = ui->lineEdit_AuthorName->text();
-//    QString Subject = ui->lineEdit_Subject->text();
-
-//    QFile AddedBooksFile(AddedBooks);
-//   AddedBooksFile.open(QIODevice::ReadWrite | QIODevice::Text);
-//   QByteArray B = AddedBooksFile.readAll();
-//   QJsonDocument D = QJsonDocument::fromJson(B);
-//   QJsonObject Obj = D.object();
-//   AddedBooksFile.close();
-////   QJsonObject empty ={};
-//   QJsonValueRef found_ref = Obj.find(BookId).value();
-
-//}
 
 void Window_Search::on_pushButton_ID_clicked()
 {
-    ui->tableWidget->show();
+
     QString BookId = ui->lineEdit_BookId->text();
     QDir AddedBook;
     AddedBook.cd("..");
@@ -71,7 +55,7 @@ void Window_Search::on_pushButton_ID_clicked()
    QString date_added= found_obj["date_added"].toString();
    QString status= found_obj["status"].toString();
    QString author= found_obj["author"].toString();
-
+    ui->tableWidget->show();
    ui-> tableWidget->setItem   (  0, 0 , new QTableWidgetItem(BookName));
     ui-> tableWidget->setItem   (  1, 0 , new QTableWidgetItem(author));
     ui-> tableWidget->setItem   ( 2, 0 , new QTableWidgetItem(subject));
@@ -86,7 +70,7 @@ void Window_Search::on_pushButton_ID_clicked()
 
 void Window_Search::on_pushButton_name_clicked()
 {
-     ui->tableWidget->show();
+
     QString BookName_lineEdit = ui->lineEdit_BookName->text();
     QDir AddedBook;
     AddedBook.cd("..");
@@ -110,6 +94,7 @@ void Window_Search::on_pushButton_name_clicked()
            QString author= (x.toObject())["author"].toString();
            QString BookId= (x.toObject())["id"].toString();
             found_flag=1;
+             ui->tableWidget->show();
            ui-> tableWidget->setItem   (  0, 0 , new QTableWidgetItem(BookName));
             ui-> tableWidget->setItem   (  1, 0 , new QTableWidgetItem(author));
             ui-> tableWidget->setItem   ( 2, 0 , new QTableWidgetItem(subject));
@@ -132,7 +117,7 @@ void Window_Search::on_pushButton_name_clicked()
 
 void Window_Search::on_pushButton_author_clicked()
 {
-     ui->tableWidget->show();
+
     QString Author_lineEdit = ui->lineEdit_AuthorName->text();
     QDir AddedBook;
     AddedBook.cd("..");
@@ -158,6 +143,7 @@ void Window_Search::on_pushButton_author_clicked()
            QString BookName=(x.toObject())["name"].toString();
            QString BookId= (x.toObject())["id"].toString();
             found_flag=1;
+             ui->tableWidget->show();
            ui-> tableWidget->setItem   (  0, 0 , new QTableWidgetItem(BookName));
             ui-> tableWidget->setItem   (  1, 0 , new QTableWidgetItem(author));
             ui-> tableWidget->setItem   ( 2, 0 , new QTableWidgetItem(subject));
@@ -179,7 +165,7 @@ void Window_Search::on_pushButton_author_clicked()
 
 void Window_Search::on_pushButton_subject_clicked()
 {
-     ui->tableWidget->show();
+
     QString Subject_lineEdit = ui->lineEdit_Subject->text();
     QDir AddedBook;
     AddedBook.cd("..");
@@ -203,6 +189,7 @@ void Window_Search::on_pushButton_subject_clicked()
            QString BookName=(x.toObject())["name"].toString();
            QString BookId= (x.toObject())["id"].toString();
            found_flag=1;
+            ui->tableWidget->show();
            ui-> tableWidget->setItem   (  0, 0 , new QTableWidgetItem(BookName));
             ui-> tableWidget->setItem   (  1, 0 , new QTableWidgetItem(author));
             ui-> tableWidget->setItem   ( 2, 0 , new QTableWidgetItem(subject));

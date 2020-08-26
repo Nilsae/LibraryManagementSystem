@@ -6,56 +6,34 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>747</width>
-    <height>538</height>
+    <width>815</width>
+    <height>537</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Renew Book</string>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(201, 255, 198);</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item>
     <layout class="QGridLayout" name="gridLayout">
-     <item row="4" column="1">
-      <widget class="QLineEdit" name="lineEdit_MemberId">
-       <property name="maximumSize">
-        <size>
-         <width>200</width>
-         <height>35</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>Microsoft Sans Serif</family>
-         <pointsize>11</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(200, 255, 148);
-color: rgb(47, 94, 69);</string>
-       </property>
-       <property name="placeholderText">
-        <string> Member ID</string>
+     <item row="15" column="1">
+      <widget class="QLabel" name="label_4">
+       <property name="text">
+        <string/>
        </property>
       </widget>
      </item>
-     <item row="2" column="3">
-      <spacer name="horizontalSpacer_2">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item row="1" column="1">
+     <item row="3" column="1">
       <widget class="QLineEdit" name="lineEdit_BookId">
        <property name="maximumSize">
         <size>
@@ -78,7 +56,40 @@ color: rgb(47, 94, 69);</string>
        </property>
       </widget>
      </item>
-     <item row="1" column="0">
+     <item row="12" column="1">
+      <widget class="QTableWidget" name="tableWidget_RentedBooks">
+       <property name="font">
+        <font>
+         <family>Microsoft Sans Serif</family>
+        </font>
+       </property>
+       <property name="mouseTracking">
+        <bool>true</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 126, 92);</string>
+       </property>
+       <property name="rowCount">
+        <number>4</number>
+       </property>
+       <row/>
+       <row/>
+       <row/>
+       <row/>
+       <column>
+        <property name="text">
+         <string>Book Id</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Rented Until</string>
+        </property>
+       </column>
+      </widget>
+     </item>
+     <item row="3" column="0">
       <spacer name="horizontalSpacer">
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
@@ -91,17 +102,20 @@ color: rgb(47, 94, 69);</string>
        </property>
       </spacer>
      </item>
-     <item row="0" column="1">
-      <widget class="QLabel" name="label">
-       <property name="text">
-        <string/>
+     <item row="13" column="1">
+      <spacer name="verticalSpacer">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
        </property>
-       <property name="pixmap">
-        <pixmap resource="image.qrc">:/img/img/renew.png</pixmap>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
        </property>
-      </widget>
+      </spacer>
      </item>
-     <item row="2" column="2">
+     <item row="4" column="2">
       <widget class="QPushButton" name="pushButton_search">
        <property name="maximumSize">
         <size>
@@ -134,12 +148,55 @@ color: rgb(52, 104, 77);</string>
        </property>
       </widget>
      </item>
-     <item row="6" column="1">
-      <widget class="QLineEdit" name="lineEdit_renewdDate">
+     <item row="0" column="1">
+      <widget class="QLabel" name="label_5">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLabel" name="label">
        <property name="maximumSize">
         <size>
          <width>200</width>
-         <height>35</height>
+         <height>200</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="image.qrc">:/img/img/renew.png</pixmap>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <spacer name="verticalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="14" column="1">
+      <widget class="QLabel" name="label_3">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QLineEdit" name="lineEdit_MemberId">
+       <property name="maximumSize">
+        <size>
+         <width>200</width>
+         <height>40</height>
         </size>
        </property>
        <property name="font">
@@ -149,15 +206,15 @@ color: rgb(52, 104, 77);</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(101, 204, 151);
-color: rgb(217, 255, 235);</string>
+        <string notr="true">background-color: rgb(200, 255, 148);
+color: rgb(47, 94, 69);</string>
        </property>
        <property name="placeholderText">
-        <string> Renewd Date</string>
+        <string> Member ID</string>
        </property>
       </widget>
      </item>
-     <item row="6" column="2">
+     <item row="5" column="2">
       <widget class="QPushButton" name="pushButton_Renew">
        <property name="maximumSize">
         <size>
@@ -190,48 +247,43 @@ color: rgb(52, 104, 77);</string>
        </property>
       </widget>
      </item>
-     <item row="7" column="1">
-      <widget class="QLabel" name="label_3">
-       <property name="text">
-        <string/>
+     <item row="5" column="1">
+      <widget class="QLineEdit" name="lineEdit_renewdDate">
+       <property name="maximumSize">
+        <size>
+         <width>200</width>
+         <height>35</height>
+        </size>
        </property>
-      </widget>
-     </item>
-     <item row="0" column="0">
-      <widget class="QTableWidget" name="tableWidget_RentedBooks">
-       <property name="mouseTracking">
-        <bool>true</bool>
+       <property name="font">
+        <font>
+         <family>Microsoft Sans Serif</family>
+         <pointsize>11</pointsize>
+        </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(255, 255, 255);</string>
+        <string notr="true">background-color: rgb(101, 204, 151);
+color: rgb(217, 255, 235);</string>
        </property>
-       <property name="rowCount">
-        <number>4</number>
+       <property name="placeholderText">
+        <string> Renewd Date</string>
        </property>
-       <row/>
-       <row/>
-       <row/>
-       <row/>
-       <column>
-        <property name="text">
-         <string>Bookid</string>
-        </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>Rented Until</string>
-        </property>
-       </column>
       </widget>
      </item>
+     <item row="1" column="2">
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>30</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
     </layout>
-   </item>
-   <item>
-    <widget class="QLabel" name="label_2">
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
    </item>
   </layout>
  </widget>

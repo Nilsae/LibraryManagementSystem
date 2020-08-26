@@ -18,6 +18,7 @@ Window_RegisterNewAccount::Window_RegisterNewAccount(QWidget *parent) :
     ui(new Ui::Window_RegisterNewAccount)
 {
     ui->setupUi(this);
+    ui->lineEdit_ID->setFocus();
 }
 
 Window_RegisterNewAccount::~Window_RegisterNewAccount()
@@ -46,6 +47,12 @@ void Window_RegisterNewAccount::on_pushButton_Register_clicked()
     else{
     if(Password!=ConfirmedPassword){
         QMessageBox::warning(this,"","confirmed password did not match");
+        this->close();
+        return;
+
+    }
+    if(Password.size()<8){
+        QMessageBox::warning(this,"","Password can not be less than 8 characters.");
         this->close();
         return;
 

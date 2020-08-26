@@ -6,12 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>710</width>
-    <height>437</height>
+    <width>714</width>
+    <height>569</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Search Book</string>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(255, 187, 148);</string>
@@ -19,10 +19,30 @@
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <layout class="QGridLayout" name="gridLayout">
-     <item row="7" column="1">
-      <widget class="QLabel" name="label_2">
+     <item row="3" column="2">
+      <widget class="QPushButton" name="pushButton_author">
+       <property name="maximumSize">
+        <size>
+         <width>100</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(0, 69, 102);
+background-color: rgba(255, 255, 255,0);</string>
+       </property>
        <property name="text">
-        <string/>
+        <string> By Author</string>
+       </property>
+       <property name="icon">
+        <iconset resource="image.qrc">
+         <normaloff>:/img/img/icons8-search-24 (1).png</normaloff>:/img/img/icons8-search-24 (1).png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>20</width>
+         <height>20</height>
+        </size>
        </property>
       </widget>
      </item>
@@ -49,6 +69,33 @@ color: rgb(207, 207, 155);</string>
        </property>
       </widget>
      </item>
+     <item row="1" column="2">
+      <widget class="QPushButton" name="pushButton_ID">
+       <property name="maximumSize">
+        <size>
+         <width>100</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(0, 69, 102);
+background-color: rgba(255, 255, 255,0);</string>
+       </property>
+       <property name="text">
+        <string> By ID</string>
+       </property>
+       <property name="icon">
+        <iconset resource="image.qrc">
+         <normaloff>:/img/img/icons8-search-24 (1).png</normaloff>:/img/img/icons8-search-24 (1).png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>20</width>
+         <height>20</height>
+        </size>
+       </property>
+      </widget>
+     </item>
      <item row="0" column="1">
       <widget class="QLabel" name="label">
        <property name="text">
@@ -56,6 +103,63 @@ color: rgb(207, 207, 155);</string>
        </property>
        <property name="pixmap">
         <pixmap resource="image.qrc">:/img/img/searchpic.png</pixmap>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QLineEdit" name="lineEdit_Subject">
+       <property name="maximumSize">
+        <size>
+         <width>210</width>
+         <height>35</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Microsoft Sans Serif</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(137, 244, 255);
+color: rgb(99, 99, 74);</string>
+       </property>
+       <property name="placeholderText">
+        <string> Subject</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="4" column="2">
+      <widget class="QPushButton" name="pushButton_subject">
+       <property name="maximumSize">
+        <size>
+         <width>100</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(0, 69, 102);
+background-color: rgba(255, 255, 255,0);</string>
+       </property>
+       <property name="text">
+        <string> By Subject</string>
+       </property>
+       <property name="icon">
+        <iconset resource="image.qrc">
+         <normaloff>:/img/img/icons8-search-24 (1).png</normaloff>:/img/img/icons8-search-24 (1).png</iconset>
        </property>
       </widget>
      </item>
@@ -79,27 +183,6 @@ color: rgb(99, 99, 74);</string>
        </property>
        <property name="placeholderText">
         <string> Book Name</string>
-       </property>
-      </widget>
-     </item>
-     <item row="4" column="2">
-      <widget class="QPushButton" name="pushButton_subject">
-       <property name="maximumSize">
-        <size>
-         <width>100</width>
-         <height>30</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: rgb(0, 69, 102);
-background-color: rgba(255, 255, 255,0);</string>
-       </property>
-       <property name="text">
-        <string> By Subject</string>
-       </property>
-       <property name="icon">
-        <iconset resource="image.qrc">
-         <normaloff>:/img/img/icons8-search-24 (1).png</normaloff>:/img/img/icons8-search-24 (1).png</iconset>
        </property>
       </widget>
      </item>
@@ -130,30 +213,10 @@ background-color: rgba(255, 255, 255,0);</string>
        </property>
       </widget>
      </item>
-     <item row="1" column="2">
-      <widget class="QPushButton" name="pushButton_ID">
-       <property name="maximumSize">
-        <size>
-         <width>100</width>
-         <height>30</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: rgb(0, 69, 102);
-background-color: rgba(255, 255, 255,0);</string>
-       </property>
+     <item row="8" column="1">
+      <widget class="QLabel" name="label_2">
        <property name="text">
-        <string> By ID</string>
-       </property>
-       <property name="icon">
-        <iconset resource="image.qrc">
-         <normaloff>:/img/img/icons8-search-24 (1).png</normaloff>:/img/img/icons8-search-24 (1).png</iconset>
-       </property>
-       <property name="iconSize">
-        <size>
-         <width>20</width>
-         <height>20</height>
-        </size>
+        <string/>
        </property>
       </widget>
      </item>
@@ -193,75 +256,12 @@ color: rgb(79, 79, 59);</string>
        </property>
       </widget>
      </item>
-     <item row="4" column="0">
-      <spacer name="horizontalSpacer">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item row="4" column="1">
-      <widget class="QLineEdit" name="lineEdit_Subject">
-       <property name="maximumSize">
-        <size>
-         <width>210</width>
-         <height>35</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>Microsoft Sans Serif</family>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(137, 244, 255);
-color: rgb(99, 99, 74);</string>
-       </property>
-       <property name="placeholderText">
-        <string> Subject</string>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="2">
-      <widget class="QPushButton" name="pushButton_author">
-       <property name="maximumSize">
-        <size>
-         <width>100</width>
-         <height>30</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: rgb(0, 69, 102);
-background-color: rgba(255, 255, 255,0);</string>
-       </property>
-       <property name="text">
-        <string> By Author</string>
-       </property>
-       <property name="icon">
-        <iconset resource="image.qrc">
-         <normaloff>:/img/img/icons8-search-24 (1).png</normaloff>:/img/img/icons8-search-24 (1).png</iconset>
-       </property>
-       <property name="iconSize">
-        <size>
-         <width>20</width>
-         <height>20</height>
-        </size>
-       </property>
-      </widget>
-     </item>
-     <item row="6" column="1">
+     <item row="7" column="1">
       <widget class="QTableWidget" name="tableWidget">
        <property name="maximumSize">
         <size>
          <width>210</width>
-         <height>100</height>
+         <height>180</height>
         </size>
        </property>
        <property name="font">

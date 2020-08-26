@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Cancel MemberShip</string>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(255, 197, 248);</string>
@@ -116,6 +116,9 @@ color: rgb(216, 216, 216);</string>
         <string notr="true">background-color: rgb(204, 121, 255);
 color: rgb(216, 216, 216);
 </string>
+       </property>
+       <property name="echoMode">
+        <enum>QLineEdit::Password</enum>
        </property>
        <property name="placeholderText">
         <string> Password  </string>

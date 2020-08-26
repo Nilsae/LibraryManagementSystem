@@ -10,8 +10,11 @@
     <height>465</height>
    </rect>
   </property>
+  <property name="acceptDrops">
+   <bool>false</bool>
+  </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Remove Book</string>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(255, 197, 248);</string>

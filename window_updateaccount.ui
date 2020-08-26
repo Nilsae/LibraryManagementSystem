@@ -7,11 +7,11 @@
     <x>0</x>
     <y>0</y>
     <width>498</width>
-    <height>427</height>
+    <height>454</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Upadte Account</string>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(255, 211, 148);</string>

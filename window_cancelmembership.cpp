@@ -20,6 +20,7 @@ Window_CancelMembership::Window_CancelMembership(QWidget *parent) :
     ui(new Ui::Window_CancelMembership)
 {
     ui->setupUi(this);
+    ui->lineEdit_MemberId->setFocus();
 }
 
 Window_CancelMembership::~Window_CancelMembership()

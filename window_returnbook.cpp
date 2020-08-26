@@ -12,12 +12,23 @@
 #include <QPair>
 #include <QMessageBox>
 #include<QDir>
+#include "globalvaribals.h"
 //==============================================================================================
 Window_ReturnBook::Window_ReturnBook(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Window_ReturnBook)
 {
     ui->setupUi(this);
+    ui->lineEdit_BookId->setFocus();
+    if(GlobalVaribals::CurrentAccType==1){
+        userflag=1;
+
+    }
+    if(GlobalVaribals::CurrentAccType==0){
+        ui->lineEdit_MemberId->hide();
+        userflag=0;
+
+    }
 }
 
 Window_ReturnBook::~Window_ReturnBook()
@@ -86,7 +97,14 @@ void Window_ReturnBook::on_pushButton_ReturnBook_clicked()
    QJsonObject Accounts_Obj=jsonDocAcc.object();
    AccountsFile.close();
 
-   QString MemberId = ui->lineEdit_MemberId->text();
+   QString MemberId;
+ if(userflag==0){
+      MemberId =QString::number(GlobalVaribals::CurrentId);
+ }
+ if(userflag==1){
+    MemberId = ui->lineEdit_MemberId->text();
+ }
+
   QJsonValueRef Account_ref = Accounts_Obj.find(MemberId).value();
   QJsonObject Account_Obj= Account_ref.toObject();
 
@@ -98,20 +116,14 @@ void Window_ReturnBook::on_pushButton_ReturnBook_clicked()
   int AccountType= Account_Obj["AccountType"].toInt();
   QString Password= Account_Obj["Password"].toString();
   QJsonObject RentedBooks= Account_Obj["RentedBooks"].toObject();
-  qDebug()<<"HI :/";
-  qDebug()<<MemberName;
-  qDebug()<<RentedBooks[BookId];
   QString date_rented_string=RentedBooks[BookId].toString();
   QDate date_rented = QDate::fromString(date_rented_string,"yyyy-MM-dd");
   QDate current_date =QDate::currentDate();
   int difference_days= date_rented.daysTo(current_date);
-//   qDebug()<<"date_rented_string:"<<date_rented_string;
-//   qDebug()<<"date_rented:"<<date_rented;
-//   qDebug()<<"difference_days:"<<difference_days;
   if (difference_days>7){
 
       QString str = QString("The book returned after %1 days delay").arg(difference_days);
-//      qDebug()<<str;
+
       QMessageBox::information(this, "", str);
   }
   else{
@@ -120,16 +132,13 @@ void Window_ReturnBook::on_pushButton_ReturnBook_clicked()
   }
 
 
-//  qDebug()<<str;
 
   if(RentedBooks.find(BookId)!=RentedBooks.end()){
       RentedBooks.remove(BookId);
   }
   else{
        QMessageBox::warning(this," ","This member does not have this book rented");
-      qDebug()<<"This member does not have this book rented ";
-      //notification that This member does not have this book rented
-  }
+       }
 
 
   QJsonObject newAccount = { {"Name", MemberName},

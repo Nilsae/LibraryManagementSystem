@@ -13,6 +13,7 @@ class Window_RenewBook : public QDialog
 
 public:
     explicit Window_RenewBook(QWidget *parent = nullptr);
+    int userflag;
     ~Window_RenewBook();
 
 private slots:
